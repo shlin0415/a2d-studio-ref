@@ -75,7 +75,10 @@ class OutputGenerator:
     ) -> Dict[str, Any]:
         """Build JSONL header with metadata"""
         
-        char_names = [char.ai_name for char in characters]
+        # Use character_key if available, otherwise fall back to ai_name
+        char_names = [
+            (char.character_key or char.ai_name) for char in characters
+        ]
         
         return {
             "header": {

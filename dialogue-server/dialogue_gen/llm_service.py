@@ -1,6 +1,7 @@
 """
 LLM Service Wrapper
 Handles communication with LLM APIs for dialogue generation
+Supports OpenAI, DeepSeek, and other compatible APIs
 """
 
 import os
@@ -14,18 +15,26 @@ logger = logging.getLogger(__name__)
 class LLMService:
     """Wrapper for LLM API calls"""
     
-    def __init__(self, provider: str = "openai", model: str = "gpt-3.5-turbo", api_key: Optional[str] = None):
+    def __init__(
+        self,
+        provider: str = "openai",
+        model: str = "gpt-3.5-turbo",
+        api_key: Optional[str] = None,
+        base_url: Optional[str] = None,
+    ):
         """
         Initialize LLM service
         
         Args:
-            provider: LLM provider (openai, anthropic, etc.)
+            provider: LLM provider (openai, deepseek, etc.)
             model: Model name
             api_key: API key (defaults to env var)
+            base_url: API base URL (for non-OpenAI providers)
         """
         self.provider = provider
         self.model = model
-        self.api_key = api_key or os.environ.get("CHAT_API_KEY")
+        self.api_key = api_key or os.environ.get("DIALOGUE_API_KEY") or os.environ.get("CHAT_API_KEY")
+        self.base_url = base_url or os.environ.get("DIALOGUE_BASE_URL")
         
         if not self.api_key:
             logger.warning("No API key found for LLM service")
@@ -35,16 +44,20 @@ class LLMService:
     def _init_client(self):
         """Initialize LLM client based on provider"""
         
-        if self.provider.lower() == "openai":
-            try:
-                from openai import AsyncOpenAI
-                self.client = AsyncOpenAI(api_key=self.api_key)
-                logger.info(f"Initialized OpenAI client with model: {self.model}")
-            except ImportError:
-                logger.error("OpenAI package not installed: pip install openai")
-                self.client = None
-        else:
-            logger.warning(f"Provider {self.provider} not yet implemented")
+        try:
+            from openai import AsyncOpenAI
+            
+            # Build OpenAI client with optional base_url for DeepSeek
+            client_kwargs = {"api_key": self.api_key}
+            if self.base_url:
+                client_kwargs["base_url"] = self.base_url
+            
+            self.client = AsyncOpenAI(**client_kwargs)
+            logger.info(f"Initialized {self.provider} client with model: {self.model}")
+            if self.base_url:
+                logger.info(f"Using custom base URL: {self.base_url}")
+        except ImportError:
+            logger.error("OpenAI package not installed: pip install openai")
             self.client = None
     
     async def generate_dialogue(

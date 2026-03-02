@@ -28,17 +28,22 @@ class CharacterLoader:
     }
     
     @staticmethod
-    def load_character(character_path: str | Path) -> Optional[CharacterSettings]:
+    def load_character(character_path: str | Path, character_key: Optional[str] = None) -> Optional[CharacterSettings]:
         """
         Load character from folder containing setting.txt
         
         Args:
             character_path: Path to character folder (e.g., Character-fig-setting-example/ema/)
+            character_key: Optional identifier for character (e.g., 'ema', 'hiro'). Defaults to folder name.
             
         Returns:
             CharacterSettings object or None if loading fails
         """
         character_path = Path(character_path)
+        
+        # Auto-detect character_key from folder name if not provided
+        if not character_key:
+            character_key = character_path.name
         
         if not character_path.exists() or not character_path.is_dir():
             logger.error(f"Character path does not exist: {character_path}")
@@ -66,8 +71,15 @@ class CharacterLoader:
             logger.error(f"No valid setting file found in {character_path}")
             return None
         
-        # Ensure resource_path is set
+        # Set character key and resource path
+        settings_dict["character_key"] = character_key
         settings_dict["resource_path"] = str(character_path)
+        
+        # Load available emotions from fig/ folder
+        emotion_figures = CharacterLoader.get_emotion_figures(character_path)
+        settings_dict["available_emotions"] = sorted(list(emotion_figures.keys()))
+        
+        logger.info(f"Found {len(emotion_figures)} emotions: {', '.join(settings_dict['available_emotions'][:5])}...")
         
         # Try to create CharacterSettings object
         try:

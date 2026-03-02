@@ -26,6 +26,7 @@ class CharacterSettings(BaseModel):
 
     # Basic Info
     ai_name: str = Field(default="character_name")
+    character_key: Optional[str] = None  # Folder name (ema, hiro, etc.)
     ai_subtitle: Optional[str] = ""
     user_name: str = Field(default="player")
     user_subtitle: Optional[str] = ""
@@ -43,6 +44,10 @@ class CharacterSettings(BaseModel):
     body_part: Optional[Dict[str, Any]] = None
     scale: float = 1.0
     clothes_name: Optional[str] = None
+    available_emotions: Optional[List[str]] = None  # Emotions from fig/ folder
+    
+    # Available Emotions (dynamically loaded from fig/ folder)
+    available_emotions: List[str] = Field(default_factory=list)
     clothes: Optional[List[Dict[str, str]]] = None
 
     # Metadata
@@ -99,7 +104,7 @@ class DialoguePlaybook(BaseModel):
         }
 
 
-# Standard 18 emotions from LingChat
+# Standard emotions expanded to include more variations
 STANDARD_EMOTIONS = [
     "慌张",
     "担心", 
@@ -119,4 +124,12 @@ STANDARD_EMOTIONS = [
     "情动",
     "哭泣",
     "调皮",
+    # Additional emotions for late-night chatting scenarios
+    "温柔",  # Gentle/tender
+    "期待",  # Expecting/looking forward to
+    "开心",  # Happy/cheerful
+    "平静",  # Calm/peaceful
+    "困惑",  # Confused
+    "失望",  # Disappointed
+    "感动",  # Moved/touched
 ]

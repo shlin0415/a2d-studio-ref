@@ -26,6 +26,7 @@ class PromptBuilder:
         topic: str,
         language: str = "zh",
         enable_translation: bool = False,
+        max_sentences_per_character: int = 5,
     ) -> str:
         """
         Build system prompt for multi-character dialogue generation
@@ -36,34 +37,49 @@ class PromptBuilder:
             topic: Context/topic for the dialogue
             language: Target language (zh, en, jp)
             enable_translation: Whether to enable ZH->JP translation
+            max_sentences_per_character: Max sentences per character turn
             
         Returns:
             System prompt string
         """
         
-        # Build character descriptions
-        char_descriptions = "\n".join([
-            PromptBuilder._format_character_description(char, user_name)
-            for char in characters
-        ])
+        # Build character descriptions and get character names
+        char_descriptions = []
+        char_names = []
+        for char in characters:
+            char_descriptions.append(PromptBuilder._format_character_description(char, user_name))
+            char_names.append(char.character_key or char.ai_name)
         
-        # Build dialogue format instructions
+        char_descriptions_str = "\n".join(char_descriptions)
+        
+        # Collect all available emotions from characters
+        all_emotions = set()
+        for char in characters:
+            if char.available_emotions:
+                all_emotions.update(char.available_emotions)
+        
+        # Build dialogue format instructions with character-specific emotions
         dialogue_format = PromptBuilder._build_dialogue_format_instructions(
             language=language,
-            enable_translation=enable_translation
+            enable_translation=enable_translation,
+            max_sentences=max_sentences_per_character,
+            valid_emotions=list(all_emotions) if all_emotions else None,
+            character_names=char_names
         )
         
         # Build conversation rules
         conversation_rules = PromptBuilder._build_conversation_rules(
             num_characters=len(characters),
-            language=language
+            language=language,
+            max_sentences=max_sentences_per_character,
+            character_names=char_names
         )
         
         # Assemble complete system prompt
         system_prompt = f"""You are a professional dialogue writer creating natural, engaging conversations.
 
 ## Characters
-{char_descriptions}
+{char_descriptions_str}
 
 ## Dialogue Format
 {dialogue_format}
@@ -104,58 +120,77 @@ User interacting with: {user_name}"""
     @staticmethod
     def _build_dialogue_format_instructions(
         language: str = "zh",
-        enable_translation: bool = False
+        enable_translation: bool = False,
+        max_sentences: int = 5,
+        valid_emotions: Optional[List[str]] = None,
+        character_names: Optional[List[str]] = None
     ) -> str:
         """Build dialogue format instructions based on language"""
         
-        format_base = f"""Each character's response must follow this strict format:
-【emotion】dialogue text（optional actions）"""
+        # Use character-specific emotions if provided, otherwise use standard
+        emotions = valid_emotions if valid_emotions else PromptBuilder.EMOTIONS
+        emotions = sorted(emotions)
         
-        if enable_translation and language != "zh":
-            format_base += """<translation>"""
+        # Default to Chinese + Japanese translation
+        format_base = f"""Each character's response must follow this STRICT format:
+【emotion】Chinese dialogue（action with CHARACTER NAMES）<Japanese translation>
+
+### Example Format:
+【期待】这么晚来找我，是有什么事情吗？（高兴地看着ema）<こんな遅くに私を訪ねてくるなんて、何か用事があるの？>
+【害羞】我...我觉得有点不好意思呢（低下了头，走近hiro）<私は...ちょっと恥ずかしいです...>
+
+### Character Names in Actions
+When writing actions, use the actual character names:"""
+        
+        if character_names and len(character_names) > 0:
+            format_base += f"\n- Character 1: {character_names[0]}"
+            if len(character_names) > 1:
+                format_base += f"\n- Character 2: {character_names[1]}"
+            if len(character_names) > 2:
+                for i, name in enumerate(character_names[2:], 3):
+                    format_base += f"\n- Character {i}: {name}"
+            format_base += "\n- DO NOT use generic terms like '对方', '他', '她' in actions"
         
         format_base += f"""
 
-### Valid Emotions ({len(PromptBuilder.EMOTIONS)} total)
-{', '.join(PromptBuilder.EMOTIONS)}
+### Constraints:
+- MUST use 【】 for emotions (NOT English)
+- MUST include <> Japanese translation for EACH line
+- Maximum {max_sentences} sentences per character turn
+- Actions use （）and should be creative and descriptive
+- Use specific character names in actions, not '对方'
+- Each sentence must be complete and natural
 
-### Format Rules
-- Emotion tags must be enclosed in 【】
-- No emoticons (颜文字) allowed
-- Actions are optional, enclosed in （）
-- Each sentence must be complete (no connecting with ~)
-- One character speaks per turn"""
-        
-        if enable_translation and language == "jp":
-            format_base += "\n- Include Japanese translation in <> after each sentence"
-        elif enable_translation and language == "en":
-            format_base += "\n- Include English translation in <> after each sentence"
-        
-        format_base += """
-
-### Example Format
-【高兴】今天天气真好呀！<Today's weather is wonderful!>
-【害羞】我...我觉得有点不好意思呢（低下了头）<I... feel a bit embarrassed...>"""
+### Valid Emotions ({len(emotions)} total - These are the ONLY emotions you can use)
+{', '.join(emotions)}"""
         
         return format_base
     
     @staticmethod
     def _build_conversation_rules(
         num_characters: int,
-        language: str = "zh"
+        language: str = "zh",
+        max_sentences: int = 5,
+        character_names: Optional[List[str]] = None
     ) -> str:
         """Build conversation rules"""
         
+        char_list = ""
+        if character_names:
+            char_list = f"\nCharacters: {', '.join(character_names)}\n"
+        
         rules = f"""1. Generate a natural dialogue with {num_characters} characters
-2. Each character should speak 2-3 times minimum
-3. Responses should reflect character personality
-4. Maintain conversation flow and context
-5. Use appropriate emotions for each statement
-6. Actions should enhance the scene (optional)
-7. Dialogue should be engaging and natural
-8. Total dialogue should be between 300-500 words
-9. Each turn must use valid emotions from the emotion list
-10. Do not break the dialogue format under any circumstances"""
+{char_list}2. Characters alternate speaking turns naturally
+3. Each character speaks 2-3 times minimum
+4. Each turn: {max_sentences} sentences maximum
+5. Responses reflect character personality and the setting
+6. Maintain conversation flow and emotional continuity
+7. Use appropriate emotions for each statement
+8. Actions should enhance the scene and feel natural
+9. Dialogue should be engaging, warm, and natural
+10. Total dialogue should be 300-500 words
+11. CRITICAL: Do not break the format 【emotion】text（action）<Japanese> under any circumstances
+12. All emotions must be valid Chinese emotion names from the list"""
         
         return rules
     
