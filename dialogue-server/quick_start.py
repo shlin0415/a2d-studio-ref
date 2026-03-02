@@ -152,37 +152,48 @@ def demo_4_generate_output(dialogue_lines, characters):
         char_list = characters
     
     topic = "Two characters meet at a coffee shop"
+    output_dir = dialogue_server_path / "output"
+    output_dir.mkdir(parents=True, exist_ok=True)
     
     # Generate JSONL
     print(f"\nGenerating JSONL output...")
+    jsonl_path = output_dir / "demo_dialogue.jsonl"
     jsonl_output = generator.generate_jsonl(
         dialogue_lines=dialogue_lines,
         characters=char_list,
         topic=topic,
         language="zh",
+        output_path=jsonl_path,
     )
     print(f"✓ Generated JSONL ({len(jsonl_output)} characters)")
+    print(f"  Saved to: {jsonl_path}")
     print(f"\nJSONL preview (first 300 chars):\n")
     print(jsonl_output[:300])
     print("...\n")
     
     # Generate JSON
     print(f"Generating JSON output...")
+    json_path = output_dir / "demo_dialogue.json"
     json_output = generator.generate_json(
         dialogue_lines=dialogue_lines,
         characters=char_list,
         topic=topic,
         language="zh",
+        output_path=json_path,
         pretty=True,
     )
     print(f"✓ Generated JSON ({len(json_output)} characters)")
+    print(f"  Saved to: {json_path}")
     
     # Generate TXT
     print(f"\nGenerating TXT output...")
+    txt_path = output_dir / "demo_dialogue.txt"
     txt_output = generator.generate_txt(
         dialogue_lines=dialogue_lines,
+        output_path=txt_path,
     )
     print(f"✓ Generated TXT ({len(txt_output)} characters)")
+    print(f"  Saved to: {txt_path}")
     print(f"\nTXT preview:\n")
     print(txt_output)
 

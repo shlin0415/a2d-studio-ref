@@ -48,6 +48,16 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 .pnp.*
+
+# Dialogue Server Output (but keep source files)
+dialogue-server/output/*.jsonl
+dialogue-server/output/*.json
+dialogue-server/*.output
+*.log
+
+# Backups to keep (do not ignore)
+# !dialogue-server/**/*.orig
+
 .yarn-integrity
 
 # Large Model Files

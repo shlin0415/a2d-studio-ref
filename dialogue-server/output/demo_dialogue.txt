@@ -1,0 +1,8 @@
+Alice: 【高兴】今天天气真好呀！（高兴地伸了个懒腰）
+  → The weather is wonderful today!
+
+Bob: 【害羞】是啊，我也很开心（低下了头，脸有点红）
+  → Me too, I'm happy...
+
+Alice: 【开心】那我们一起去公园吧！（拉住对方的手）
+  → Let's go to the park together!
