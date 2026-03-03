@@ -1,3 +1,7 @@
+# NEWS: LingChat and SillyTavern have been moved to the third_party folder now. Please do not edit files in the third_party folder. The follow is an old run process.
+
+------
+
 Venv was activated successfully
 Starting frontend...
 [1/4] Activating environment...

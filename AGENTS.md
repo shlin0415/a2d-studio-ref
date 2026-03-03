@@ -40,3 +40,6 @@ example:
 (a2d-studio) PS D:\aaa-new\setups\a2d-studio\ref> 
 ```
 
+## 7. please do not edit files in the third_party folder and things recorded in .gitignore in normal situation
+If needed, ask the user first.
+

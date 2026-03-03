@@ -1,3 +1,5 @@
+NEWS: LingChat and SillyTavern have been moved to the third_party folder now. Please do not edit files in the third_party folder.
+
 1, find out how LingChat and SillyTavern get character chatting with LLM API KEY, especially for SillyTavern multi character chatting with a long topic (1000+ words).
 
 # Which components are most important to you?
