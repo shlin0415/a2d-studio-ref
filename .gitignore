@@ -5,6 +5,7 @@ vendor/
 venv/
 env/
 .venv/
+third_party/
 
 # Build Artifacts
 dist/
@@ -111,6 +112,7 @@ session-*.md
 *assets*
 *resource*
 *background*
+*/fig/*
 
 ##### from old 
 

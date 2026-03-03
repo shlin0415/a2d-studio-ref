@@ -1,0 +1,6 @@
+GPT_SOVITS_TYPE1='v2' 
+GPT_SOVITS_TYPE2='v2'
+GPT_WEIGHT='manosaba_ema-e15.ckpt'
+SoVITS_WEIGHT='manosaba_ema_e8_s864.pth'
+DEFAULT_REF_VOICE='./good_ref/0101Adv26_Ema012.wav'
+DEFAULT_REF_SETTING='./good_ref/0101Adv26_Ema012.txt'

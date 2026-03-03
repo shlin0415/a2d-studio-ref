@@ -1,0 +1,6 @@
+GPT_SOVITS_TYPE1='v2' 
+GPT_SOVITS_TYPE2='v2ProPlus'
+GPT_WEIGHT='hiro-e15.ckpt'
+SoVITS_WEIGHT='hiro_e8_s2184.pth'
+DEFAULT_REF_VOICE='./good_ref/0205Trial09_Hiro093.ogg'
+DEFAULT_REF_SETTING='./good_ref/0205Trial09_Hiro093.txt'

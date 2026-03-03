@@ -60,8 +60,8 @@ async def main():
     ref_path = dialogue_server_path.parent / "Character-fig-setting-example"
     
     try:
-        ema = loader.load_character(ref_path / "ema")
-        hiro = loader.load_character(ref_path / "hiro")
+        ema = loader.load_character(ref_path / "艾玛")
+        hiro = loader.load_character(ref_path / "希罗")
         
         if not ema or not hiro:
             print("✗ Failed to load characters")
