@@ -33,7 +33,7 @@ $env:PYTHONUTF8 = 1
 python .\quick_start.py 2>&1 | Select-Object -Last 50
 ```
 
-## 6. remember to check the running env
+## 6. always remember to check the running env and run commands in the proper env
 example:
 ```
 (base) PS D:\aaa-new\setups\a2d-studio\ref> conda activate a2d-studio
