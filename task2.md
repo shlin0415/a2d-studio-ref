@@ -147,4 +147,71 @@ structure.md
 
 it seem succeeded but the whole terminal crashed.
 i guess it is not your fault.
-the result of the 
+the result of the gpt-sovits side is in D:\aaa-new\setups\a2d-studio\ref\third_party\gpt-sovits-api-run.md (long).
+can you check your env now?
+maybe we need to try again.
+
+thanks. you are so good.
+i want to try D:\aaa-new\setups\a2d-studio\ref\voice-server\demo_gpt_sovits_voice.py again, to see why the terminal crashed (maybe it is my fault).
+this time, please first check your env.
+and run demo_gpt_sovits_voice.py, catch the output file to a .out (attention that we are on a windows and vscode github copilot).
+
+thanks.
+lets review what we do until now first.
+and then we need to build the voice server to accept dialogue-server\output\real_dialogue.json, and generate the corr voice file.
+but we seem also need to improve the dialogue-server, to make it clear that which is the real text need to generate voice.
+there seem should be caption_text (字幕文本) and voice_text (声音文本).
+for dialogue-server\output\real_dialogue.json, the caption_text is chinese, the voice_text is japanese.
+and we also need to make sure the action_text will not be used in voice generate.
+for example,
+{
+    "index": 8,
+    "character": "艾玛",
+    "emotion": "开心",
+    "text": "嗯！最喜欢希罗了～",
+    "action": "开心地举起双手，配合着让希罗帮她脱下外套",
+    "text_jp": "うん！ヒロ大好き～（嬉しそうに両手を上げ、ヒロが上着を脱がせるのに合わせる）",
+    "emotion_jp": null,
+    "timestamp": null
+}
+the action_text_jp '（嬉しそうに両手を上げ、ヒロが上着を脱がせるのに合わせる）' is inner text_jp "うん！ヒロ大好き～（嬉しそうに両手を上げ、ヒロが上着を脱がせるのに合わせる）".
+the real text need to generate voice is 'うん！ヒロ大好き～'.
+and the caption_text is "嗯！最喜欢希罗了～ （开心地举起双手，配合着让希罗帮她脱下外套）", which is text + (action).
+
+
+
+
+❓ Questions Before I Start
+Should I modify dialogue-server output format or create a separate transformer that reads the current JSON and creates an enhanced version with caption_text/voice_text_jp?
+i prefer improve dialogue-server output format.
+For action text extraction: Should I simply remove all text within parentheses （...） from text_jp to get voice_text_jp?
+maybe it is stable? i am not sure.
+Voice file naming: Should audio files be named like {character}_{index}_{emotion}.wav or something else?
+i prefer make a corr .txt file to explain things for the .wav file.
+and we may need to make a {dialogue}_voice output folder for each {dialogue}.json file, and put voice files in.
+the name of each .wav file can be {character}_{index}.wav, with the {character}_{index}.txt.
+and to make sure our system is stable, we need to test 9 different groups. caption_text can be {english, chinese, japanese}. voice_text can also be {english, chinese, japanese}. so 3 * 3 = 9.
+please make a plan first, thanks.
+
+
+
+❓ Before Implementation: Clarifications Needed
+Caption Language Default: Should dialogue-server default to Chinese captions, or should I allow user to specify via PromptBuilder?
+    this is vital, allow user to set first.
+    we may need to create a dialogue-topic-template.md and tell the user to set caption_text_language and voice_text_language.
+    and the setting will be written to {dialogue}.json.
+    if empty, let the default caption_text_language to be chinese, and the default voice_text_language also be chinese.
+    and please name the variable more general.
+    do not use suffix like _en.
+    for each dialogue, there will only be one kind of caption_text_language and one kind of voice_text_language, in normal cases.
+Voice Language Default: Should voice-server default to Japanese voice (as in your example), or read from dialogue output?
+    first read from {dialogue}.json which should include the user setting, and if empty, default is chinese.
+Action Text Stability: Your regex approach （[^）]*） seems solid. Should I also handle cases like:
+Multiple parentheses in one line?
+Nested parentheses?
+Mixed () and （）?
+    yes, please handle these edge cases carefully.
+Metadata Format: Should the .txt file use simple KEY=VALUE format (like voice_setting.txt) or JSON?
+    maybe better to use JSON.
+so please renew the plan, thanks.
+
