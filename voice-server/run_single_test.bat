@@ -1,0 +1,7 @@
+@echo off
+chcp 65001 >nul
+set PYTHONUTF8=1
+call conda activate a2d-studio
+cd /d "%~dp0"
+python test_single_port_bottleneck.py
+pause
