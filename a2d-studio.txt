@@ -1,0 +1,4116 @@
+
+# PROJECT STRUCTURE: ref/
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── push-to-checkout.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   ├── objects
+│   │   ├── 00
+│   │   │   ├── 5dd8313ad6e2bfeed98374adcb29b59eb771b4
+│   │   │   └── 6a9760831942a51d5a8fd7f80a022f67a8f47f
+│   │   ├── 01
+│   │   │   └── b17c41e2e7ac3d14a59199e2cfad04a4f7f3b3
+│   │   ├── 07
+│   │   │   └── daae1257929cc8f1710108f4215d41f63d0d50
+│   │   ├── 08
+│   │   │   ├── 42eff34833f14403a1ae404c4e8ee853ca0c6b
+│   │   │   ├── 9279d2913bb281fbc82c5d6bbbcd6c86f53aea
+│   │   │   └── e9194a57f0b2c8e20244f6f689424b7f73df5a
+│   │   ├── 09
+│   │   │   └── db7e5b45fb3c56d5a3346637180660ab82a182
+│   │   ├── 0a
+│   │   │   └── a7fa47bd5a3a4032064ca4b32e3ce1725e1a6b
+│   │   ├── 0b
+│   │   │   └── 48109eb087380c9ab1185ca75e6fc6a33fed31
+│   │   ├── 0c
+│   │   │   └── 4c5a399b88a4b52e876159726247ed799daf4f
+│   │   ├── 10
+│   │   │   └── 4ba147acf3085fce01a18760373fd744fc7923
+│   │   ├── 11
+│   │   │   ├── 607b8fa399abec57ae15f86dc0925faa7f5fe0
+│   │   │   ├── 9cf3962b85e10c1e88ed8e44162c4de40d55ee
+│   │   │   └── b11a9c2416928eaf93754aef14ca104a082c72
+│   │   ├── 15
+│   │   │   └── 4570069abcaea6af34f372678edebe7a623e9e
+│   │   ├── 16
+│   │   │   └── f801b95d2eae1e1958fae6ba4b54d88c5a517e
+│   │   ├── 18
+│   │   │   ├── 603235db2674d24dc9be1cdd2caeac13f4f548
+│   │   │   └── a001ed1b8590b8d016cd08ef1b8f548ba14642
+│   │   ├── 1b
+│   │   │   ├── 3daab689212da6c5b152f701d28cf15ad6e167
+│   │   │   └── 5ef8ff8ce22acee2e56fd2aad4c9f0037fee71
+│   │   ├── 1c
+│   │   │   └── c3a03e12c015e342f5ad5d9f5c4c3df6f7f619
+│   │   ├── 1d
+│   │   │   ├── 96a7c750c99f3167e9ca1edb0e2b638d1d32df
+│   │   │   └── fc5f5ca7368ec494668d258936e771bf9c55a6
+│   │   ├── 1f
+│   │   │   └── 4566c0568930fd595777c8074cf521df98ca07
+│   │   ├── 22
+│   │   │   └── 19bf49efa87ac25ea5f34ce38d0e67d7d37e6c
+│   │   ├── 23
+│   │   │   ├── 89ddf240f6f5c84378ce7c873f6e70b10f67c0
+│   │   │   └── b3862917990126215404bd216a24f254324185
+│   │   ├── 24
+│   │   │   └── 03ec3e0d81a327fe6e1f7449ff9b739e5c9c5f
+│   │   ├── 25
+│   │   │   └── 7cfe37e152b7efb33ba71969452a1942b5aba1
+│   │   ├── 26
+│   │   │   ├── 21bedaf9707ad2c4b66d3ad4ecfc9d68cfff1f
+│   │   │   └── fe33c6069c5642d7c3110ef817ca25da849bba
+│   │   ├── 27
+│   │   │   ├── 1976b62006c2192d3d881f296272a8f282f5ac
+│   │   │   └── 91fc14470c1b089ec86c063ebc230b6e027caf
+│   │   ├── 29
+│   │   │   └── 8f0557ecde47cb92a7752d4ddb1a654baedbb1
+│   │   ├── 2d
+│   │   │   └── d8050c73efe13f8b3044a6c709815442c537df
+│   │   ├── 2e
+│   │   │   └── d15f07445c2564c6bf1c4d481547f00c0e63ed
+│   │   ├── 30
+│   │   │   └── a6ec783ba01e2ef10afba97bf535b7552753d8
+│   │   ├── 31
+│   │   │   └── b7bb8264c435db2351f73a3176e0dfc0991a07
+│   │   ├── 33
+│   │   │   └── ec95df9f0711bb6db54e6c2509f35a301fb660
+│   │   ├── 34
+│   │   │   └── 07cb96ed81f17077042f35bc8a14f131a53756
+│   │   ├── 35
+│   │   │   ├── 09b0cecfb263766f845c1c5d9ad3b7eaf2412f
+│   │   │   └── 44bdf6ed9952e65f5e902baa557a879e3b319d
+│   │   ├── 36
+│   │   │   ├── 2d7cec70409bc88780a5667feae4338d65620d
+│   │   │   └── 5ee44aecdc115e77cccf999ff52fbe677c19c5
+│   │   ├── 37
+│   │   │   └── 8821f2f42bffc1182f396bd5c29d6a25b1b504
+│   │   ├── 38
+│   │   │   └── f16941801e42afda379b57868d9065fff7e10e
+│   │   ├── 3a
+│   │   │   ├── 3898a95f6b0f74f98882d73afd58d8d76d3678
+│   │   │   └── a3bfa31cd007f902164cc0be4f9a90fee170e2
+│   │   ├── 3d
+│   │   │   └── c91acad317aee262b36e33709626fb228e43ce
+│   │   ├── 3f
+│   │   │   └── 077083d3b2962c51d876167f5aa8cf9a6780cd
+│   │   ├── 41
+│   │   │   ├── 18d25f88d9af33f27641ba727804ced069faa0
+│   │   │   ├── 4c3e3e2b106472ffa511ffd22ed4d053be5bde
+│   │   │   └── 741916afcebfd61271ffe949a2ca60afee642e
+│   │   ├── 43
+│   │   │   └── 31d1c51b4636edc631c0cb5aba1ef70ebbcf96
+│   │   ├── 46
+│   │   │   └── dad5a84b85698c3d322864c2567731a20200a3
+│   │   ├── 49
+│   │   │   ├── 5a26290f748908788ccb04fae492161cd334d8
+│   │   │   └── c65061cf0c8175093fe6fdeee4e8430861d7c2
+│   │   ├── 4a
+│   │   │   └── cbd834ebb749bf7c1c7eacc3aa20398f2c70b4
+│   │   ├── 4c
+│   │   │   └── 9d01cf13a0e519529cf38a558cd9399191b4c4
+│   │   ├── 51
+│   │   │   └── 420bdb902a4f8183677a46587c734700f75ee1
+│   │   ├── 55
+│   │   │   └── 15235546ca0881a544e09e242532d891867eb7
+│   │   ├── 57
+│   │   │   ├── 29f8d49116b15f19cf3f0545c3f8732f94cac1
+│   │   │   ├── acc38b2eac11e319a021dab65121102b85beb2
+│   │   │   └── efd5c7ca9f4c8651ed4c32f5a6fb090605486f
+│   │   ├── 59
+│   │   │   └── 2e69f4d5043f3fe2172231bc047a077bddd81c
+│   │   ├── 5b
+│   │   │   ├── c9a70baca094045bdbebfdab69486dc498e572
+│   │   │   └── d7130cf5fdfe5588050a1edcf834a58fd647ea
+│   │   ├── 61
+│   │   │   └── 61bf55c2fac2435391784f4e4539c6d28aa1ae
+│   │   ├── 62
+│   │   │   ├── 497b516ccac10caf967876df8d101dc37d84aa
+│   │   │   └── a08161a76d80304a37f5b16f380265c536c160
+│   │   ├── 63
+│   │   │   └── 654e86ba3c4d67796568bdce8665ac29d4bc9a
+│   │   ├── 65
+│   │   │   ├── 69e1a91a837ae2138fbbc0094a5d3ed705e174
+│   │   │   └── f07de5d87262adfbf91ca090e591cf04e82ac3
+│   │   ├── 66
+│   │   │   └── 759d2fdbf0b884aa283a8da4a02809ca0c17d8
+│   │   ├── 69
+│   │   │   └── c703aeeb3cda970af59f791a8b8ad9386e8c61
+│   │   ├── 6a
+│   │   │   └── 39a8e15a5a67d183ff034b74e8d02f249f5d15
+│   │   ├── 6c
+│   │   │   ├── 64f9a6c4095b89e3b82f2c1e6ea52e7cbfd92b
+│   │   │   └── 7d065c0907a0c5ddfe73f4b1533c3abe00fe0c
+│   │   ├── 6f
+│   │   │   ├── 13d36b2178a912b3cad486f5dd935bd8aefc8f
+│   │   │   ├── a5a2798a5f073bc3b621f5114846641e68e9fc
+│   │   │   └── cde02a6e85de135b98f63f43b385a138c1c8e7
+│   │   ├── 71
+│   │   │   └── ff3d15bf7e57553ab93fcfbd6cddbe12f8cc46
+│   │   ├── 74
+│   │   │   └── 5026f12300fdb28330bdd20cacb2b65bee3942
+│   │   ├── 7c
+│   │   │   ├── 2b1a7183818d1018b74c234945e3e3c42023a4
+│   │   │   └── 6ab65a585c76276ff7ad69bb3e08694d632997
+│   │   ├── 7f
+│   │   │   └── b2c9f10b0ab28853670ca22ea6659f53359492
+│   │   ├── 80
+│   │   │   └── d6267ec12db470fda2ce209330c19aab13457d
+│   │   ├── 82
+│   │   │   └── 8b9f7adc36a66a4a0e7a70b18a4c7a3483a288
+│   │   ├── 84
+│   │   │   └── b57f4345580e2015b17e56b3e330296b509f0f
+│   │   ├── 85
+│   │   │   └── 3c0b095efacf15bf77fadbcf8fba703b7eaa9c
+│   │   ├── 86
+│   │   │   ├── 31505c13257f2d65e2b8b5b3b10d47b4f3b498
+│   │   │   └── 37118e899ccb2a55b7b523c9ebab12c740a996
+│   │   ├── 89
+│   │   │   └── cd31e90f584aff0c50df2322b82ce0e9ae4220
+│   │   ├── 8d
+│   │   │   └── 65a0c989567a9b4a6a91494b6243de58c4d3fc
+│   │   ├── 8e
+│   │   │   └── 58db719a7c43283a591ca6b942433a3dc673f9
+│   │   ├── 93
+│   │   │   └── 25e8e6aab760c29f5d6356d44157b94fd7a178
+│   │   ├── 94
+│   │   │   ├── 0c628dd0add55b83fc1dd9556d3f2f7dcfe3a0
+│   │   │   └── 6564af351781e1558621ff7ae81513812b66d5
+│   │   ├── 95
+│   │   │   └── d44bb74d0722b2b7ef651b1876dba5f4f37f9a
+│   │   ├── 97
+│   │   │   └── 6c0f88c513e4803d7e53e1369d1de51e894c46
+│   │   ├── 99
+│   │   │   └── 1b609fc8e6e1df3a9a79c0e402a519de1a148b
+│   │   ├── 9a
+│   │   │   ├── 097567f76513ae07950628d1618a1758d4e17c
+│   │   │   └── fddfb9923b1ce24823b5bf6c7b9b5c07ee2e95
+│   │   ├── 9e
+│   │   │   └── d325d77927528346c1d67f210923eb55c3c62e
+│   │   ├── a8
+│   │   │   └── 608d2918f7dd56a57b184472cac86a8e11e19f
+│   │   ├── ac
+│   │   │   ├── 02a4dc46849b849e7ad505c919581ed3b2127b
+│   │   │   └── 49ea46eb346838e14b8c6612f1562b2904168e
+│   │   ├── ad
+│   │   │   └── 20d37ef8322113e30a93850eeedcc30d012f58
+│   │   ├── ae
+│   │   │   └── a1322300d1ff9f4ca54c13c532930889f0c089
+│   │   ├── b0
+│   │   │   └── 706bf413ce55359795b15ab62736cb94d88d90
+│   │   ├── b6
+│   │   │   └── bc34f34778d413f568957fcd18bd81e3156045
+│   │   ├── b9
+│   │   │   └── fdb0d09ff1815d34cf752684fb0f6b696ed339
+│   │   ├── ba
+│   │   │   └── 66c8d878ce7cfe2ac3cc9e33e0206e618626cf
+│   │   ├── bd
+│   │   │   └── 9b1dca42af7a39cc72d922b4d56b4a83fa1ccd
+│   │   ├── c0
+│   │   │   └── fd9b84c204a58542a1c06a9e1f2dff3a2cc89d
+│   │   ├── c3
+│   │   │   └── d00f5b117d3561ba22aed97b9e7b968acb3dc0
+│   │   ├── c6
+│   │   │   ├── aea69c2ceeaef6992249b75eb269cb63b57577
+│   │   │   └── f862c1b41ae9dba079205c2abbf2a566cbd920
+│   │   ├── c8
+│   │   │   ├── 9c577da2a01c35032c4999290fe36b4fde142d
+│   │   │   └── df5d10db2c1c9215d402f08bf2580ad045e488
+│   │   ├── c9
+│   │   │   ├── 00e70756bd6e74a4af6b2a604e3384da084a35
+│   │   │   └── 1ce4e4523c8f0fc016859fdb50f4a281e34b36
+│   │   ├── cc
+│   │   │   └── 042b5910c57b5ade7a762148bafed0d971f18f
+│   │   ├── ce
+│   │   │   └── 0b3c6488e1f13416ae3e87f2073a52f6b21d6e
+│   │   ├── cf
+│   │   │   └── 1092944832b9551e5b658a9229ae9fc1fd1247
+│   │   ├── d5
+│   │   │   └── 70f25b290e638820202b7fd413b4e7c91f6f3d
+│   │   ├── d6
+│   │   │   └── 19cddf161eb83c5e0e6ecc92ad0e460b506700
+│   │   ├── d7
+│   │   │   └── b1d8803ba2dc2e769d638d99e26e9ce09e6275
+│   │   ├── d8
+│   │   │   ├── 133113a691bb0993b6e00813e244227e90c5ca
+│   │   │   └── aa0166b0821344ad2050a17e46952433550efa
+│   │   ├── db
+│   │   │   └── 087812e76a2b9cf8d8ee08b8c5aac9439f648a
+│   │   ├── dc
+│   │   │   └── 2f6105f18dc5e6c844b58202c29fe483122dad
+│   │   ├── de
+│   │   │   └── 5eda4649a35be69980bd04468f8882bae3236b
+│   │   ├── e0
+│   │   │   └── 851910ba08c11e5f9b01620a4278c21df890c0
+│   │   ├── e1
+│   │   │   └── 81ea02ff3945ef93b70e20224144a60d224b15
+│   │   ├── e6
+│   │   │   └── 11f36b019558caa3d853d040cbe2ba8bce2505
+│   │   ├── e8
+│   │   │   ├── bae072595142ee8d64773551ac689c2426ebb1
+│   │   │   ├── ce29ec4764c4f86bbce4b8caac1bde5a1860dd
+│   │   │   └── fb13a7458b3355cade1a19c7b77a428b17ed6d
+│   │   ├── e9
+│   │   │   └── 10c8e486a87e7df53cad0b017ffe194743cdef
+│   │   ├── ea
+│   │   │   └── eb7cc6562b7795eacfe35c866cfe040772f7d6
+│   │   ├── ed
+│   │   │   └── e37fdec7ba239a6345d7ebd1e1b2957ae1b5aa
+│   │   ├── ee
+│   │   │   ├── 54a4c293bccf66aecd1941c015352efd55cefa
+│   │   │   └── 96861e837f0a4b9ffa0ff934d13b02dec7a2fd
+│   │   ├── ef
+│   │   │   └── 2bddccb399b925d9b5bd857c4d149e6255677f
+│   │   ├── f3
+│   │   │   ├── cc1b9816994a96b30c0e3e7d59117380413889
+│   │   │   └── fb54cc0811facdd318bfbcccdcb21a4d509196
+│   │   ├── f4
+│   │   │   └── 75d3299bb72e56849a940854c9002b9fdc27ea
+│   │   ├── fb
+│   │   │   └── cc956d3590a1e370b2941d96f60d25012f53d9
+│   │   ├── fd
+│   │   │   └── 601e293fd3eb11c447e4f46c9f2f963272c083
+│   │   ├── fe
+│   │   │   └── c1bec7a1b8620903b62a501630c8c254375186
+│   │   ├── ff
+│   │   │   ├── 35c13feb2d4c88cf6e4691a100edaf25303d52
+│   │   │   └── b3e0e064c14d13c7ed676a80b08b2265c1bf5d
+│   │   ├── info
+│   │   └── pack
+│   ├── opencode
+│   └── refs
+│       ├── heads
+│       │   └── master
+│       └── tags
+├── .gitignore
+├── .vscode
+├── ACTION_LOG.md
+├── AGENTS.md
+├── CLAUDE.md
+├── Character-fig-setting-example
+│   ├── 希罗
+│   │   ├── fig
+│   │   ├── setting-calm-version.txt
+│   │   ├── setting-straightforward-version.txt
+│   │   └── setting.txt
+│   └── 艾玛
+│       ├── fig
+│       ├── setting-calm-version.txt
+│       ├── setting-straightforward-version.txt
+│       └── setting.txt
+├── Character-voice-example
+│   ├── 希罗
+│   │   └── GPT-SoVITS
+│   │       ├── good_ref
+│   │       │   ├── 0204Adv10_Hiro006.txt
+│   │       │   └── 0205Trial09_Hiro093.txt
+│   │       ├── other_ref
+│   │       └── voice_setting.txt
+│   └── 艾玛
+│       └── GPT-SoVITS
+│           ├── good_ref
+│           │   └── 0101Adv26_Ema012.txt
+│           ├── other_ref
+│           └── voice_setting.txt
+├── NEWS.md
+├── TASK1_ANALYSIS.md
+├── TASK1_QUICK_REFERENCE.md
+├── TASK2_ANALYSIS.md
+├── TASK2_INVESTIGATION_SUMMARY.md
+├── TASK2_QUICK_REFERENCE.md
+├── a2d-studio.txt
+├── brain-storm.md
+├── character-fig-setting-example-tree.md
+├── character-voice-example-tree.md
+├── collect-folder.py
+├── dialogue-server
+│   ├── ACTION_LOG.md
+│   ├── DELIVERY.txt
+│   ├── PHASE1_SUMMARY.md
+│   ├── QUICKSTART_VISUAL.md
+│   ├── README.md
+│   ├── demo_real_llm.py
+│   ├── dialogue_gen
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── character_loader.py
+│   │   ├── config.py
+│   │   ├── core
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   └── models.py
+│   │   ├── dialogue_generator.py
+│   │   ├── dialogue_parser.py
+│   │   ├── llm_service.py
+│   │   ├── output_generator.py
+│   │   ├── prompt_builder.py
+│   │   └── topic_loader.py
+│   ├── output
+│   │   ├── demo_dialogue.txt
+│   │   └── real_dialogue.txt
+│   ├── quick_start.py
+│   ├── requirements.txt
+│   └── tests
+│       └── test_components.py
+├── dialogue-topics
+│   └── chatting-before-sleep.md
+├── extra-extension-ref.md
+├── full-chat-record.md
+├── git.md
+├── gpt-sovits.txt
+├── structure.md
+├── task1.md
+├── task2-long.md
+├── task2.md
+├── third_party
+├── tmp_not_needed
+│   └── demo_gpt_sovits_voice.py
+└── voice-server
+    ├── demo_gpt_sovits_voice.output
+    ├── demo_gpt_sovits_voice.py
+    ├── output
+    │   └── demo_voice
+    │       ├── 希罗
+    │       └── 艾玛
+    └── voice_server
+
+################################################################################
+# SOURCE CODE COLLECTION
+################################################################################
+
+================================================================================
+FILE: collect-folder.py
+================================================================================
+
+import os
+import argparse
+import sys
+from pathlib import Path
+
+# Try to import pathspec for gitignore support
+try:
+    import pathspec
+except ImportError:
+    print("Error: 'pathspec' library is required.")
+    print("Please install it using: pip install pathspec")
+    sys.exit(1)
+
+# Patterns based on your provided list
+IGNORE_PATTERNS = """
+# Dependencies
+node_modules/
+.pnpm-store/
+vendor/
+venv/
+env/
+.venv/
+third_party/
+
+# Build Artifacts
+dist/
+build/
+out/
+*.exe
+*.dll
+*.so
+*.dylib
+*.app
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+
+# Large Model Files
+*.pth
+*.ckpt
+*.safetensors
+*.gguf
+*.bin
+models/
+checkpoints/
+vae/
+loras/
+embeddings/
+
+# Assets & Media
+*.ogg
+*.wav
+*.mp3
+*.png
+*.jpg
+*.jpeg
+*.gif
+*runtime*
+*assets*
+*resource*
+*background*
+*/fig/*
+*/third_party/*
+*/third-party/*
+
+# Temporary / Logs
+.cache/
+temp/
+tmp/
+*.tmp
+outputs/
+logs/
+*.log
+
+# Negations (Exceptions to keep)
+!dialogue-server/**/*.orig
+"""
+
+# SOURCE_EXTENSIONS = {
+#     '.py', '.js', '.ts', '.c', '.cpp', '.h', '.hpp', '.java', 
+#     '.go', '.rs', '.sh', '.rb', '.php', '.cs', '.html', '.css', 
+#     '.sql', '.yaml', '.yml', '.json', '.md', '.txt'
+# }
+
+SOURCE_EXTENSIONS = {
+    '.py', '.js', '.ts', '.c', '.cpp', '.h', '.hpp', '.java', 
+    '.go', '.rs', '.sh', '.rb', '.php', '.cs', '.html', '.css'
+}
+
+
+def get_spec(root_path):
+    lines = IGNORE_PATTERNS.splitlines()
+    gitignore_file = Path(root_path) / ".gitignore"
+    if gitignore_file.exists():
+        with open(gitignore_file, 'r', encoding='utf-8', errors='ignore') as f:
+            lines.extend(f.readlines())
+    return pathspec.PathSpec.from_lines('gitwildmatch', lines)
+
+def is_ignored(path, spec, root_path):
+    rel_path = os.path.relpath(path, root_path)
+    if rel_path == ".": return False
+    return spec.match_file(rel_path.replace(os.sep, '/'))
+
+def print_tree(directory, spec, root_path, file_handle, prefix=""):
+    try:
+        items = sorted(os.listdir(directory))
+    except PermissionError:
+        return
+
+    filtered_items = [i for i in items if not is_ignored(os.path.join(directory, i), spec, root_path)]
+
+    for i, item in enumerate(filtered_items):
+        path = os.path.join(directory, item)
+        is_last = (i == len(filtered_items) - 1)
+        connector = "└── " if is_last else "├── "
+        
+        file_handle.write(f"{prefix}{connector}{item}\n")
+        
+        if os.path.isdir(path):
+            new_prefix = prefix + ("    " if is_last else "│   ")
+            print_tree(path, spec, root_path, file_handle, new_prefix)
+
+def collect_sources(directory, spec, root_path, file_handle):
+    for root, dirs, files in os.walk(directory):
+        # Prune ignored directories
+        dirs[:] = [d for d in dirs if not is_ignored(os.path.join(root, d), spec, root_path)]
+        
+        for file in sorted(files):
+            file_path = os.path.join(root, file)
+            if is_ignored(file_path, spec, root_path):
+                continue
+                
+            if Path(file).suffix.lower() in SOURCE_EXTENSIONS:
+                rel_path = os.path.relpath(file_path, root_path)
+                file_handle.write("\n" + "="*80 + "\n")
+                file_handle.write(f"FILE: {rel_path}\n")
+                file_handle.write("="*80 + "\n\n")
+                
+                try:
+                    with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
+                        file_handle.write(f.read())
+                        file_handle.write("\n")
+                except Exception as e:
+                    file_handle.write(f"[Could not read file {file}: {e}]\n")
+
+def main():
+    parser = argparse.ArgumentParser(description="Collect source code and tree structure.")
+    parser.add_argument("--path", type=str, required=True, help="Folder path to scan.")
+    parser.add_argument("--output", type=str, help="Output file path (optional).")
+    args = parser.parse_args()
+
+    root_path = os.path.abspath(args.path)
+    if not os.path.exists(root_path):
+        print(f"Error: Path '{root_path}' does not exist.")
+        return
+
+    spec = get_spec(root_path)
+
+    # Determine where to send output
+    if args.output:
+        out_f = open(args.output, 'w', encoding='utf-8')
+        print(f"Processing... results will be saved to {args.output}")
+    else:
+        out_f = sys.stdout
+
+    try:
+        out_f.write(f"\n# PROJECT STRUCTURE: {os.path.basename(root_path)}/\n")
+        print_tree(root_path, spec, root_path, out_f)
+        
+        out_f.write("\n" + "#"*80 + "\n")
+        out_f.write("# SOURCE CODE COLLECTION\n")
+        out_f.write("#"*80 + "\n")
+        collect_sources(root_path, spec, root_path, out_f)
+        
+        if args.output:
+            print("Done!")
+    finally:
+        if args.output:
+            out_f.close()
+
+if __name__ == "__main__":
+    main()
+
+    
+
+================================================================================
+FILE: dialogue-server\demo_real_llm.py
+================================================================================
+
+"""
+Real LLM Integration Test
+Uses actual ema and hiro characters with LLM API
+Topic: Chatting before sleep
+"""
+
+import sys
+import asyncio
+from pathlib import Path
+
+# Add dialogue-server to path
+dialogue_server_path = Path(__file__).parent
+sys.path.insert(0, str(dialogue_server_path))
+
+from dialogue_gen.character_loader import CharacterLoader
+from dialogue_gen.prompt_builder import PromptBuilder
+from dialogue_gen.dialogue_parser import DialogueParser
+from dialogue_gen.output_generator import OutputGenerator
+from dialogue_gen.llm_service import LLMService
+from dialogue_gen.topic_loader import TopicLoader
+from dialogue_gen.config import Config
+
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s: %(message)s'
+)
+
+logger = logging.getLogger(__name__)
+
+
+async def main():
+    """Run real LLM dialogue generation"""
+    
+    print("\n" + "="*70)
+    print("REAL LLM DIALOGUE GENERATION")
+    print("="*70)
+    print("Characters: ema, hiro")
+    print("Topic: Chatting before sleep")
+    print("Languages: Chinese → Japanese")
+    
+    # Load config from .env
+    config = Config()
+    
+    print(f"\nConfig loaded:")
+    print(f"  API Key: {config.api_key[:20]}...")
+    print(f"  Model: {config.model}")
+    print(f"  Base URL: {config.base_url}")
+    print(f"  Max sentences: {config.max_sentences}")
+    print(f"  Languages: {config.languages}")
+    
+    # Step 1: Load characters
+    print("\n" + "="*70)
+    print("STEP 1: Loading Characters")
+    print("="*70)
+    
+    loader = CharacterLoader()
+    ref_path = dialogue_server_path.parent / "Character-fig-setting-example"
+    
+    try:
+        ema = loader.load_character(ref_path / "艾玛")
+        hiro = loader.load_character(ref_path / "希罗")
+        
+        if not ema or not hiro:
+            print("✗ Failed to load characters")
+            return
+        
+        print(f"✓ Loaded ema: {ema.ai_name}")
+        print(f"✓ Loaded hiro: {hiro.ai_name}")
+        
+        characters = [ema, hiro]
+    except Exception as e:
+        print(f"✗ Error loading characters: {e}")
+        return
+    
+    # Step 2: Load topic
+    print("\n" + "="*70)
+    print("STEP 2: Loading Topic")
+    print("="*70)
+    
+    topic_path = dialogue_server_path.parent / "dialogue-topics" / "chatting-before-sleep.md"
+    
+    try:
+        if topic_path.exists():
+            topic_text, topic_metadata = TopicLoader.load_topic(topic_path)
+            print(f"✓ Loaded topic: {topic_metadata.title}")
+            print(f"  Style: {topic_metadata.style}")
+            if topic_metadata.location:
+                print(f"  Location: {topic_metadata.location}")
+            if topic_metadata.mood:
+                print(f"  Mood: {topic_metadata.mood}")
+            topic = f"""Topic: {topic_metadata.title}
+Style: {topic_metadata.style}
+{f"Location: {topic_metadata.location}" if topic_metadata.location else ""}
+
+{topic_metadata.description}"""
+        else:
+            topic = "Characters are chatting before going to sleep."
+            print(f"✓ Using default topic")
+    except Exception as e:
+        print(f"✗ Error loading topic: {e}")
+        topic = "Characters are chatting before going to sleep."
+    
+    # Step 3: Build system prompt
+    print("\n" + "="*70)
+    print("STEP 3: Building System Prompt")
+    print("="*70)
+    
+    builder = PromptBuilder()
+    system_prompt = builder.build_system_prompt(
+        user_name="player",
+        characters=characters,
+        topic=topic,
+        language="zh",
+        enable_translation=True,
+        max_sentences_per_character=config.max_sentences,
+    )
+    
+    print(f"✓ Generated system prompt ({len(system_prompt)} chars)")
+    print(f"\nPrompt preview (first 400 chars):\n")
+    print(system_prompt[:400])
+    print("...\n")
+    
+    # Step 4: Call LLM API
+    print("="*70)
+    print("STEP 4: Calling LLM API")
+    print("="*70)
+    
+    llm_service = LLMService(
+        provider="deepseek",
+        model=config.model,
+        api_key=config.api_key,
+        base_url=config.base_url,
+    )
+    
+    try:
+        print(f"Calling {config.model} API...")
+        llm_response = await llm_service.generate_dialogue(
+            system_prompt=system_prompt,
+            max_tokens=2048,
+            temperature=0.8,
+        )
+        
+        print(f"✓ Received response ({len(llm_response)} chars)")
+        print(f"\nLLM Response:\n")
+        print(llm_response)
+        
+    except Exception as e:
+        print(f"✗ Error calling LLM: {e}")
+        print("\nUsing sample dialogue for demonstration...")
+        llm_response = """【期待】这么晚来找我，是有什么事情吗？（好奇地看着对方）<こんな遅くに訪ねてくるなんて、何か用事があるの？>
+【害羞】没...没什么啦（挠了挠头）<そう...何もないんだけど...>
+【温柔】只是想和你聊聊天呢（坐在床边）<ただあなたと話したかったから...>
+【期待】是吗？那我们聊聊今天的事吧（靠在枕头上）<そう？それなら今日のことについて話そうか>
+【开心】好啊！（笑着开始聊天）<いいね！>"""
+        print(llm_response)
+    
+    # Step 5: Parse dialogue
+    print("\n" + "="*70)
+    print("STEP 5: Parsing Dialogue")
+    print("="*70)
+    
+    parser = DialogueParser()
+    
+    # Collect all valid emotions from characters
+    all_emotions = set()
+    for char in characters:
+        all_emotions.update(char.available_emotions)
+    
+    print(f"Using character-specific emotions ({len(all_emotions)} total):")
+    print(f"  {', '.join(sorted(all_emotions)[:10])}...")
+    
+    try:
+        dialogue_lines = parser.parse_multi_character_dialogue(
+            llm_response,
+            [ema.character_key or ema.ai_name, hiro.character_key or hiro.ai_name],
+            valid_emotions=list(all_emotions) if all_emotions else None,
+        )
+        
+        print(f"✓ Parsed {len(dialogue_lines)} dialogue lines")
+        
+        for i, line in enumerate(dialogue_lines[:3]):
+            print(f"\nLine {i+1}:")
+            print(f"  Character: {line.character}")
+            print(f"  Emotion: 【{line.emotion}】")
+            print(f"  Text: {line.text}")
+            if line.action:
+                print(f"  Action: （{line.action}）")
+            if line.text_jp:
+                print(f"  JP: <{line.text_jp}>")
+        
+        if len(dialogue_lines) > 3:
+            print(f"\n... and {len(dialogue_lines) - 3} more lines")
+        
+    except Exception as e:
+        print(f"✗ Error parsing dialogue: {e}")
+        import traceback
+        traceback.print_exc()
+        return
+    
+    # Step 6: Generate output
+    print("\n" + "="*70)
+    print("STEP 6: Generating Output Files")
+    print("="*70)
+    
+    output_dir = dialogue_server_path / "output"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    generator = OutputGenerator()
+    
+    try:
+        # Generate JSONL
+        jsonl_path = output_dir / "real_dialogue.jsonl"
+        generator.generate_jsonl(
+            dialogue_lines=dialogue_lines,
+            characters=characters,
+            topic="Chatting before sleep",
+            language="zh",
+            output_path=jsonl_path,
+        )
+        print(f"✓ Generated JSONL: {jsonl_path}")
+        
+        # Generate JSON
+        json_path = output_dir / "real_dialogue.json"
+        generator.generate_json(
+            dialogue_lines=dialogue_lines,
+            characters=characters,
+            topic="Chatting before sleep",
+            language="zh",
+            output_path=json_path,
+        )
+        print(f"✓ Generated JSON: {json_path}")
+        
+        # Generate TXT
+        txt_path = output_dir / "real_dialogue.txt"
+        generator.generate_txt(
+            dialogue_lines=dialogue_lines,
+            output_path=txt_path,
+        )
+        print(f"✓ Generated TXT: {txt_path}")
+        
+    except Exception as e:
+        print(f"✗ Error generating output: {e}")
+        import traceback
+        traceback.print_exc()
+        return
+    
+    print("\n" + "="*70)
+    print("✓ DIALOGUE GENERATION COMPLETE!")
+    print("="*70)
+    print(f"\nOutput files saved to: {output_dir}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
+
+================================================================================
+FILE: dialogue-server\quick_start.py
+================================================================================
+
+"""
+Quick Start Guide - Phase 1 MVP
+Run this file to test all components
+"""
+
+import sys
+from pathlib import Path
+
+# Add dialogue-server to path
+dialogue_server_path = Path(__file__).parent
+sys.path.insert(0, str(dialogue_server_path))
+
+from dialogue_gen.character_loader import CharacterLoader
+from dialogue_gen.prompt_builder import PromptBuilder
+from dialogue_gen.dialogue_parser import DialogueParser
+from dialogue_gen.output_generator import OutputGenerator
+from dialogue_gen.core.models import DialogueLine, CharacterSettings
+
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s: %(message)s'
+)
+
+
+def demo_1_load_characters():
+    """Demo 1: Load characters from Character-fig-setting-example"""
+    print("\n" + "="*70)
+    print("DEMO 1: Loading Characters")
+    print("="*70)
+    
+    loader = CharacterLoader()
+    ref_path = dialogue_server_path.parent / "Character-fig-setting-example"
+    
+    character_dirs = {
+        "ema": ref_path / "ema",
+        "hiro": ref_path / "hiro",
+    }
+    
+    loaded_characters = {}
+    
+    for name, path in character_dirs.items():
+        if path.exists():
+            print(f"\nLoading '{name}' from {path}")
+            char = loader.load_character(path)
+            
+            if char:
+                loaded_characters[name] = char
+                print(f"✓ Loaded: {char.ai_name}")
+                print(f"  - Subtitle: {char.ai_subtitle}")
+                print(f"  - System prompt: {(char.system_prompt or '')[:60]}...")
+                
+                # Show emotion figures
+                emotions = loader.get_emotion_figures(path)
+                print(f"  - Emotions ({len(emotions)}): {list(emotions.keys())[:5]}...")
+            else:
+                print(f"✗ Failed to load '{name}'")
+        else:
+            print(f"⚠ Path not found: {path}")
+    
+    return loaded_characters
+
+
+def demo_2_build_prompts(characters):
+    """Demo 2: Build system prompts"""
+    print("\n" + "="*70)
+    print("DEMO 2: Building System Prompts")
+    print("="*70)
+    
+    if not characters:
+        print("⚠ No characters loaded, skipping this demo")
+        return
+    
+    builder = PromptBuilder()
+    char_list = list(characters.values())
+    
+    print(f"\nBuilding prompt for {len(char_list)} characters")
+    
+    system_prompt = builder.build_system_prompt(
+        user_name="Player",
+        characters=char_list,
+        topic="Two characters meet at a coffee shop and discuss their weekend plans",
+        language="zh",
+        enable_translation=False,
+    )
+    
+    print(f"✓ Generated system prompt ({len(system_prompt)} characters)")
+    print(f"\nPrompt preview (first 300 chars):\n")
+    print(system_prompt[:300])
+    print("...\n")
+    
+    return system_prompt
+
+
+def demo_3_parse_dialogue():
+    """Demo 3: Parse dialogue with emotion tags"""
+    print("\n" + "="*70)
+    print("DEMO 3: Parsing Dialogue Output")
+    print("="*70)
+    
+    parser = DialogueParser()
+    
+    # Simulated LLM output
+    sample_dialogue = """【高兴】今天天气真好呀！（高兴地伸了个懒腰）<The weather is wonderful today!>
+【害羞】是啊，我也很开心（低下了头，脸有点红）<Me too, I'm happy...>
+【开心】那我们一起去公园吧！（拉住对方的手）<Let's go to the park together!>"""
+    
+    print(f"\nSample LLM output:\n{sample_dialogue}\n")
+    
+    # Parse as multi-character dialogue
+    char_names = ["Alice", "Bob"]
+    
+    dialogue_lines = parser.parse_multi_character_dialogue(
+        raw_text=sample_dialogue,
+        characters=char_names,
+    )
+    
+    print(f"✓ Parsed {len(dialogue_lines)} dialogue lines\n")
+    
+    for idx, line in enumerate(dialogue_lines):
+        print(f"Line {idx+1}:")
+        print(f"  Character: {line.character}")
+        print(f"  Emotion: 【{line.emotion}】")
+        print(f"  Text: {line.text}")
+        if line.action:
+            print(f"  Action: （{line.action}）")
+        if line.text_jp:
+            print(f"  Translation: <{line.text_jp}>")
+        print()
+    
+    return dialogue_lines
+
+
+def demo_4_generate_output(dialogue_lines, characters):
+    """Demo 4: Generate output files"""
+    print("\n" + "="*70)
+    print("DEMO 4: Generating Output Files")
+    print("="*70)
+    
+    if not dialogue_lines:
+        print("⚠ No dialogue lines to output, skipping this demo")
+        return
+    
+    generator = OutputGenerator()
+    
+    # Convert character dict to list if needed
+    if isinstance(characters, dict):
+        char_list = list(characters.values())
+    else:
+        char_list = characters
+    
+    topic = "Two characters meet at a coffee shop"
+    output_dir = dialogue_server_path / "output"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Generate JSONL
+    print(f"\nGenerating JSONL output...")
+    jsonl_path = output_dir / "demo_dialogue.jsonl"
+    jsonl_output = generator.generate_jsonl(
+        dialogue_lines=dialogue_lines,
+        characters=char_list,
+        topic=topic,
+        language="zh",
+        output_path=jsonl_path,
+    )
+    print(f"✓ Generated JSONL ({len(jsonl_output)} characters)")
+    print(f"  Saved to: {jsonl_path}")
+    print(f"\nJSONL preview (first 300 chars):\n")
+    print(jsonl_output[:300])
+    print("...\n")
+    
+    # Generate JSON
+    print(f"Generating JSON output...")
+    json_path = output_dir / "demo_dialogue.json"
+    json_output = generator.generate_json(
+        dialogue_lines=dialogue_lines,
+        characters=char_list,
+        topic=topic,
+        language="zh",
+        output_path=json_path,
+        pretty=True,
+    )
+    print(f"✓ Generated JSON ({len(json_output)} characters)")
+    print(f"  Saved to: {json_path}")
+    
+    # Generate TXT
+    print(f"\nGenerating TXT output...")
+    txt_path = output_dir / "demo_dialogue.txt"
+    txt_output = generator.generate_txt(
+        dialogue_lines=dialogue_lines,
+        output_path=txt_path,
+    )
+    print(f"✓ Generated TXT ({len(txt_output)} characters)")
+    print(f"  Saved to: {txt_path}")
+    print(f"\nTXT preview:\n")
+    print(txt_output)
+
+
+def main():
+    """Run all demos"""
+    print("\n" + "="*70)
+    print("PHASE 1 MVP - QUICK START DEMO")
+    print("="*70)
+    print("\nThis demonstrates all 4 core components of the dialogue generation server:")
+    print("1. Character Loading")
+    print("2. Prompt Building")
+    print("3. Dialogue Parsing")
+    print("4. Output Generation")
+    print("\nNote: To generate actual dialogue, you'll need OpenAI API key")
+    
+    # Run demos
+    try:
+        # Demo 1: Load characters
+        characters = demo_1_load_characters()
+        
+        # Demo 2: Build prompts
+        system_prompt = demo_2_build_prompts(characters)
+        
+        # Demo 3: Parse dialogue (using sample)
+        dialogue_lines = demo_3_parse_dialogue()
+        
+        # Demo 4: Generate output
+        demo_4_generate_output(dialogue_lines, characters)
+        
+        print("\n" + "="*70)
+        print("✓ ALL DEMOS COMPLETED SUCCESSFULLY!")
+        print("="*70)
+        print("\nNext steps:")
+        print("1. Set CHAT_API_KEY environment variable")
+        print("2. Run: python -m dialogue_gen.dialogue_generator")
+        print("3. Or import DialogueGenerator for your own code")
+        print("4. See README.md for detailed documentation")
+        print()
+        
+    except Exception as e:
+        print(f"\n✗ Error during demo: {e}")
+        import traceback
+        traceback.print_exc()
+
+
+if __name__ == "__main__":
+    main()
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\__init__.py
+================================================================================
+
+"""
+Multi-Character Dialogue Generation Server
+Phase 1: MVP Implementation
+"""
+
+__version__ = "0.1.0"
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\character_loader.py
+================================================================================
+
+"""
+Character Loader
+Reads character configuration from setting.txt files
+Based on LingChat's Function.load_character_settings and parse_enhanced_txt
+"""
+
+import re
+import ast
+from pathlib import Path
+from typing import Dict, Optional, List
+import yaml
+import logging
+
+from .core.models import CharacterSettings
+
+logger = logging.getLogger(__name__)
+
+
+class CharacterLoader:
+    """Load and validate character settings from folder structure"""
+    
+    # Fields that should be None if empty in settings file
+    HIDE_NONE_FIELDS = {
+        "system_prompt_example",
+        "system_prompt_example_old",
+        "ai_subtitle",
+        "user_subtitle",
+    }
+    
+    @staticmethod
+    def load_character(character_path: str | Path, character_key: Optional[str] = None) -> Optional[CharacterSettings]:
+        """
+        Load character from folder containing setting.txt
+        
+        Args:
+            character_path: Path to character folder (e.g., Character-fig-setting-example/ema/)
+            character_key: Optional identifier for character (e.g., 'ema', 'hiro'). Defaults to folder name.
+            
+        Returns:
+            CharacterSettings object or None if loading fails
+        """
+        character_path = Path(character_path)
+        
+        # Auto-detect character_key from folder name if not provided
+        if not character_key:
+            character_key = character_path.name
+        
+        if not character_path.exists() or not character_path.is_dir():
+            logger.error(f"Character path does not exist: {character_path}")
+            return None
+        
+        # Try multiple setting file names
+        setting_files = [
+            character_path / "setting.txt",
+            character_path / "setting-calm-version.txt",
+            character_path / "setting-straightforward-version.txt",
+        ]
+        
+        settings_dict = None
+        for setting_file in setting_files:
+            if setting_file.exists():
+                try:
+                    settings_dict = CharacterLoader.parse_enhanced_txt(setting_file)
+                    logger.info(f"Loaded character settings from: {setting_file}")
+                    break
+                except Exception as e:
+                    logger.warning(f"Failed to parse {setting_file}: {e}")
+                    continue
+        
+        if not settings_dict:
+            logger.error(f"No valid setting file found in {character_path}")
+            return None
+        
+        # Set character key and resource path
+        settings_dict["character_key"] = character_key
+        settings_dict["resource_path"] = str(character_path)
+        
+        # Load available emotions from fig/ folder
+        emotion_figures = CharacterLoader.get_emotion_figures(character_path)
+        settings_dict["available_emotions"] = sorted(list(emotion_figures.keys()))
+        
+        logger.info(f"Found {len(emotion_figures)} emotions: {', '.join(settings_dict['available_emotions'][:5])}...")
+        
+        # Try to create CharacterSettings object
+        try:
+            settings = CharacterSettings(**settings_dict)
+            logger.info(f"Successfully loaded character: {settings.ai_name}")
+            return settings
+        except Exception as e:
+            logger.error(f"Failed to create CharacterSettings: {e}")
+            return None
+    
+    @staticmethod
+    def parse_enhanced_txt(file_path: Path) -> Dict[str, any]:
+        """
+        Parse setting.txt file with support for multiple formats
+        Based on LingChat's parse_enhanced_txt
+        
+        Supports:
+        - Single line values: key = value
+        - Quoted values: key = "value"
+        - Multiline strings: key = \"\"\"value\"\"\"
+        - Dictionary values: key = {dict_content}
+        
+        Args:
+            file_path: Path to setting.txt file
+            
+        Returns:
+            Dictionary of parsed settings
+        """
+        settings = {}
+        
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        
+        # Try YAML parsing first (most common format)
+        try:
+            yaml_data = yaml.safe_load(content)
+            if isinstance(yaml_data, dict):
+                settings.update(yaml_data)
+                logger.debug(f"Successfully parsed {file_path.name} as YAML")
+                return settings
+        except yaml.YAMLError as e:
+            logger.debug(f"YAML parsing failed for {file_path.name}: {e}, trying regex parsing")
+        
+        # Fallback to regex-based parsing (for custom formats)
+        # Handle multiline strings: key = """value"""
+        multi_line_pattern = re.compile(r'^(\w+)\s*=\s*"""(.*?)"""\s*$', re.MULTILINE | re.DOTALL)
+        for match in multi_line_pattern.finditer(content):
+            key = match.group(1)
+            value = match.group(2).strip()
+            settings[key] = value
+        
+        # Handle dictionary values: key = {...}
+        dict_pattern = re.compile(r'^(\w+)\s*=\s*({.*?})\s*$', re.MULTILINE | re.DOTALL)
+        for match in dict_pattern.finditer(content):
+            key = match.group(1)
+            if key not in settings:
+                value = match.group(2).strip()
+                try:
+                    settings[key] = ast.literal_eval(value)
+                except (ValueError, SyntaxError):
+                    settings[key] = value
+        
+        # Handle single line values: key = value
+        single_line_pattern = re.compile(r'^(\w+)\s*=\s*(.*?)\s*$', re.MULTILINE)
+        for match in single_line_pattern.finditer(content):
+            key = match.group(1)
+            if key not in settings:
+                value = match.group(2).strip()
+                
+                # Remove quotes if present
+                if (value.startswith('"') and value.endswith('"')) or \
+                   (value.startswith("'") and value.endswith("'")):
+                    value = value[1:-1]
+                
+                # Convert empty string to None for specific fields
+                if value == '' and key in CharacterLoader.HIDE_NONE_FIELDS:
+                    value = None
+                
+                settings[key] = value
+        
+        return settings
+    
+    @staticmethod
+    def get_emotion_figures(character_path: str | Path) -> Dict[str, Path]:
+        """
+        Discover emotion figure files in character folder
+        
+        Args:
+            character_path: Path to character folder
+            
+        Returns:
+            Dictionary mapping emotion names to image file paths
+        """
+        character_path = Path(character_path)
+        fig_path = character_path / "fig"
+        
+        emotion_figures = {}
+        
+        if not fig_path.exists():
+            logger.warning(f"Figure folder not found: {fig_path}")
+            return emotion_figures
+        
+        # Find all image files (PNG, JPG)
+        for img_file in fig_path.glob("*.png"):
+            emotion_name = img_file.stem  # Filename without extension
+            emotion_figures[emotion_name] = img_file
+            logger.debug(f"Found emotion figure: {emotion_name} -> {img_file.name}")
+        
+        for img_file in fig_path.glob("*.jpg"):
+            emotion_name = img_file.stem
+            emotion_figures[emotion_name] = img_file
+        
+        for img_file in fig_path.glob("*.jpeg"):
+            emotion_name = img_file.stem
+            emotion_figures[emotion_name] = img_file
+        
+        return emotion_figures
+    
+    @staticmethod
+    def validate_character_emotions(
+        character: CharacterSettings,
+        character_path: str | Path
+    ) -> bool:
+        """
+        Validate that character's emotions have corresponding figure files
+        
+        Args:
+            character: CharacterSettings object
+            character_path: Path to character folder
+            
+        Returns:
+            True if all emotions have figures, False otherwise
+        """
+        emotion_figures = CharacterLoader.get_emotion_figures(character_path)
+        
+        # If system_prompt mentions emotions, validate them
+        if character.system_prompt:
+            # Extract emotion names from system prompt
+            # Looking for 【emotion】 patterns
+            emotion_pattern = re.compile(r'【([^】]+)】')
+            mentioned_emotions = set(emotion_pattern.findall(character.system_prompt))
+            
+            missing_emotions = []
+            for emotion in mentioned_emotions:
+                if emotion not in emotion_figures:
+                    missing_emotions.append(emotion)
+            
+            if missing_emotions:
+                logger.warning(
+                    f"Character {character.ai_name} has emotions without figures: "
+                    f"{', '.join(missing_emotions)}"
+                )
+                return False
+        
+        logger.info(f"Character {character.ai_name} validated successfully")
+        return True
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\config.py
+================================================================================
+
+"""
+Configuration loader for dialogue server
+Reads from .env and provides defaults
+"""
+
+import os
+from pathlib import Path
+from typing import Optional
+
+
+class Config:
+    """Configuration for dialogue generation server"""
+    
+    def __init__(self, env_path: Optional[Path] = None):
+        """Load configuration from .env file"""
+        if env_path is None:
+            # Look for .env in parent of dialogue-server
+            env_path = Path(__file__).parent.parent.parent / ".env"
+        
+        self.env_path = env_path
+        self._load_env()
+    
+    def _load_env(self):
+        """Load environment variables from .env file"""
+        if self.env_path.exists():
+            with open(self.env_path, 'r', encoding='utf-8') as f:
+                for line in f:
+                    # Remove comments
+                    if '#' in line:
+                        line = line[:line.index('#')]
+                    
+                    line = line.strip()
+                    if not line:
+                        continue
+                    
+                    if '=' in line:
+                        key, value = line.split('=', 1)
+                        key = key.strip()
+                        value = value.strip('"').strip("'")
+                        
+                        # Handle variable substitution ${VAR}
+                        import re
+                        value = re.sub(r'\$\{([^}]+)\}', lambda m: os.environ.get(m.group(1), ''), value)
+                        
+                        os.environ[key] = value
+    
+    @property
+    def api_key(self) -> str:
+        """Get API key from environment"""
+        return os.environ.get("DIALOGUE_API_KEY", os.environ.get("DS_LLM_API_KEY", ""))
+    
+    @property
+    def model(self) -> str:
+        """Get model from environment"""
+        return os.environ.get("DIALOGUE_MODEL", os.environ.get("DS_LLM_MODEL_ID", "gpt-3.5-turbo"))
+    
+    @property
+    def base_url(self) -> str:
+        """Get API base URL"""
+        return os.environ.get("DIALOGUE_BASE_URL", os.environ.get("DS_LLM_BASE_URL", "https://api.openai.com/v1"))
+    
+    @property
+    def max_sentences(self) -> int:
+        """Get max sentences per character"""
+        return int(os.environ.get("DIALOGUE_MAX_SENTENCES", "5"))
+    
+    @property
+    def languages(self) -> str:
+        """Get target languages"""
+        return os.environ.get("DIALOGUE_LANGUAGES", "zh,ja")
+    
+    def get(self, key: str, default: str = "") -> str:
+        """Get any environment variable"""
+        return os.environ.get(key, default)
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\dialogue_generator.py
+================================================================================
+
+"""
+Main Dialogue Generator Orchestrator
+Coordinates all components for dialogue generation
+"""
+
+import asyncio
+import logging
+from pathlib import Path
+from typing import List, Optional, Dict, Any
+
+from .character_loader import CharacterLoader
+from .prompt_builder import PromptBuilder
+from .dialogue_parser import DialogueParser
+from .output_generator import OutputGenerator
+from .llm_service import LLMService
+from .core.models import CharacterSettings, DialogueLine
+
+logger = logging.getLogger(__name__)
+
+
+class DialogueGenerator:
+    """Main orchestrator for dialogue generation"""
+    
+    def __init__(
+        self,
+        llm_provider: str = "openai",
+        llm_model: str = "gpt-3.5-turbo",
+        api_key: Optional[str] = None,
+    ):
+        """
+        Initialize dialogue generator
+        
+        Args:
+            llm_provider: LLM provider name
+            llm_model: Model to use
+            api_key: API key (defaults to env var)
+        """
+        self.character_loader = CharacterLoader()
+        self.prompt_builder = PromptBuilder()
+        self.dialogue_parser = DialogueParser()
+        self.output_generator = OutputGenerator()
+        self.llm_service = LLMService(
+            provider=llm_provider,
+            model=llm_model,
+            api_key=api_key,
+        )
+    
+    async def generate_multi_character_dialogue(
+        self,
+        character_paths: List[str | Path],
+        topic: str,
+        user_name: str = "player",
+        language: str = "zh",
+        enable_translation: bool = False,
+        output_path: Optional[Path] = None,
+        output_format: str = "jsonl",
+        max_tokens: int = 1024,
+        temperature: float = 0.7,
+    ) -> Dict[str, Any]:
+        """
+        Generate multi-character dialogue
+        
+        Args:
+            character_paths: List of paths to character folders
+            topic: Dialogue topic/context
+            user_name: Name of user/player
+            language: Target language (zh, en, jp)
+            enable_translation: Whether to enable translation
+            output_path: Path to save output
+            output_format: Output format (jsonl, json, csv, txt)
+            max_tokens: Max tokens for LLM
+            temperature: LLM temperature
+            
+        Returns:
+            Dictionary with status and results
+        """
+        
+        logger.info(f"Starting multi-character dialogue generation ({len(character_paths)} characters)")
+        
+        # Step 1: Load characters
+        characters = []
+        for char_path in character_paths:
+            char = self.character_loader.load_character(char_path)
+            if char:
+                characters.append(char)
+            else:
+                logger.warning(f"Failed to load character from: {char_path}")
+        
+        if not characters:
+            return {
+                "success": False,
+                "error": "No valid characters loaded",
+            }
+        
+        logger.info(f"Loaded {len(characters)} characters: {[c.ai_name for c in characters]}")
+        
+        # Step 2: Build system prompt
+        system_prompt = self.prompt_builder.build_system_prompt(
+            user_name=user_name,
+            characters=characters,
+            topic=topic,
+            language=language,
+            enable_translation=enable_translation,
+        )
+        
+        logger.debug(f"System prompt length: {len(system_prompt)} chars")
+        
+        # Step 3: Generate dialogue via LLM
+        try:
+            raw_dialogue = await self.llm_service.generate_dialogue(
+                system_prompt=system_prompt,
+                max_tokens=max_tokens,
+                temperature=temperature,
+            )
+            logger.info(f"Generated raw dialogue: {len(raw_dialogue)} chars")
+        except Exception as e:
+            logger.error(f"LLM generation failed: {e}")
+            return {
+                "success": False,
+                "error": str(e),
+            }
+        
+        # Step 4: Parse dialogue
+        char_names = [c.ai_name for c in characters]
+        dialogue_lines = self.dialogue_parser.parse_multi_character_dialogue(
+            raw_text=raw_dialogue,
+            characters=char_names,
+            valid_emotions=self.prompt_builder.get_emotion_list(),
+        )
+        
+        logger.info(f"Parsed {len(dialogue_lines)} dialogue lines")
+        
+        # Step 5: Generate output
+        if output_format == "jsonl":
+            output = self.output_generator.generate_jsonl(
+                dialogue_lines=dialogue_lines,
+                characters=characters,
+                topic=topic,
+                language=language,
+                output_path=output_path,
+            )
+        elif output_format == "json":
+            output = self.output_generator.generate_json(
+                dialogue_lines=dialogue_lines,
+                characters=characters,
+                topic=topic,
+                language=language,
+                output_path=output_path,
+                pretty=True,
+            )
+        elif output_format == "csv":
+            output = self.output_generator.generate_csv(
+                dialogue_lines=dialogue_lines,
+                output_path=output_path,
+            )
+        elif output_format == "txt":
+            output = self.output_generator.generate_txt(
+                dialogue_lines=dialogue_lines,
+                output_path=output_path,
+            )
+        else:
+            logger.warning(f"Unknown output format: {output_format}, defaulting to jsonl")
+            output = self.output_generator.generate_jsonl(
+                dialogue_lines=dialogue_lines,
+                characters=characters,
+                topic=topic,
+                language=language,
+                output_path=output_path,
+            )
+        
+        return {
+            "success": True,
+            "characters": char_names,
+            "num_lines": len(dialogue_lines),
+            "output_format": output_format,
+            "output_path": str(output_path) if output_path else None,
+            "dialogue_lines": dialogue_lines,
+            "raw_output": output[:500] + "..." if len(output) > 500 else output,
+        }
+    
+    async def generate_single_character_dialogue(
+        self,
+        character_path: str | Path,
+        topic: str,
+        user_name: str = "player",
+        language: str = "zh",
+        enable_translation: bool = False,
+        output_path: Optional[Path] = None,
+        output_format: str = "jsonl",
+        max_tokens: int = 1024,
+        temperature: float = 0.7,
+    ) -> Dict[str, Any]:
+        """
+        Generate single character dialogue
+        
+        Args:
+            character_path: Path to character folder
+            topic: Dialogue topic
+            user_name: User/player name
+            language: Target language
+            enable_translation: Whether to enable translation
+            output_path: Path to save output
+            output_format: Output format
+            max_tokens: Max tokens for LLM
+            temperature: LLM temperature
+            
+        Returns:
+            Dictionary with status and results
+        """
+        
+        logger.info(f"Starting single-character dialogue generation")
+        
+        # Load character
+        character = self.character_loader.load_character(character_path)
+        if not character:
+            return {
+                "success": False,
+                "error": f"Failed to load character from: {character_path}",
+            }
+        
+        logger.info(f"Loaded character: {character.ai_name}")
+        
+        # Generate (delegate to multi-character with single character)
+        return await self.generate_multi_character_dialogue(
+            character_paths=[character_path],
+            topic=topic,
+            user_name=user_name,
+            language=language,
+            enable_translation=enable_translation,
+            output_path=output_path,
+            output_format=output_format,
+            max_tokens=max_tokens,
+            temperature=temperature,
+        )
+
+
+async def main():
+    """Example usage"""
+    
+    # Configure logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
+    
+    # Initialize generator
+    generator = DialogueGenerator(
+        llm_provider="openai",
+        llm_model="gpt-3.5-turbo",
+    )
+    
+    # Example: Generate with character-fig-setting-example
+    character_paths = [
+        "Character-fig-setting-example/ema",
+        "Character-fig-setting-example/hiro",
+    ]
+    
+    topic = "Two friends meet in a coffee shop and discuss their weekend plans."
+    
+    result = await generator.generate_multi_character_dialogue(
+        character_paths=character_paths,
+        topic=topic,
+        user_name="player",
+        language="zh",
+        output_format="jsonl",
+        output_path=Path("output/dialogue.jsonl"),
+    )
+    
+    print(f"\nGeneration result: {result}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\dialogue_parser.py
+================================================================================
+
+"""
+Dialogue Parser
+Parses LLM-generated dialogue with emotion tags and actions
+Based on LingChat's emotion parsing logic
+"""
+
+import re
+import logging
+from typing import Dict, List, Optional, Tuple
+
+from .core.models import DialogueLine, STANDARD_EMOTIONS
+
+logger = logging.getLogger(__name__)
+
+
+class DialogueParser:
+    """Parse dialogue with 【emotion】text（actions）<translation> format"""
+    
+    # Regex patterns
+    EMOTION_PATTERN = re.compile(r'【([^】]+)】')
+    ACTION_PATTERN = re.compile(r'（([^）]+)）')
+    TRANSLATION_PATTERN = re.compile(r'<([^>]+)>')
+    LINE_SPLITTER = re.compile(r'(?:【[^】]+】[^【]*?)(?=【|$)')
+    
+    @staticmethod
+    def parse_raw_response(
+        raw_text: str,
+        character_name: str,
+        valid_emotions: Optional[List[str]] = None,
+    ) -> List[DialogueLine]:
+        """
+        Parse raw LLM response into structured dialogue lines
+        
+        Args:
+            raw_text: Raw text from LLM with emotion tags
+            character_name: Name of character speaking
+            valid_emotions: List of valid emotions (uses standard 18 if None)
+            
+        Returns:
+            List of DialogueLine objects
+        """
+        if not valid_emotions:
+            valid_emotions = STANDARD_EMOTIONS
+        
+        lines = []
+        
+        # Split into individual dialogue units
+        dialogue_units = DialogueParser._split_dialogue_units(raw_text)
+        
+        for unit in dialogue_units:
+            try:
+                line = DialogueParser.parse_dialogue_unit(
+                    unit,
+                    character_name=character_name,
+                    valid_emotions=valid_emotions,
+                )
+                if line:
+                    lines.append(line)
+            except Exception as e:
+                logger.warning(f"Failed to parse dialogue unit: {unit[:50]}... Error: {e}")
+                continue
+        
+        return lines
+    
+    @staticmethod
+    def parse_dialogue_unit(
+        text: str,
+        character_name: str,
+        valid_emotions: Optional[List[str]] = None,
+    ) -> Optional[DialogueLine]:
+        """
+        Parse a single dialogue unit with emotion tag
+        
+        Args:
+            text: Single dialogue unit (e.g., "【高兴】你好！<Hello!>（挥手）")
+            character_name: Character name
+            valid_emotions: List of valid emotions
+            
+        Returns:
+            DialogueLine object or None if parsing fails
+        """
+        if not valid_emotions:
+            valid_emotions = STANDARD_EMOTIONS
+        
+        text = text.strip()
+        if not text:
+            return None
+        
+        # Extract emotion
+        emotion_match = DialogueParser.EMOTION_PATTERN.search(text)
+        if not emotion_match:
+            logger.debug(f"No emotion tag found in: {text[:50]}")
+            return None
+        
+        emotion = emotion_match.group(1).strip()
+        
+        # Validate emotion
+        if emotion not in valid_emotions:
+            logger.warning(f"Invalid emotion '{emotion}' not in valid emotions")
+            # Still parse it, but mark as invalid
+        
+        # Remove emotion tag from text
+        remaining_text = text[emotion_match.end():]
+        
+        # Extract translation (if present)
+        translation_match = DialogueParser.TRANSLATION_PATTERN.search(remaining_text)
+        translation = None
+        if translation_match:
+            translation = translation_match.group(1).strip()
+            remaining_text = remaining_text[:translation_match.start()] + remaining_text[translation_match.end():]
+        
+        # Extract action (if present)
+        action_match = DialogueParser.ACTION_PATTERN.search(remaining_text)
+        action = ""
+        if action_match:
+            action = action_match.group(1).strip()
+            remaining_text = remaining_text[:action_match.start()] + remaining_text[action_match.end():]
+        
+        # What's left is the dialogue text
+        dialogue_text = remaining_text.strip()
+        
+        if not dialogue_text:
+            logger.warning(f"No dialogue text found in unit: {text}")
+            return None
+        
+        return DialogueLine(
+            character=character_name,
+            emotion=emotion,
+            text=dialogue_text,
+            action=action,
+            text_jp=translation if translation else None,
+        )
+    
+    @staticmethod
+    def _split_dialogue_units(text: str) -> List[str]:
+        """
+        Split raw text into individual dialogue units
+        Each unit should start with 【emotion】
+        
+        Args:
+            text: Raw text with multiple dialogue units
+            
+        Returns:
+            List of dialogue unit strings
+        """
+        # Find all emotion tag positions
+        units = []
+        current_pos = 0
+        
+        for match in DialogueParser.EMOTION_PATTERN.finditer(text):
+            if match.start() > current_pos:
+                # Add any text before this emotion as a separate unit
+                prev_unit = text[current_pos:match.start()].strip()
+                if prev_unit:
+                    units.append(prev_unit)
+            
+            # Find the next emotion tag or end of text
+            next_emotion = DialogueParser.EMOTION_PATTERN.search(text, match.end())
+            if next_emotion:
+                unit = text[match.start():next_emotion.start()]
+                units.append(unit.strip())
+                current_pos = next_emotion.start()
+            else:
+                # Last unit
+                unit = text[match.start():]
+                units.append(unit.strip())
+                break
+        
+        # Filter empty units
+        return [u for u in units if u]
+    
+    @staticmethod
+    def parse_multi_character_dialogue(
+        raw_text: str,
+        characters: List[str],
+        valid_emotions: Optional[List[str]] = None,
+    ) -> List[DialogueLine]:
+        """
+        Parse multi-character dialogue
+        Attempts to identify which character is speaking based on context
+        
+        Args:
+            raw_text: Raw text with dialogue
+            characters: List of character names
+            valid_emotions: List of valid emotions
+            
+        Returns:
+            List of DialogueLine objects
+        """
+        if not valid_emotions:
+            valid_emotions = STANDARD_EMOTIONS
+        
+        lines = []
+        
+        # Split by emotion tags and try to assign speakers
+        dialogue_units = DialogueParser._split_dialogue_units(raw_text)
+        
+        current_character_idx = 0
+        
+        for unit in dialogue_units:
+            try:
+                # Determine which character is speaking (round-robin)
+                current_char = characters[current_character_idx % len(characters)]
+                
+                line = DialogueParser.parse_dialogue_unit(
+                    unit,
+                    character_name=current_char,
+                    valid_emotions=valid_emotions,
+                )
+                
+                if line:
+                    lines.append(line)
+                    current_character_idx += 1
+                    
+            except Exception as e:
+                logger.warning(f"Failed to parse unit: {e}")
+                continue
+        
+        return lines
+    
+    @staticmethod
+    def validate_dialogue_format(dialogue_line: DialogueLine) -> Tuple[bool, str]:
+        """
+        Validate dialogue line format
+        
+        Args:
+            dialogue_line: DialogueLine to validate
+            
+        Returns:
+            Tuple of (is_valid, error_message)
+        """
+        # Check emotion
+        if not dialogue_line.emotion:
+            return False, "Missing emotion tag"
+        
+        if dialogue_line.emotion not in STANDARD_EMOTIONS:
+            return False, f"Invalid emotion: {dialogue_line.emotion}"
+        
+        # Check dialogue text
+        if not dialogue_line.text:
+            return False, "Missing dialogue text"
+        
+        # Check for emoticons (heuristic)
+        emoticon_pattern = re.compile(r'[^\w\s\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff，。！？（）\(\)<>\-]')
+        if emoticon_pattern.search(dialogue_line.text):
+            return False, "Contains emoticons or invalid characters"
+        
+        return True, ""
+    
+    @staticmethod
+    def extract_emotions(text: str) -> List[str]:
+        """Extract all emotion tags from text"""
+        matches = DialogueParser.EMOTION_PATTERN.findall(text)
+        return list(set(matches))  # Remove duplicates
+    
+    @staticmethod
+    def extract_actions(text: str) -> List[str]:
+        """Extract all action descriptions from text"""
+        matches = DialogueParser.ACTION_PATTERN.findall(text)
+        return matches
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\llm_service.py
+================================================================================
+
+"""
+LLM Service Wrapper
+Handles communication with LLM APIs for dialogue generation
+Supports OpenAI, DeepSeek, and other compatible APIs
+"""
+
+import os
+import logging
+from typing import List, Dict, Optional, AsyncGenerator
+import asyncio
+
+logger = logging.getLogger(__name__)
+
+
+class LLMService:
+    """Wrapper for LLM API calls"""
+    
+    def __init__(
+        self,
+        provider: str = "openai",
+        model: str = "gpt-3.5-turbo",
+        api_key: Optional[str] = None,
+        base_url: Optional[str] = None,
+    ):
+        """
+        Initialize LLM service
+        
+        Args:
+            provider: LLM provider (openai, deepseek, etc.)
+            model: Model name
+            api_key: API key (defaults to env var)
+            base_url: API base URL (for non-OpenAI providers)
+        """
+        self.provider = provider
+        self.model = model
+        self.api_key = api_key or os.environ.get("DIALOGUE_API_KEY") or os.environ.get("CHAT_API_KEY")
+        self.base_url = base_url or os.environ.get("DIALOGUE_BASE_URL")
+        
+        if not self.api_key:
+            logger.warning("No API key found for LLM service")
+        
+        self._init_client()
+    
+    def _init_client(self):
+        """Initialize LLM client based on provider"""
+        
+        try:
+            from openai import AsyncOpenAI
+            
+            # Build OpenAI client with optional base_url for DeepSeek
+            client_kwargs = {"api_key": self.api_key}
+            if self.base_url:
+                client_kwargs["base_url"] = self.base_url
+            
+            self.client = AsyncOpenAI(**client_kwargs)
+            logger.info(f"Initialized {self.provider} client with model: {self.model}")
+            if self.base_url:
+                logger.info(f"Using custom base URL: {self.base_url}")
+        except ImportError:
+            logger.error("OpenAI package not installed: pip install openai")
+            self.client = None
+    
+    async def generate_dialogue(
+        self,
+        system_prompt: str,
+        max_tokens: int = 1024,
+        temperature: float = 0.7,
+    ) -> str:
+        """
+        Generate dialogue from system prompt
+        
+        Args:
+            system_prompt: System prompt for LLM
+            max_tokens: Maximum tokens in response
+            temperature: Temperature for generation
+            
+        Returns:
+            Generated dialogue text
+        """
+        
+        if not self.client:
+            raise RuntimeError("LLM client not initialized")
+        
+        try:
+            response = await self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                ],
+                max_tokens=max_tokens,
+                temperature=temperature,
+            )
+            
+            dialogue = response.choices[0].message.content
+            logger.info(f"Generated dialogue ({len(dialogue)} chars)")
+            return dialogue
+            
+        except Exception as e:
+            logger.error(f"Error generating dialogue: {e}")
+            raise
+    
+    async def generate_dialogue_stream(
+        self,
+        system_prompt: str,
+        max_tokens: int = 1024,
+        temperature: float = 0.7,
+    ) -> AsyncGenerator[str, None]:
+        """
+        Generate dialogue with streaming
+        
+        Args:
+            system_prompt: System prompt for LLM
+            max_tokens: Maximum tokens in response
+            temperature: Temperature for generation
+            
+        Yields:
+            Chunks of dialogue text
+        """
+        
+        if not self.client:
+            raise RuntimeError("LLM client not initialized")
+        
+        try:
+            response = await self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                ],
+                max_tokens=max_tokens,
+                temperature=temperature,
+                stream=True,
+            )
+            
+            async for chunk in response:
+                if chunk.choices[0].delta.content:
+                    yield chunk.choices[0].delta.content
+                    
+        except Exception as e:
+            logger.error(f"Error in streaming dialogue: {e}")
+            raise
+    
+    @staticmethod
+    def test_connection(api_key: Optional[str] = None) -> bool:
+        """Test LLM connection"""
+        
+        api_key = api_key or os.environ.get("CHAT_API_KEY")
+        
+        if not api_key:
+            logger.error("No API key available for testing")
+            return False
+        
+        try:
+            from openai import OpenAI
+            client = OpenAI(api_key=api_key)
+            
+            # Simple test
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "user", "content": "Say hello"}],
+                max_tokens=10,
+            )
+            
+            logger.info("LLM connection test successful")
+            return True
+            
+        except Exception as e:
+            logger.error(f"LLM connection test failed: {e}")
+            return False
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\output_generator.py
+================================================================================
+
+"""
+Output Generator
+Generates JSONL playbook output from parsed dialogue
+"""
+
+import json
+import logging
+from pathlib import Path
+from typing import List, Dict, Optional, Any
+from datetime import datetime
+
+from .core.models import DialogueLine, DialoguePlaybook, CharacterSettings
+
+logger = logging.getLogger(__name__)
+
+
+class OutputGenerator:
+    """Generate structured dialogue output in JSONL format"""
+    
+    @staticmethod
+    def generate_jsonl(
+        dialogue_lines: List[DialogueLine],
+        characters: List[CharacterSettings],
+        topic: str,
+        language: str = "zh",
+        output_path: Optional[Path] = None,
+    ) -> str:
+        """
+        Generate JSONL output from dialogue lines
+        
+        Args:
+            dialogue_lines: List of DialogueLine objects
+            characters: List of CharacterSettings
+            topic: Dialogue topic
+            language: Language code
+            output_path: Optional file path to write output
+            
+        Returns:
+            JSONL string (newline-separated JSON objects)
+        """
+        
+        # Build header
+        header = OutputGenerator._build_header(
+            characters=characters,
+            topic=topic,
+            language=language,
+            num_lines=len(dialogue_lines),
+        )
+        
+        # Build output lines
+        jsonl_lines = [json.dumps(header, ensure_ascii=False)]
+        
+        for idx, line in enumerate(dialogue_lines):
+            line_dict = OutputGenerator._dialogue_line_to_dict(line, idx)
+            jsonl_lines.append(json.dumps(line_dict, ensure_ascii=False))
+        
+        jsonl_output = "\n".join(jsonl_lines)
+        
+        # Write to file if path provided
+        if output_path:
+            output_path = Path(output_path)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(jsonl_output)
+            logger.info(f"Wrote output to: {output_path}")
+        
+        return jsonl_output
+    
+    @staticmethod
+    def _build_header(
+        characters: List[CharacterSettings],
+        topic: str,
+        language: str = "zh",
+        num_lines: int = 0,
+    ) -> Dict[str, Any]:
+        """Build JSONL header with metadata"""
+        
+        # Use character_key if available, otherwise fall back to ai_name
+        char_names = [
+            (char.character_key or char.ai_name) for char in characters
+        ]
+        
+        return {
+            "header": {
+                "characters": char_names,
+                "character_count": len(characters),
+                "topic": topic,
+                "language": language,
+                "emotion_count": 18,
+                "line_count": num_lines,
+                "timestamp": datetime.now().isoformat(),
+                "format_version": "1.0",
+                "format_description": "Multi-character dialogue with emotions and actions",
+            }
+        }
+    
+    @staticmethod
+    def _dialogue_line_to_dict(line: DialogueLine, index: int) -> Dict[str, Any]:
+        """Convert DialogueLine to dictionary for JSON serialization"""
+        
+        return {
+            "index": index,
+            "character": line.character,
+            "emotion": line.emotion,
+            "text": line.text,
+            "action": line.action,
+            "text_jp": line.text_jp,
+            "emotion_jp": line.emotion_jp,
+            "timestamp": line.timestamp,
+        }
+    
+    @staticmethod
+    def generate_json(
+        dialogue_lines: List[DialogueLine],
+        characters: List[CharacterSettings],
+        topic: str,
+        language: str = "zh",
+        output_path: Optional[Path] = None,
+        pretty: bool = True,
+    ) -> str:
+        """
+        Generate single JSON output (alternative to JSONL)
+        
+        Args:
+            dialogue_lines: List of DialogueLine objects
+            characters: List of CharacterSettings
+            topic: Dialogue topic
+            language: Language code
+            output_path: Optional file path to write output
+            pretty: Whether to pretty-print JSON
+            
+        Returns:
+            JSON string
+        """
+        
+        header = OutputGenerator._build_header(
+            characters=characters,
+            topic=topic,
+            language=language,
+            num_lines=len(dialogue_lines),
+        )
+        
+        lines_list = [
+            OutputGenerator._dialogue_line_to_dict(line, idx)
+            for idx, line in enumerate(dialogue_lines)
+        ]
+        
+        playbook_dict = {
+            **header,
+            "lines": lines_list,
+        }
+        
+        if pretty:
+            json_output = json.dumps(playbook_dict, ensure_ascii=False, indent=2)
+        else:
+            json_output = json.dumps(playbook_dict, ensure_ascii=False)
+        
+        # Write to file if path provided
+        if output_path:
+            output_path = Path(output_path)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(json_output)
+            logger.info(f"Wrote output to: {output_path}")
+        
+        return json_output
+    
+    @staticmethod
+    def generate_csv(
+        dialogue_lines: List[DialogueLine],
+        output_path: Optional[Path] = None,
+    ) -> str:
+        """
+        Generate CSV output for spreadsheet applications
+        
+        Args:
+            dialogue_lines: List of DialogueLine objects
+            output_path: Optional file path to write output
+            
+        Returns:
+            CSV string
+        """
+        import csv
+        from io import StringIO
+        
+        output = StringIO()
+        writer = csv.writer(output)
+        
+        # Write header
+        writer.writerow([
+            "Character",
+            "Emotion",
+            "Dialogue",
+            "Action",
+            "Japanese Translation",
+            "Emotion (JP)",
+        ])
+        
+        # Write data
+        for line in dialogue_lines:
+            writer.writerow([
+                line.character,
+                line.emotion,
+                line.text,
+                line.action,
+                line.text_jp or "",
+                line.emotion_jp or "",
+            ])
+        
+        csv_output = output.getvalue()
+        
+        # Write to file if path provided
+        if output_path:
+            output_path = Path(output_path)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(output_path, 'w', encoding='utf-8', newline='') as f:
+                f.write(csv_output)
+            logger.info(f"Wrote CSV output to: {output_path}")
+        
+        return csv_output
+    
+    @staticmethod
+    def generate_txt(
+        dialogue_lines: List[DialogueLine],
+        output_path: Optional[Path] = None,
+    ) -> str:
+        """
+        Generate human-readable TXT output
+        
+        Args:
+            dialogue_lines: List of DialogueLine objects
+            output_path: Optional file path to write output
+            
+        Returns:
+            TXT string
+        """
+        
+        lines = []
+        
+        for line in dialogue_lines:
+            # Format: Character: 【emotion】text（action）
+            line_text = f"{line.character}: 【{line.emotion}】{line.text}"
+            
+            if line.action:
+                line_text += f"（{line.action}）"
+            
+            if line.text_jp:
+                line_text += f"\n  → {line.text_jp}"
+            
+            lines.append(line_text)
+        
+        txt_output = "\n\n".join(lines)
+        
+        # Write to file if path provided
+        if output_path:
+            output_path = Path(output_path)
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(txt_output)
+            logger.info(f"Wrote TXT output to: {output_path}")
+        
+        return txt_output
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\prompt_builder.py
+================================================================================
+
+"""
+Prompt Builder
+Constructs LLM prompts with dialogue format rules
+Based on LingChat's sys_prompt_builder logic
+"""
+
+import os
+import logging
+from typing import List, Dict, Optional
+
+from .core.models import CharacterSettings, STANDARD_EMOTIONS
+
+logger = logging.getLogger(__name__)
+
+
+class PromptBuilder:
+    """Build LLM system prompts with dialogue format rules"""
+    
+    # Standard 18 emotions from LingChat
+    EMOTIONS = STANDARD_EMOTIONS
+    
+    @staticmethod
+    def build_system_prompt(
+        user_name: str,
+        characters: List[CharacterSettings],
+        topic: str,
+        language: str = "zh",
+        enable_translation: bool = False,
+        max_sentences_per_character: int = 5,
+    ) -> str:
+        """
+        Build system prompt for multi-character dialogue generation
+        
+        Args:
+            user_name: Name of the user/player
+            characters: List of characters participating
+            topic: Context/topic for the dialogue
+            language: Target language (zh, en, jp)
+            enable_translation: Whether to enable ZH->JP translation
+            max_sentences_per_character: Max sentences per character turn
+            
+        Returns:
+            System prompt string
+        """
+        
+        # Build character descriptions and get character names
+        char_descriptions = []
+        char_names = []
+        for char in characters:
+            char_descriptions.append(PromptBuilder._format_character_description(char, user_name))
+            char_names.append(char.character_key or char.ai_name)
+        
+        char_descriptions_str = "\n".join(char_descriptions)
+        
+        # Collect all available emotions from characters
+        all_emotions = set()
+        for char in characters:
+            if char.available_emotions:
+                all_emotions.update(char.available_emotions)
+        
+        # Build dialogue format instructions with character-specific emotions
+        dialogue_format = PromptBuilder._build_dialogue_format_instructions(
+            language=language,
+            enable_translation=enable_translation,
+            max_sentences=max_sentences_per_character,
+            valid_emotions=list(all_emotions) if all_emotions else None,
+            character_names=char_names
+        )
+        
+        # Build conversation rules
+        conversation_rules = PromptBuilder._build_conversation_rules(
+            num_characters=len(characters),
+            language=language,
+            max_sentences=max_sentences_per_character,
+            character_names=char_names
+        )
+        
+        # Assemble complete system prompt
+        system_prompt = f"""You are a professional dialogue writer creating natural, engaging conversations.
+
+## Characters
+{char_descriptions_str}
+
+## Dialogue Format
+{dialogue_format}
+
+## Conversation Rules
+{conversation_rules}
+
+## Topic/Context
+{topic}
+
+Now, generate the dialogue. Remember to strictly follow the format rules."""
+        
+        return system_prompt
+    
+    @staticmethod
+    def _format_character_description(character: CharacterSettings, user_name: str) -> str:
+        """Format a single character description for the prompt"""
+        
+        base_desc = f"""### {character.ai_name}
+User interacting with: {user_name}"""
+        
+        if character.ai_subtitle:
+            base_desc += f"\nRole: {character.ai_subtitle}"
+        
+        if character.system_prompt:
+            # Extract core personality/behavior from system prompt
+            # Skip dialogue format instructions
+            lines = character.system_prompt.split('\n')
+            core_prompt = '\n'.join([
+                line for line in lines 
+                if not any(x in line for x in ['【', '】', '格式', 'format'])
+            ])
+            if core_prompt.strip():
+                base_desc += f"\nCharacter Profile:\n{core_prompt.strip()}"
+        
+        return base_desc
+    
+    @staticmethod
+    def _build_dialogue_format_instructions(
+        language: str = "zh",
+        enable_translation: bool = False,
+        max_sentences: int = 5,
+        valid_emotions: Optional[List[str]] = None,
+        character_names: Optional[List[str]] = None
+    ) -> str:
+        """Build dialogue format instructions based on language"""
+        
+        # Use character-specific emotions if provided, otherwise use standard
+        emotions = valid_emotions if valid_emotions else PromptBuilder.EMOTIONS
+        emotions = sorted(emotions)
+        
+        # Default to Chinese + Japanese translation
+        format_base = f"""Each character's response must follow this STRICT format:
+【emotion】Chinese dialogue（action with CHARACTER NAMES）<Japanese translation>
+
+### Example Format:
+【期待】这么晚来找我，是有什么事情吗？（高兴地看着ema）<こんな遅くに私を訪ねてくるなんて、何か用事があるの？>
+【害羞】我...我觉得有点不好意思呢（低下了头，走近hiro）<私は...ちょっと恥ずかしいです...>
+
+### Character Names in Actions
+When writing actions, use the actual character names:"""
+        
+        if character_names and len(character_names) > 0:
+            format_base += f"\n- Character 1: {character_names[0]}"
+            if len(character_names) > 1:
+                format_base += f"\n- Character 2: {character_names[1]}"
+            if len(character_names) > 2:
+                for i, name in enumerate(character_names[2:], 3):
+                    format_base += f"\n- Character {i}: {name}"
+            format_base += "\n- DO NOT use generic terms like '对方', '他', '她' in actions"
+        
+        format_base += f"""
+
+### Constraints:
+- MUST use 【】 for emotions (NOT English)
+- MUST include <> Japanese translation for EACH line
+- Maximum {max_sentences} sentences per character turn
+- Actions use （）and should be creative and descriptive
+- Use specific character names in actions, not '对方'
+- Each sentence must be complete and natural
+
+### Valid Emotions ({len(emotions)} total - These are the ONLY emotions you can use)
+{', '.join(emotions)}"""
+        
+        return format_base
+    
+    @staticmethod
+    def _build_conversation_rules(
+        num_characters: int,
+        language: str = "zh",
+        max_sentences: int = 5,
+        character_names: Optional[List[str]] = None
+    ) -> str:
+        """Build conversation rules"""
+        
+        char_list = ""
+        if character_names:
+            char_list = f"\nCharacters: {', '.join(character_names)}\n"
+        
+        rules = f"""1. Generate a natural dialogue with {num_characters} characters
+{char_list}2. Characters alternate speaking turns naturally
+3. Each character speaks 2-3 times minimum
+4. Each turn: {max_sentences} sentences maximum
+5. Responses reflect character personality and the setting
+6. Maintain conversation flow and emotional continuity
+7. Use appropriate emotions for each statement
+8. Actions should enhance the scene and feel natural
+9. Dialogue should be engaging, warm, and natural
+10. Total dialogue should be 300-500 words
+11. CRITICAL: Do not break the format 【emotion】text（action）<Japanese> under any circumstances
+12. All emotions must be valid Chinese emotion names from the list"""
+        
+        return rules
+    
+    @staticmethod
+    def build_single_character_prompt(
+        user_name: str,
+        character: CharacterSettings,
+        topic: str,
+        language: str = "zh",
+        enable_translation: bool = False,
+        dialogue_history: Optional[List[Dict]] = None,
+    ) -> str:
+        """
+        Build system prompt for single character dialogue
+        
+        Args:
+            user_name: Name of the user
+            character: Character for dialogue
+            topic: Conversation topic/context
+            language: Target language
+            enable_translation: Whether to enable translation
+            dialogue_history: Previous dialogue lines (for context)
+            
+        Returns:
+            System prompt string
+        """
+        return PromptBuilder.build_system_prompt(
+            user_name=user_name,
+            characters=[character],
+            topic=topic,
+            language=language,
+            enable_translation=enable_translation,
+        )
+    
+    @staticmethod
+    def get_emotion_list() -> List[str]:
+        """Get the standard emotion list"""
+        return PromptBuilder.EMOTIONS.copy()
+    
+    @staticmethod
+    def validate_emotion(emotion: str) -> bool:
+        """Check if emotion is in standard list"""
+        return emotion in PromptBuilder.EMOTIONS
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\topic_loader.py
+================================================================================
+
+"""
+Topic Loader
+Reads topic descriptions and metadata from .md files
+"""
+
+import logging
+import re
+from pathlib import Path
+from typing import Dict, Optional, Any
+
+logger = logging.getLogger(__name__)
+
+
+class TopicMetadata:
+    """Metadata extracted from topic .md file"""
+    
+    def __init__(self):
+        self.title: str = "Dialogue"
+        self.description: str = ""
+        self.style: str = "a little nsfw"  # sfw, a little nsfw, nsfw
+        self.location: Optional[str] = None
+        self.mood: Optional[str] = None
+        self.context: str = ""
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary"""
+        return {
+            "title": self.title,
+            "style": self.style,
+            "location": self.location,
+            "mood": self.mood,
+        }
+
+
+class TopicLoader:
+    """Load and parse topic metadata from markdown files"""
+    
+    @staticmethod
+    def load_topic(topic_path: Path | str) -> tuple[str, TopicMetadata]:
+        """
+        Load topic from markdown file
+        
+        Args:
+            topic_path: Path to topic.md file
+            
+        Returns:
+            Tuple of (full_topic_text, metadata)
+        """
+        topic_path = Path(topic_path)
+        metadata = TopicMetadata()
+        
+        if not topic_path.exists():
+            logger.warning(f"Topic file not found: {topic_path}")
+            return "", metadata
+        
+        try:
+            with open(topic_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Extract title (first # line)
+            title_match = re.search(r'^# (.+)$', content, re.MULTILINE)
+            if title_match:
+                metadata.title = title_match.group(1).strip()
+            
+            # Extract YAML-like metadata blocks or key: value patterns
+            style_match = re.search(r'^[#\s]*[Ss]tyle[:\s]+(.+)$', content, re.MULTILINE)
+            if style_match:
+                style_val = style_match.group(1).strip().lower()
+                if style_val in ('sfw', 'a little nsfw', 'nsfw'):
+                    metadata.style = style_val
+            
+            location_match = re.search(r'^[#\s]*[Ll]ocation[:\s]+(.+)$', content, re.MULTILINE)
+            if location_match:
+                metadata.location = location_match.group(1).strip()
+            
+            mood_match = re.search(r'^[#\s]*[Mm]ood[:\s]+(.+)$', content, re.MULTILINE)
+            if mood_match:
+                metadata.mood = mood_match.group(1).strip()
+            
+            # Extract description (everything after title up to the next ## section)
+            desc_match = re.search(r'^# .+\n\n(.+?)(?=\n##|\Z)', content, re.MULTILINE | re.DOTALL)
+            if desc_match:
+                metadata.description = desc_match.group(1).strip()
+            
+            logger.info(f"Loaded topic: {metadata.title}")
+            logger.info(f"  Style: {metadata.style}, Location: {metadata.location}")
+            
+            return content, metadata
+            
+        except Exception as e:
+            logger.error(f"Error loading topic: {e}")
+            return "", metadata
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\core\__init__.py
+================================================================================
+
+"""Core data models for dialogue generation"""
+
+from .models import (
+    CharacterSettings,
+    DialogueLine,
+    DialoguePlaybook,
+    STANDARD_EMOTIONS,
+)
+
+__all__ = [
+    "CharacterSettings",
+    "DialogueLine",
+    "DialoguePlaybook",
+    "STANDARD_EMOTIONS",
+]
+
+
+
+================================================================================
+FILE: dialogue-server\dialogue_gen\core\models.py
+================================================================================
+
+"""
+Data models for dialogue generation system
+Based on LingChat's CharacterSettings and SillyTavern's character format
+"""
+
+from typing import Any, Dict, List, Optional
+from pathlib import Path
+from pydantic import BaseModel, Field, ConfigDict
+
+
+class VoiceModel(BaseModel):
+    """Voice synthesis configuration"""
+    sva_speaker_id: Optional[str] = None
+    sbv2_name: Optional[str] = None
+    sbv2_speaker_id: Optional[str] = None
+    bv2_speaker_id: Optional[str] = None
+
+
+class CharacterSettings(BaseModel):
+    """
+    Character configuration model
+    Mirrors LingChat's structure with additions for dialogue generation
+    """
+
+    model_config = ConfigDict(extra="allow")
+
+    # Basic Info
+    ai_name: str = Field(default="character_name")
+    character_key: Optional[str] = None  # Folder name (ema, hiro, etc.)
+    ai_subtitle: Optional[str] = ""
+    user_name: str = Field(default="player")
+    user_subtitle: Optional[str] = ""
+
+    # Prompts (CRITICAL)
+    system_prompt: Optional[str] = None
+    system_prompt_example: Optional[str] = None
+    system_prompt_example_old: Optional[str] = None
+
+    # Voice
+    voice_models: Optional[VoiceModel] = None
+    tts_type: Optional[str] = None
+
+    # Visual
+    body_part: Optional[Dict[str, Any]] = None
+    scale: float = 1.0
+    clothes_name: Optional[str] = None
+    available_emotions: Optional[List[str]] = None  # Emotions from fig/ folder
+    
+    # Available Emotions (dynamically loaded from fig/ folder)
+    available_emotions: List[str] = Field(default_factory=list)
+    clothes: Optional[List[Dict[str, str]]] = None
+
+    # Metadata
+    resource_path: Optional[str] = None
+    character_id: Optional[int] = None
+
+
+class DialogueLine(BaseModel):
+    """Single line of dialogue with emotion and metadata"""
+    
+    character: str
+    emotion: str
+    text: str
+    action: str = ""
+    text_jp: Optional[str] = None
+    emotion_jp: Optional[str] = None
+    timestamp: Optional[str] = None
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "character": "Alice",
+                "emotion": "平静",
+                "text": "今天天气真好啊",
+                "action": "",
+                "text_jp": "今日はいい天気ですね",
+            }
+        }
+
+
+class DialoguePlaybook(BaseModel):
+    """Complete dialogue playbook"""
+    
+    header: Dict[str, Any]
+    lines: List[DialogueLine]
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "header": {
+                    "characters": ["Alice", "Bob"],
+                    "topic": "Weather",
+                    "language": "zh",
+                    "emotion_count": 18,
+                },
+                "lines": [
+                    {
+                        "character": "Alice",
+                        "emotion": "平静",
+                        "text": "今天天气真好",
+                    }
+                ]
+            }
+        }
+
+
+# Standard emotions expanded to include more variations
+STANDARD_EMOTIONS = [
+    "慌张",
+    "担心", 
+    "尴尬",
+    "紧张",
+    "高兴",
+    "自信",
+    "害怕",
+    "害羞",
+    "认真",
+    "生气",
+    "无语",
+    "厌恶",
+    "疑惑",
+    "难为情",
+    "惊讶",
+    "情动",
+    "哭泣",
+    "调皮",
+    # Additional emotions for late-night chatting scenarios
+    "温柔",  # Gentle/tender
+    "期待",  # Expecting/looking forward to
+    "开心",  # Happy/cheerful
+    "平静",  # Calm/peaceful
+    "困惑",  # Confused
+    "失望",  # Disappointed
+    "感动",  # Moved/touched
+]
+
+
+================================================================================
+FILE: dialogue-server\tests\test_components.py
+================================================================================
+
+"""
+Test script for Phase 1 MVP
+Tests all components with Character-fig-setting-example
+"""
+
+import sys
+import asyncio
+import logging
+from pathlib import Path
+
+# Add parent directory to path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from dialogue_gen.character_loader import CharacterLoader
+from dialogue_gen.prompt_builder import PromptBuilder
+from dialogue_gen.dialogue_parser import DialogueParser
+from dialogue_gen.output_generator import OutputGenerator
+
+# Configure logging
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+
+logger = logging.getLogger(__name__)
+
+
+def test_character_loader():
+    """Test character loading"""
+    print("\n" + "="*60)
+    print("TEST 1: Character Loader")
+    print("="*60)
+    
+    loader = CharacterLoader()
+    
+    # Test with example characters
+    char_paths = [
+        Path(__file__).parent.parent / "Character-fig-setting-example" / "ema",
+        Path(__file__).parent.parent / "Character-fig-setting-example" / "hiro",
+    ]
+    
+    for char_path in char_paths:
+        if char_path.exists():
+            print(f"\nLoading character from: {char_path}")
+            character = loader.load_character(char_path)
+            
+            if character:
+                print(f"✓ Successfully loaded: {character.ai_name}")
+                print(f"  Subtitle: {character.ai_subtitle}")
+                print(f"  Prompt preview: {(character.system_prompt or '')[:100]}...")
+                
+                # Get emotion figures
+                emotions = loader.get_emotion_figures(char_path)
+                print(f"  Found {len(emotions)} emotion figures: {', '.join(list(emotions.keys())[:5])}...")
+            else:
+                print(f"✗ Failed to load character")
+        else:
+            print(f"✗ Character path not found: {char_path}")
+
+
+def test_prompt_builder():
+    """Test prompt building"""
+    print("\n" + "="*60)
+    print("TEST 2: Prompt Builder")
+    print("="*60)
+    
+    builder = PromptBuilder()
+    
+    # Load characters first
+    loader = CharacterLoader()
+    char_paths = [
+        Path(__file__).parent.parent / "Character-fig-setting-example" / "ema",
+        Path(__file__).parent.parent / "Character-fig-setting-example" / "hiro",
+    ]
+    
+    characters = []
+    for path in char_paths:
+        if path.exists():
+            char = loader.load_character(path)
+            if char:
+                characters.append(char)
+    
+    if characters:
+        print(f"\nBuilding prompt for {len(characters)} characters")
+        
+        system_prompt = builder.build_system_prompt(
+            user_name="Alice",
+            characters=characters,
+            topic="Two characters meet at a bookstore and discuss their favorite books",
+            language="zh",
+            enable_translation=False,
+        )
+        
+        print(f"✓ Generated system prompt ({len(system_prompt)} chars)")
+        print(f"\nPrompt preview:\n{system_prompt[:300]}...\n")
+        
+        # Test emotion validation
+        emotions = builder.get_emotion_list()
+        print(f"✓ Standard emotions ({len(emotions)}): {emotions[:5]}...")
+        
+        is_valid = builder.validate_emotion("高兴")
+        print(f"✓ Emotion validation - '高兴' is valid: {is_valid}")
+        
+        is_valid = builder.validate_emotion("invalid_emotion")
+        print(f"✓ Emotion validation - 'invalid_emotion' is valid: {is_valid}")
+
+
+def test_dialogue_parser():
+    """Test dialogue parsing"""
+    print("\n" + "="*60)
+    print("TEST 3: Dialogue Parser")
+    print("="*60)
+    
+    parser = DialogueParser()
+    
+    # Test single unit parsing
+    test_cases = [
+        "【高兴】今天天气真好！<Today's weather is wonderful!>",
+        "【害羞】我...我觉得有点不好意思呢（低下了头）<I feel a bit embarrassed...>",
+        "【生气】你为什么这样做！（愤怒地指向对方）",
+        "【无语】这就是你的理由吗？（摇了摇头）",
+    ]
+    
+    print("\nParsing individual dialogue units:")
+    
+    for test_case in test_cases:
+        print(f"\nInput: {test_case}")
+        
+        line = parser.parse_dialogue_unit(
+            text=test_case,
+            character_name="TestChar",
+            valid_emotions=parser.EMOTIONS,
+        )
+        
+        if line:
+            print(f"✓ Parsed successfully")
+            print(f"  Emotion: {line.emotion}")
+            print(f"  Text: {line.text}")
+            print(f"  Action: {line.action}")
+            print(f"  Translation: {line.text_jp}")
+        else:
+            print(f"✗ Failed to parse")
+    
+    # Test raw response parsing
+    raw_dialogue = """【高兴】今天天气真好！
+【害羞】我...我也觉得（低下了头）<I think so too...>
+【开心】我们一起出去走走吧！"""
+    
+    print(f"\n\nParsing multi-line dialogue:")
+    print(f"Input (raw):\n{raw_dialogue}\n")
+    
+    lines = parser.parse_raw_response(
+        raw_text=raw_dialogue,
+        character_name="Alice",
+    )
+    
+    print(f"✓ Parsed {len(lines)} lines")
+    for idx, line in enumerate(lines):
+        print(f"  Line {idx+1}: [{line.emotion}] {line.text}")
+
+
+def test_output_generator():
+    """Test output generation"""
+    print("\n" + "="*60)
+    print("TEST 4: Output Generator")
+    print("="*60)
+    
+    from dialogue_gen.core.models import DialogueLine, CharacterSettings
+    
+    # Create sample dialogue
+    dialogue_lines = [
+        DialogueLine(
+            character="Alice",
+            emotion="高兴",
+            text="今天天气真好啊！",
+            action="",
+            text_jp="今日はいい天気ですね！",
+        ),
+        DialogueLine(
+            character="Bob",
+            emotion="害羞",
+            text="是啊，我们一起出去走走吧（拉住Alice的手）",
+            action="拉住Alice的手",
+            text_jp="そうですね、一緒に歩きませんか",
+        ),
+    ]
+    
+    characters = [
+        CharacterSettings(ai_name="Alice"),
+        CharacterSettings(ai_name="Bob"),
+    ]
+    
+    topic = "Two friends meet and plan their weekend"
+    
+    print(f"\nGenerating JSONL output...")
+    jsonl_output = OutputGenerator.generate_jsonl(
+        dialogue_lines=dialogue_lines,
+        characters=characters,
+        topic=topic,
+        language="zh",
+    )
+    print(f"✓ Generated JSONL ({len(jsonl_output)} chars)")
+    print(f"\nJSONL preview:\n{jsonl_output[:300]}...\n")
+    
+    print(f"\nGenerating JSON output...")
+    json_output = OutputGenerator.generate_json(
+        dialogue_lines=dialogue_lines,
+        characters=characters,
+        topic=topic,
+        language="zh",
+        pretty=True,
+    )
+    print(f"✓ Generated JSON ({len(json_output)} chars)")
+    
+    print(f"\nGenerating TXT output...")
+    txt_output = OutputGenerator.generate_txt(
+        dialogue_lines=dialogue_lines,
+    )
+    print(f"✓ Generated TXT ({len(txt_output)} chars)")
+    print(f"\nTXT preview:\n{txt_output}\n")
+
+
+def run_all_tests():
+    """Run all tests"""
+    print("\n" + "="*80)
+    print("PHASE 1 MVP: Component Testing")
+    print("="*80)
+    
+    try:
+        test_character_loader()
+        test_prompt_builder()
+        test_dialogue_parser()
+        test_output_generator()
+        
+        print("\n" + "="*80)
+        print("✓ All tests completed successfully!")
+        print("="*80 + "\n")
+        
+    except Exception as e:
+        print(f"\n✗ Test failed with error: {e}")
+        import traceback
+        traceback.print_exc()
+
+
+if __name__ == "__main__":
+    run_all_tests()
+
+
+================================================================================
+FILE: tmp_not_needed\demo_gpt_sovits_voice.py
+================================================================================
+
+"""
+Demo: GPT-SoVITS Voice Generation
+
+Loads character voice settings from Character-voice-example folder
+and generates speech for test sentences in English, Chinese, and Japanese.
+
+Usage:
+    python demo_gpt_sovits_voice.py
+    
+Requirements:
+    - GPT-SoVITS API running at http://127.0.0.1:9880
+    - Character-voice-example folder with voice settings
+    - httpx: pip install httpx
+"""
+
+import asyncio
+import json
+import re
+import shutil
+from pathlib import Path
+from dataclasses import dataclass, asdict
+from typing import Dict, Optional
+import sys
+
+try:
+    import httpx
+except ImportError:
+    print("ERROR: httpx not installed. Run: pip install httpx")
+    sys.exit(1)
+
+
+# ============================================================================
+# Data Models
+# ============================================================================
+
+@dataclass
+class VoiceSettings:
+    """Settings from voice_setting.txt"""
+    gpt_weight: str
+    sovits_weight: str
+    default_ref_voice: str
+    default_ref_setting: str
+    gpt_type1: str
+    gpt_type2: str
+
+
+@dataclass
+class RefAudioSettings:
+    """Settings from reference audio config file"""
+    speak_speed: float
+    seconds_between_sentences: float
+    top_k: int
+    top_p: float
+    temperature: float
+    wav_file: str
+    ref_text: str
+    ref_language: str
+
+
+# ============================================================================
+# Configuration Parser
+# ============================================================================
+
+class ConfigParser:
+    """Parse voice configuration files with key='value' format"""
+    
+    @staticmethod
+    def parse_config(config_text: str) -> Dict[str, str]:
+        """
+        Parse configuration file in key='value' format.
+        
+        Example:
+            SPEAK_SPEED=0.95
+            REF_TEXT='うん、ノアちゃんは...'
+            
+        Returns dict with stripped quotes and converted values.
+        """
+        config = {}
+        for line in config_text.strip().split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            
+            if '=' not in line:
+                continue
+            
+            key, value = line.split('=', 1)
+            key = key.strip()
+            value = value.strip()
+            
+            # Remove surrounding quotes if present
+            if (value.startswith("'") and value.endswith("'")) or \
+               (value.startswith('"') and value.endswith('"')):
+                value = value[1:-1]
+            
+            config[key] = value
+        
+        return config
+    
+    @staticmethod
+    def load_voice_settings(voice_setting_path: Path) -> VoiceSettings:
+        """Load voice_setting.txt and return VoiceSettings."""
+        if not voice_setting_path.exists():
+            raise FileNotFoundError(f"Voice settings not found: {voice_setting_path}")
+        
+        config = ConfigParser.parse_config(voice_setting_path.read_text(encoding='utf-8'))
+        
+        return VoiceSettings(
+            gpt_weight=config['GPT_WEIGHT'],
+            sovits_weight=config['SoVITS_WEIGHT'],
+            default_ref_voice=config['DEFAULT_REF_VOICE'],
+            default_ref_setting=config['DEFAULT_REF_SETTING'],
+            gpt_type1=config['GPT_SOVITS_TYPE1'],
+            gpt_type2=config['GPT_SOVITS_TYPE2'],
+        )
+    
+    @staticmethod
+    def load_ref_audio_settings(ref_setting_path: Path) -> RefAudioSettings:
+        """Load reference audio settings file."""
+        if not ref_setting_path.exists():
+            raise FileNotFoundError(f"Reference settings not found: {ref_setting_path}")
+        
+        config = ConfigParser.parse_config(ref_setting_path.read_text(encoding='utf-8'))
+        
+        return RefAudioSettings(
+            speak_speed=float(config['SPEAK_SPEED']),
+            seconds_between_sentences=float(config['SECONDS_BETWEEN_SENTENCES']),
+            top_k=int(config['TOP_K']),
+            top_p=float(config['TOP_P']),
+            temperature=float(config['TEMPERATURE']),
+            wav_file=config['WAV_FILE'],
+            ref_text=config['REF_TEXT'],
+            ref_language=config['REF_LANGUAGE'],
+        )
+
+
+# ============================================================================
+# GPT-SoVITS API Client
+# ============================================================================
+
+class GPTSoVITSClient:
+    """Async HTTP client for GPT-SoVITS API"""
+    
+    def __init__(self, api_url: str = "http://127.0.0.1:9880"):
+        self.api_url = api_url
+        self.client = httpx.AsyncClient(timeout=120.0)
+    
+    async def close(self):
+        """Close HTTP client"""
+        await self.client.aclose()
+    
+    async def health_check(self) -> bool:
+        """Check if GPT-SoVITS API is running"""
+        try:
+            response = await self.client.get(f"{self.api_url}/docs", follow_redirects=True)
+            return response.status_code == 200
+        except Exception as e:
+            print(f"❌ Health check failed: {e}")
+            return False
+    
+    async def set_gpt_weights(self, model_path: str) -> bool:
+        """Load GPT model weights"""
+        try:
+            response = await self.client.post(
+                f"{self.api_url}/set_gpt_weights",
+                json={"weights_path": str(model_path)}
+            )
+            if response.status_code == 200:
+                print(f"✓ GPT model loaded: {Path(model_path).name}")
+                return True
+            else:
+                print(f"❌ Failed to load GPT model: {response.text}")
+                return False
+        except Exception as e:
+            print(f"❌ Error setting GPT weights: {e}")
+            return False
+    
+    async def set_sovits_weights(self, model_path: str) -> bool:
+        """Load SoVITS model weights"""
+        try:
+            response = await self.client.post(
+                f"{self.api_url}/set_sovits_weights",
+                json={"weights_path": str(model_path)}
+            )
+            if response.status_code == 200:
+                print(f"✓ SoVITS model loaded: {Path(model_path).name}")
+                return True
+            else:
+                print(f"❌ Failed to load SoVITS model: {response.text}")
+                return False
+        except Exception as e:
+            print(f"❌ Error setting SoVITS weights: {e}")
+            return False
+    
+    async def generate_voice(
+        self,
+        text: str,
+        ref_audio_path: str,
+        ref_text: str,
+        ref_language: str,
+        text_language: str,
+        speed_factor: float = 1.0,
+        top_k: int = 5,
+        top_p: float = 1.0,
+        temperature: float = 1.0,
+    ) -> Optional[bytes]:
+        """
+        Generate speech from text.
+        
+        Args:
+            text: Text to synthesize
+            ref_audio_path: Path to reference audio
+            ref_text: Text corresponding to reference audio
+            ref_language: Language of reference text (JA, ZH, EN, etc.)
+            text_language: Language of input text
+            speed_factor: Speech speed (0.5-2.0)
+            top_k: Top-k sampling
+            top_p: Top-p sampling
+            temperature: Sampling temperature
+            
+        Returns:
+            Audio bytes (WAV format) or None if failed
+        """
+        try:
+            # Convert language codes to lowercase for API
+            ref_lang_code = ref_language.lower() if ref_language.lower() in ['ja', 'zh', 'en', 'yue', 'ko'] else 'auto'
+            text_lang_code = text_language.lower() if text_language.lower() in ['ja', 'zh', 'en', 'yue', 'ko'] else 'auto'
+            
+            payload = {
+                "text": text,
+                "text_lang": text_lang_code,
+                "ref_audio_path": str(ref_audio_path),
+                "prompt_text": ref_text,
+                "prompt_lang": ref_lang_code,
+                "speed_factor": speed_factor,
+                "top_k": top_k,
+                "top_p": top_p,
+                "temperature": temperature,
+                "text_split_method": "cut5",
+                "media_type": "wav",
+            }
+            
+            response = await self.client.post(
+                f"{self.api_url}/tts",
+                json=payload
+            )
+            
+            if response.status_code == 200:
+                return response.content
+            else:
+                print(f"❌ TTS generation failed: {response.text}")
+                return None
+                
+        except Exception as e:
+            print(f"❌ Error generating voice: {e}")
+            return False
+
+
+# ============================================================================
+# Character Voice Manager
+# ============================================================================
+
+class CharacterVoiceManager:
+    """Manage character voice generation"""
+    
+    def __init__(self, character_name: str, character_folder: Path, output_dir: Path):
+        """
+        Initialize character voice manager.
+        
+        Args:
+            character_name: Character display name (e.g., "艾玛", "希罗")
+            character_folder: Path to Character-voice-example/{character}/
+            output_dir: Output directory for generated audio
+        """
+        self.character_name = character_name
+        self.character_folder = character_folder
+        self.output_dir = output_dir
+        self.gpt_sovits_folder = character_folder / "GPT-SoVITS"
+        
+        # Load settings
+        self.voice_settings = ConfigParser.load_voice_settings(
+            self.gpt_sovits_folder / "voice_setting.txt"
+        )
+        
+        # Load reference audio settings
+        ref_setting_path = self.gpt_sovits_folder / self.voice_settings.default_ref_setting.lstrip('./')
+        self.ref_audio_settings = ConfigParser.load_ref_audio_settings(ref_setting_path)
+        
+        # Resolve full paths
+        self.gpt_model_path = self.gpt_sovits_folder / self.voice_settings.gpt_weight
+        self.sovits_model_path = self.gpt_sovits_folder / self.voice_settings.sovits_weight
+        self.ref_audio_path = self.gpt_sovits_folder / self.voice_settings.default_ref_voice.lstrip('./')
+        
+        # Create character output folder
+        self.character_output_dir = output_dir / f"{character_name}"
+        self.character_output_dir.mkdir(parents=True, exist_ok=True)
+        
+        print(f"\n{'='*70}")
+        print(f"Character: {character_name}")
+        print(f"{'='*70}")
+        print(f"Folder: {character_folder}")
+        print(f"GPT Model Type: {self.voice_settings.gpt_type2}")
+        print(f"GPT Model: {self.voice_settings.gpt_weight}")
+        print(f"SoVITS Model: {self.voice_settings.sovits_weight}")
+        print(f"Reference Audio: {self.ref_audio_path.name}")
+        print(f"Reference Text: {self.ref_audio_settings.ref_text[:60]}...")
+        print(f"Speech Speed: {self.ref_audio_settings.speak_speed}")
+    
+    async def generate_speech(
+        self,
+        client: GPTSoVITSClient,
+        text: str,
+        language: str,
+        output_filename: str,
+    ) -> bool:
+        """
+        Generate speech for a text.
+        
+        Args:
+            client: GPTSoVITSClient instance
+            text: Text to synthesize
+            language: Language code (EN, ZH, JA)
+            output_filename: Output filename (e.g., "english.wav")
+            
+        Returns:
+            True if successful, False otherwise
+        """
+        print(f"\n  📝 Text: {text}")
+        print(f"  🌐 Language: {language}")
+        
+        audio_bytes = await client.generate_voice(
+            text=text,
+            ref_audio_path=str(self.ref_audio_path),
+            ref_text=self.ref_audio_settings.ref_text,
+            ref_language=self.ref_audio_settings.ref_language,
+            text_language=language,
+            speed_factor=self.ref_audio_settings.speak_speed,
+            top_k=self.ref_audio_settings.top_k,
+            top_p=self.ref_audio_settings.top_p,
+            temperature=self.ref_audio_settings.temperature,
+        )
+        
+        if audio_bytes:
+            output_path = self.character_output_dir / output_filename
+            output_path.write_bytes(audio_bytes)
+            print(f"  ✓ Saved: {output_filename} ({len(audio_bytes)} bytes)")
+            return True
+        else:
+            print(f"  ❌ Failed to generate speech")
+            return False
+
+
+# ============================================================================
+# Main Demo
+# ============================================================================
+
+async def main():
+    """Main demo function"""
+    
+    # Setup paths
+    base_dir = Path(__file__).parent.parent
+    character_voice_example = base_dir / "Character-voice-example"
+    output_dir = base_dir / "dialogue-server" / "output" / "demo_voice"
+    
+    # Clean output directory
+    if output_dir.exists():
+        shutil.rmtree(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    print("\n" + "="*70)
+    print("GPT-SoVITS Voice Generation Demo")
+    print("="*70)
+    
+    # Initialize API client
+    client = GPTSoVITSClient(api_url="http://127.0.0.1:9880")
+    
+    # Check API health
+    print("\n🔍 Checking GPT-SoVITS API connection...")
+    is_healthy = await client.health_check()
+    if not is_healthy:
+        print("❌ Cannot connect to GPT-SoVITS API at http://127.0.0.1:9880")
+        print("   Please ensure GPT-SoVITS API is running:")
+        print("   cd third_party/GPT-SoVITS-v2pro-20250604")
+        print("   python api_v2.py -a 127.0.0.1 -p 9880")
+        await client.close()
+        return
+    print("✓ GPT-SoVITS API is running")
+    
+    # Test sentences in multiple languages
+    test_texts = [
+        ("Good morning", "EN"),
+        ("早上好", "ZH"),
+        ("おはよう", "JA"),
+    ]
+    
+    # Process characters
+    characters = [
+        ("艾玛", character_voice_example / "艾玛"),
+        ("希罗", character_voice_example / "希罗"),
+    ]
+    
+    for character_name, character_folder in characters:
+        if not character_folder.exists():
+            print(f"❌ Character folder not found: {character_folder}")
+            continue
+        
+        manager = CharacterVoiceManager(character_name, character_folder, output_dir)
+        
+        # Load models
+        print(f"\n📦 Loading models...")
+        gpt_success = await client.set_gpt_weights(str(manager.gpt_model_path))
+        sovits_success = await client.set_sovits_weights(str(manager.sovits_model_path))
+        
+        if not (gpt_success and sovits_success):
+            print(f"❌ Failed to load models for {character_name}")
+            continue
+        
+        # Generate speech for each test text
+        print(f"\n🎤 Generating speech for {character_name}...")
+        for text, language in test_texts:
+            lang_name = {"EN": "English", "ZH": "Chinese", "JA": "Japanese"}[language]
+            output_filename = f"{language.lower()}_{character_name}.wav"
+            await manager.generate_speech(client, text, language, output_filename)
+    
+    await client.close()
+    
+    # Summary
+    print(f"\n" + "="*70)
+    print(f"✓ Demo completed!")
+    print(f"📁 Output saved to: {output_dir}")
+    print(f"="*70 + "\n")
+    
+    # List generated files
+    if output_dir.exists():
+        audio_files = list(output_dir.rglob("*.wav"))
+        if audio_files:
+            print("📋 Generated audio files:")
+            for audio_file in sorted(audio_files):
+                rel_path = audio_file.relative_to(output_dir)
+                size_kb = audio_file.stat().st_size / 1024
+                print(f"   - {rel_path} ({size_kb:.1f} KB)")
+        else:
+            print("⚠️  No audio files were generated.")
+
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\n⚠️  Demo interrupted by user")
+    except Exception as e:
+        print(f"❌ Fatal error: {e}")
+        import traceback
+        traceback.print_exc()
+
+
+================================================================================
+FILE: voice-server\demo_gpt_sovits_voice.py
+================================================================================
+
+"""
+Demo: GPT-SoVITS Voice Generation
+
+Loads character voice settings from Character-voice-example folder
+and generates speech for test sentences in English, Chinese, and Japanese.
+
+Usage:
+    python demo_gpt_sovits_voice.py
+    
+Requirements:
+    - GPT-SoVITS API running at http://127.0.0.1:9880
+    - Character-voice-example folder with voice settings
+    - httpx: pip install httpx
+"""
+
+import asyncio
+import json
+import re
+import shutil
+from pathlib import Path
+from dataclasses import dataclass, asdict
+from typing import Dict, Optional
+import sys
+
+try:
+    import httpx
+except ImportError:
+    print("ERROR: httpx not installed. Run: pip install httpx")
+    sys.exit(1)
+
+
+# ============================================================================
+# Data Models
+# ============================================================================
+
+@dataclass
+class VoiceSettings:
+    """Settings from voice_setting.txt"""
+    gpt_weight: str
+    sovits_weight: str
+    default_ref_voice: str
+    default_ref_setting: str
+    gpt_type1: str
+    gpt_type2: str
+
+
+@dataclass
+class RefAudioSettings:
+    """Settings from reference audio config file"""
+    speak_speed: float
+    seconds_between_sentences: float
+    top_k: int
+    top_p: float
+    temperature: float
+    wav_file: str
+    ref_text: str
+    ref_language: str
+
+
+# ============================================================================
+# Configuration Parser
+# ============================================================================
+
+class ConfigParser:
+    """Parse voice configuration files with key='value' format"""
+    
+    @staticmethod
+    def parse_config(config_text: str) -> Dict[str, str]:
+        """
+        Parse configuration file in key='value' format.
+        
+        Example:
+            SPEAK_SPEED=0.95
+            REF_TEXT='うん、ノアちゃんは...'
+            
+        Returns dict with stripped quotes and converted values.
+        """
+        config = {}
+        for line in config_text.strip().split('\n'):
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            
+            if '=' not in line:
+                continue
+            
+            key, value = line.split('=', 1)
+            key = key.strip()
+            value = value.strip()
+            
+            # Remove surrounding quotes if present
+            if (value.startswith("'") and value.endswith("'")) or \
+               (value.startswith('"') and value.endswith('"')):
+                value = value[1:-1]
+            
+            config[key] = value
+        
+        return config
+    
+    @staticmethod
+    def load_voice_settings(voice_setting_path: Path) -> VoiceSettings:
+        """Load voice_setting.txt and return VoiceSettings."""
+        if not voice_setting_path.exists():
+            raise FileNotFoundError(f"Voice settings not found: {voice_setting_path}")
+        
+        config = ConfigParser.parse_config(voice_setting_path.read_text(encoding='utf-8'))
+        
+        return VoiceSettings(
+            gpt_weight=config['GPT_WEIGHT'],
+            sovits_weight=config['SoVITS_WEIGHT'],
+            default_ref_voice=config['DEFAULT_REF_VOICE'],
+            default_ref_setting=config['DEFAULT_REF_SETTING'],
+            gpt_type1=config['GPT_SOVITS_TYPE1'],
+            gpt_type2=config['GPT_SOVITS_TYPE2'],
+        )
+    
+    @staticmethod
+    def load_ref_audio_settings(ref_setting_path: Path) -> RefAudioSettings:
+        """Load reference audio settings file."""
+        if not ref_setting_path.exists():
+            raise FileNotFoundError(f"Reference settings not found: {ref_setting_path}")
+        
+        config = ConfigParser.parse_config(ref_setting_path.read_text(encoding='utf-8'))
+        
+        return RefAudioSettings(
+            speak_speed=float(config['SPEAK_SPEED']),
+            seconds_between_sentences=float(config['SECONDS_BETWEEN_SENTENCES']),
+            top_k=int(config['TOP_K']),
+            top_p=float(config['TOP_P']),
+            temperature=float(config['TEMPERATURE']),
+            wav_file=config['WAV_FILE'],
+            ref_text=config['REF_TEXT'],
+            ref_language=config['REF_LANGUAGE'],
+        )
+
+
+# ============================================================================
+# GPT-SoVITS API Client
+# ============================================================================
+
+class GPTSoVITSClient:
+    """Async HTTP client for GPT-SoVITS API"""
+    
+    def __init__(self, api_url: str = "http://127.0.0.1:9880"):
+        self.api_url = api_url
+        self.client = httpx.AsyncClient(timeout=120.0)
+    
+    async def close(self):
+        """Close HTTP client"""
+        await self.client.aclose()
+    
+    async def health_check(self) -> bool:
+        """Check if GPT-SoVITS API is running"""
+        try:
+            response = await self.client.get(f"{self.api_url}/docs", follow_redirects=True)
+            return response.status_code == 200
+        except Exception as e:
+            print(f"❌ Health check failed: {e}")
+            return False
+    
+    async def set_gpt_weights(self, model_path: str) -> bool:
+        """Load GPT model weights"""
+        try:
+            # Use GET request with query parameter
+            response = await self.client.get(
+                f"{self.api_url}/set_gpt_weights",
+                params={"weights_path": str(model_path)}
+            )
+            if response.status_code == 200:
+                print(f"✓ GPT model loaded: {Path(model_path).name}")
+                return True
+            else:
+                print(f"❌ Failed to load GPT model: {response.text}")
+                return False
+        except Exception as e:
+            print(f"❌ Error setting GPT weights: {e}")
+            return False
+    
+    async def set_sovits_weights(self, model_path: str) -> bool:
+        """Load SoVITS model weights"""
+        try:
+            # Use GET request with query parameter
+            response = await self.client.get(
+                f"{self.api_url}/set_sovits_weights",
+                params={"weights_path": str(model_path)}
+            )
+            if response.status_code == 200:
+                print(f"✓ SoVITS model loaded: {Path(model_path).name}")
+                return True
+            else:
+                print(f"❌ Failed to load SoVITS model: {response.text}")
+                return False
+        except Exception as e:
+            print(f"❌ Error setting SoVITS weights: {e}")
+            return False
+    
+    async def generate_voice(
+        self,
+        text: str,
+        ref_audio_path: str,
+        ref_text: str,
+        ref_language: str,
+        text_language: str,
+        speed_factor: float = 1.0,
+        top_k: int = 5,
+        top_p: float = 1.0,
+        temperature: float = 1.0,
+    ) -> Optional[bytes]:
+        """
+        Generate speech from text.
+        
+        Args:
+            text: Text to synthesize
+            ref_audio_path: Path to reference audio
+            ref_text: Text corresponding to reference audio
+            ref_language: Language of reference text (JA, ZH, EN, etc.)
+            text_language: Language of input text
+            speed_factor: Speech speed (0.5-2.0)
+            top_k: Top-k sampling
+            top_p: Top-p sampling
+            temperature: Sampling temperature
+            
+        Returns:
+            Audio bytes (WAV format) or None if failed
+        """
+        try:
+            # Convert language codes to lowercase for API
+            ref_lang_code = ref_language.lower() if ref_language.lower() in ['ja', 'zh', 'en', 'yue', 'ko'] else 'auto'
+            text_lang_code = text_language.lower() if text_language.lower() in ['ja', 'zh', 'en', 'yue', 'ko'] else 'auto'
+            
+            payload = {
+                "text": text,
+                "text_lang": text_lang_code,
+                "ref_audio_path": str(ref_audio_path),
+                "prompt_text": ref_text,
+                "prompt_lang": ref_lang_code,
+                "speed_factor": speed_factor,
+                "top_k": top_k,
+                "top_p": top_p,
+                "temperature": temperature,
+                "text_split_method": "cut5",
+                "media_type": "wav",
+            }
+            
+            response = await self.client.post(
+                f"{self.api_url}/tts",
+                json=payload
+            )
+            
+            if response.status_code == 200:
+                return response.content
+            else:
+                print(f"❌ TTS generation failed: {response.text}")
+                return None
+                
+        except Exception as e:
+            print(f"❌ Error generating voice: {e}")
+            return None
+
+
+# ============================================================================
+# Character Voice Manager
+# ============================================================================
+
+class CharacterVoiceManager:
+    """Manage character voice generation"""
+    
+    def __init__(self, character_name: str, character_folder: Path, output_dir: Path):
+        """
+        Initialize character voice manager.
+        
+        Args:
+            character_name: Character display name (e.g., "艾玛", "希罗")
+            character_folder: Path to Character-voice-example/{character}/
+            output_dir: Output directory for generated audio
+        """
+        self.character_name = character_name
+        self.character_folder = character_folder
+        self.output_dir = output_dir
+        self.gpt_sovits_folder = character_folder / "GPT-SoVITS"
+        
+        # Load settings
+        self.voice_settings = ConfigParser.load_voice_settings(
+            self.gpt_sovits_folder / "voice_setting.txt"
+        )
+        
+        # Load reference audio settings
+        ref_setting_path = self.gpt_sovits_folder / self.voice_settings.default_ref_setting.lstrip('./')
+        self.ref_audio_settings = ConfigParser.load_ref_audio_settings(ref_setting_path)
+        
+        # Resolve full paths
+        self.gpt_model_path = self.gpt_sovits_folder / self.voice_settings.gpt_weight
+        self.sovits_model_path = self.gpt_sovits_folder / self.voice_settings.sovits_weight
+        self.ref_audio_path = self.gpt_sovits_folder / self.voice_settings.default_ref_voice.lstrip('./')
+        
+        # Create character output folder
+        self.character_output_dir = output_dir / f"{character_name}"
+        self.character_output_dir.mkdir(parents=True, exist_ok=True)
+        
+        print(f"\n{'='*70}")
+        print(f"Character: {character_name}")
+        print(f"{'='*70}")
+        print(f"Folder: {character_folder}")
+        print(f"GPT Model Type: {self.voice_settings.gpt_type2}")
+        print(f"GPT Model: {self.voice_settings.gpt_weight}")
+        print(f"SoVITS Model: {self.voice_settings.sovits_weight}")
+        print(f"Reference Audio: {self.ref_audio_path.name}")
+        print(f"Reference Text: {self.ref_audio_settings.ref_text[:60]}...")
+        print(f"Speech Speed: {self.ref_audio_settings.speak_speed}")
+    
+    async def generate_speech(
+        self,
+        client: GPTSoVITSClient,
+        text: str,
+        language: str,
+        output_filename: str,
+    ) -> bool:
+        """
+        Generate speech for a text.
+        
+        Args:
+            client: GPTSoVITSClient instance
+            text: Text to synthesize
+            language: Language code (EN, ZH, JA)
+            output_filename: Output filename (e.g., "english.wav")
+            
+        Returns:
+            True if successful, False otherwise
+        """
+        print(f"\n  📝 Text: {text}")
+        print(f"  🌐 Language: {language}")
+        
+        audio_bytes = await client.generate_voice(
+            text=text,
+            ref_audio_path=str(self.ref_audio_path),
+            ref_text=self.ref_audio_settings.ref_text,
+            ref_language=self.ref_audio_settings.ref_language,
+            text_language=language,
+            speed_factor=self.ref_audio_settings.speak_speed,
+            top_k=self.ref_audio_settings.top_k,
+            top_p=self.ref_audio_settings.top_p,
+            temperature=self.ref_audio_settings.temperature,
+        )
+        
+        if audio_bytes:
+            output_path = self.character_output_dir / output_filename
+            output_path.write_bytes(audio_bytes)
+            print(f"  ✓ Saved: {output_filename} ({len(audio_bytes)} bytes)")
+            return True
+        else:
+            print(f"  ❌ Failed to generate speech")
+            return False
+
+
+# ============================================================================
+# Main Demo
+# ============================================================================
+
+async def main():
+    """Main demo function"""
+    
+    # Setup paths
+    base_dir = Path(__file__).parent.parent
+    character_voice_example = base_dir / "Character-voice-example"
+    output_dir = Path(__file__).parent / "output" / "demo_voice"
+    
+    # Clean output directory
+    if output_dir.exists():
+        shutil.rmtree(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    print("\n" + "="*70)
+    print("GPT-SoVITS Voice Generation Demo")
+    print("="*70)
+    
+    # Initialize API client
+    client = GPTSoVITSClient(api_url="http://127.0.0.1:9880")
+    
+    # Check API health
+    print("\n🔍 Checking GPT-SoVITS API connection...")
+    is_healthy = await client.health_check()
+    if not is_healthy:
+        print("❌ Cannot connect to GPT-SoVITS API at http://127.0.0.1:9880")
+        print("   Please ensure GPT-SoVITS API is running:")
+        print("   cd third_party/GPT-SoVITS-v2pro-20250604")
+        print("   python api_v2.py -a 127.0.0.1 -p 9880 -c GPT_SoVITS/configs/tts_infer.yaml")
+        await client.close()
+        return
+    print("✓ GPT-SoVITS API is running")
+    
+    # Test sentences in multiple languages
+    test_texts = [
+        ("Good morning", "EN"),
+        ("早上好", "ZH"),
+        ("おはよう", "JA"),
+    ]
+    
+    # Process characters
+    characters = [
+        ("艾玛", character_voice_example / "艾玛"),
+        ("希罗", character_voice_example / "希罗"),
+    ]
+    
+    for character_name, character_folder in characters:
+        if not character_folder.exists():
+            print(f"❌ Character folder not found: {character_folder}")
+            continue
+        
+        manager = CharacterVoiceManager(character_name, character_folder, output_dir)
+        
+        # Load models
+        print(f"\n📦 Loading models...")
+        gpt_success = await client.set_gpt_weights(str(manager.gpt_model_path))
+        sovits_success = await client.set_sovits_weights(str(manager.sovits_model_path))
+        
+        if not (gpt_success and sovits_success):
+            print(f"❌ Failed to load models for {character_name}")
+            continue
+        
+        # Generate speech for each test text
+        print(f"\n🎤 Generating speech for {character_name}...")
+        for text, language in test_texts:
+            lang_name = {"EN": "English", "ZH": "Chinese", "JA": "Japanese"}[language]
+            output_filename = f"{language.lower()}_{character_name}.wav"
+            await manager.generate_speech(client, text, language, output_filename)
+    
+    await client.close()
+    
+    # Summary
+    print(f"\n" + "="*70)
+    print(f"✓ Demo completed!")
+    print(f"📁 Output saved to: {output_dir}")
+    print(f"="*70 + "\n")
+    
+    # List generated files
+    if output_dir.exists():
+        audio_files = list(output_dir.rglob("*.wav"))
+        if audio_files:
+            print("📋 Generated audio files:")
+            for audio_file in sorted(audio_files):
+                rel_path = audio_file.relative_to(output_dir)
+                size_kb = audio_file.stat().st_size / 1024
+                print(f"   - {rel_path} ({size_kb:.1f} KB)")
+        else:
+            print("⚠️  No audio files were generated.")
+
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\n⚠️  Demo interrupted by user")
+    except Exception as e:
+        print(f"❌ Fatal error: {e}")
+        import traceback
+        traceback.print_exc()
+
