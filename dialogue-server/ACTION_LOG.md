@@ -1,5 +1,20 @@
 # Action Log - Dialogue Server Phase 1 & 2
 
+## 2026-03-10 | Task 2 - GPT-SoVITS Bottleneck Test Scripts
+
+### [14:00] Created Model Switching Bottleneck Test
+- **Action**: Created test scripts to measure model change time bottleneck
+- **Files Created**:
+  - voice-server/test_single_port_bottleneck.py: Test with single port 9880, model switching
+  - voice-server/test_dual_port_performance.py: Test with dual ports 31801/31802, no switching
+  - voice-server/compare_results.py: Compare results from both tests
+  - voice-server/run_single_test.bat: Batch runner for single port test
+  - voice-server/run_dual_test.bat: Batch runner for dual port test
+- **Purpose**: Measure time cost when generating voice for multi-character dialogue
+- **Result**: ✅ Committed to git (0ba13c8)
+
+---
+
 ## 2026-03-02 | Phase 1 MVP - Import Fixes & Output Setup
 
 ### [23:40] Fixed Module Imports
