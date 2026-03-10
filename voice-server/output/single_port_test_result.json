@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "test_type": "single_port_model_switching",
+    "port": 9880,
+    "num_turns": 9,
+    "total_time": 36.52654089999123,
+    "avg_model_load_time": 1.8416881222227757,
+    "avg_generation_time": 2.2168164222206945,
+    "avg_total_time": 4.05850454444347,
+    "total_model_load_time": 16.57519310000498,
+    "total_generation_time": 19.95134779998625
+  },
+  "turns": [
+    {
+      "turn_index": 0,
+      "character": "ema",
+      "text": "希罗，今天也辛苦啦～",
+      "model_load_time": 1.5556232999952044,
+      "generation_time": 1.3716985999999451,
+      "total_time": 2.9273218999951496
+    },
+    {
+      "turn_index": 1,
+      "character": "hiro",
+      "text": "别、别突然抱上来啊...",
+      "model_load_time": 2.6574774000036996,
+      "generation_time": 1.1592782000006991,
+      "total_time": 3.8167556000043987
+    },
+    {
+      "turn_index": 2,
+      "character": "ema",
+      "text": "因为希罗的后背很温暖嘛。而且...今天一整天都没怎么抱到，我...",
+      "model_load_time": 1.1701544000097783,
+      "generation_time": 3.871018900004856,
+      "total_time": 5.041173300014634
+    },
+    {
+      "turn_index": 3,
+      "character": "hiro",
+      "text": "说、说什么呢...该睡觉了，快去换睡衣。",
+      "model_load_time": 2.1673645000046236,
+      "generation_time": 2.5947034999990137,
+      "total_time": 4.762068000003637
+    },
+    {
+      "turn_index": 4,
+      "character": "ema",
+      "text": "嗯...那希罗帮我换？就像上次那样？",
+      "model_load_time": 1.6032836999947904,
+      "generation_time": 2.0500277999963146,
+      "total_time": 3.653311499991105
+    },
+    {
+      "turn_index": 5,
+      "character": "hiro",
+      "text": "上次那是...！那是你假装手受伤了才...！",
+      "model_load_time": 2.1893736999991233,
+      "generation_time": 2.099939699997776,
+      "total_time": 4.2893133999968995
+    },
+    {
+      "turn_index": 6,
+      "character": "ema",
+      "text": "但是希罗很温柔地帮我换了呀。今晚也...不行吗？",
+      "model_load_time": 1.635469800006831,
+      "generation_time": 2.4984684999944875,
+      "total_time": 4.133938300001319
+    },
+    {
+      "turn_index": 7,
+      "character": "hiro",
+      "text": "...真拿你没办法。只此一次，下不为例。",
+      "model_load_time": 2.057908499991754,
+      "generation_time": 2.690759599994635,
+      "total_time": 4.748668099986389
+    },
+    {
+      "turn_index": 8,
+      "character": "ema",
+      "text": "嗯！最喜欢希罗了～",
+      "model_load_time": 1.538537799999176,
+      "generation_time": 1.6154529999985243,
+      "total_time": 3.1539907999977004
+    }
+  ]
+}

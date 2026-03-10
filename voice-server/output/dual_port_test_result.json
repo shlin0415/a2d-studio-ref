@@ -1,0 +1,69 @@
+{
+  "summary": {
+    "test_type": "dual_port_no_switching",
+    "ema_port": 31801,
+    "hiro_port": 31802,
+    "num_turns": 9,
+    "one_time_model_load_time": 3.2735269000040716,
+    "total_time": 24.06783360001282,
+    "avg_generation_time": 2.3104785222231943,
+    "avg_total_time": 2.6742037333347577,
+    "total_generation_time": 20.794306700008747
+  },
+  "turns": [
+    {
+      "turn_index": 0,
+      "character": "ema",
+      "text": "希罗，今天也辛苦啦～",
+      "generation_time": 1.238253600000462
+    },
+    {
+      "turn_index": 1,
+      "character": "hiro",
+      "text": "别、别突然抱上来啊...",
+      "generation_time": 2.0350055000017164
+    },
+    {
+      "turn_index": 2,
+      "character": "ema",
+      "text": "因为希罗的后背很温暖嘛。而且...今天一整天都没怎么抱到，我...",
+      "generation_time": 4.457880300004035
+    },
+    {
+      "turn_index": 3,
+      "character": "hiro",
+      "text": "说、说什么呢...该睡觉了，快去换睡衣。",
+      "generation_time": 2.569327400000475
+    },
+    {
+      "turn_index": 4,
+      "character": "ema",
+      "text": "嗯...那希罗帮我换？就像上次那样？",
+      "generation_time": 2.3165453000037814
+    },
+    {
+      "turn_index": 5,
+      "character": "hiro",
+      "text": "上次那是...！那是你假装手受伤了才...！",
+      "generation_time": 2.095483699995384
+    },
+    {
+      "turn_index": 6,
+      "character": "ema",
+      "text": "但是希罗很温柔地帮我换了呀。今晚也...不行吗？",
+      "generation_time": 2.5614646000030916
+    },
+    {
+      "turn_index": 7,
+      "character": "hiro",
+      "text": "...真拿你没办法。只此一次，下不为例。",
+      "generation_time": 2.220439400000032
+    },
+    {
+      "turn_index": 8,
+      "character": "ema",
+      "text": "嗯！最喜欢希罗了～",
+      "generation_time": 1.299906899999769
+    }
+  ]
+}

@@ -20,10 +20,19 @@ Requirements:
 import asyncio
 import json
 import time
+import os
 from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import Dict, List, Optional
 import sys
+
+# Force UTF-8 encoding for Windows
+if sys.platform == "win32":
+    os.environ["PYTHONIOENCODING"] = "utf-8"
+    import io
+
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
 try:
     import httpx
@@ -387,6 +396,15 @@ async def run_single_port_test(
             temperature=manager.ref_audio_settings.temperature,
         )
 
+        # Save audio file
+        audio_dir = output_path.parent / "single_port_test_audio"
+        audio_dir.mkdir(parents=True, exist_ok=True)
+        audio_filename = f"{char_key}_{i:02d}.wav"
+        audio_filepath = audio_dir / audio_filename
+        if audio_bytes:
+            audio_filepath.write_bytes(audio_bytes)
+            print(f"    Saved: {audio_filename}")
+
         turn_result.generation_time = gen_time
         turn_result.total_time = model_load_time + gen_time
 
@@ -477,10 +495,10 @@ async def main():
     await client.close()
 
     if not is_healthy:
-        print("❌ Cannot connect to GPT-SoVITS API at http://127.0.0.1:9880")
+        print("[ERROR] Cannot connect to GPT-SoVITS API at http://127.0.0.1:9880")
         print("   Please ensure GPT-SoVITS API is running")
         sys.exit(1)
-    print("✓ API is running")
+    print("[OK] API is running")
 
     # Run test
     output_path = output_dir / "single_port_test_result.json"
@@ -508,9 +526,9 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\n⚠️  Test interrupted by user")
+        print("\n[WARN] Test interrupted by user")
     except Exception as e:
-        print(f"❌ Fatal error: {e}")
+        print(f"[ERROR] Fatal error: {e}")
         import traceback
 
         traceback.print_exc()

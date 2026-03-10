@@ -230,3 +230,36 @@ my situation is, two characters, two different models, each one say one sentence
 please refer to demo_gpt_sovits_voice.py.
 please help me write a .py file to test the time cost when using only one port (9880).
 please help me write a .py file to test the time cost when using two ports (31801, 31802).
+
+How many dialogue turns to test? (e.g., 10 turns = 5 sentences per character, or 20 turns?)
+10 turns ok.
+Test sentences: Should I use the same dialogue from Phase 2 (real_dialogue.jsonl) or simple 固定 sentences like "你好"? 
+you can try to use real_dialogue.jsonl.
+Pre-requisite: Are there already GPT-SoVITS instances running on ports 31801 and 31802, or should the test script start them? 
+yes, i opened all of them.
+
+can you use git to accept these changes.
+
+can you help me run the tests you built.
+maybe you need to use similar: 
+Ran terminal command: cd "d:\aaa-new\setups\a2d-studio\ref\voice-server" ; conda activate a2d-studio ; $OutputEncoding = [Console]::InputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); $env:PYTHONUTF8 = 1; python demo_gpt_sovits_voice.py 2>&1 | Tee-Object -FilePath demo_gpt_sovits_voice.output
+
+i told you to attention the command:
+cd "d:\aaa-new\setups\a2d-studio\ref\voice-server" ; conda activate a2d-studio ; $OutputEncoding = [Console]::InputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); $env:PYTHONUTF8 = 1; python demo_gpt_sovits_voice.py 2>&1 | Tee-Object -FilePath demo_gpt_sovits_voice.output
+do you not understand the utf-8 setting in it?
+if you use similar commands to use utf-8, you may succeed.
+
+ok, thanks, maybe you are right. maybe just edit the .py to use utf-8.
+please plan first.
+
+it depends on will it break the program.
+
+ok, lets do it and test.
+
+thanks, do you save the generated voice files? i want to check them.
+
+thanks, please make the test py save the voice files and re run the tests.
+
+thank you very much.
+do you know how to accept the changes in opencode win desktop app?
+you help me git the changes before, but it seem keep the changes and let me check.

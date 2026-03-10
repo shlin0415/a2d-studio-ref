@@ -22,10 +22,19 @@ Requirements:
 import asyncio
 import json
 import time
+import os
 from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import Dict, List, Optional
 import sys
+
+# Force UTF-8 encoding for Windows
+if sys.platform == "win32":
+    os.environ["PYTHONIOENCODING"] = "utf-8"
+    import io
+
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
 try:
     import httpx
@@ -388,6 +397,15 @@ async def run_dual_port_test(
             temperature=manager.ref_audio_settings.temperature,
         )
 
+        # Save audio file
+        audio_dir = output_path.parent / "dual_port_test_audio"
+        audio_dir.mkdir(parents=True, exist_ok=True)
+        audio_filename = f"{char_key}_{i:02d}.wav"
+        audio_filepath = audio_dir / audio_filename
+        if audio_bytes:
+            audio_filepath.write_bytes(audio_bytes)
+            print(f"    Saved: {audio_filename}")
+
         turn_result.generation_time = gen_time
         total_generation_time += gen_time
 
@@ -473,7 +491,7 @@ async def main():
     hiro_port = 31802
 
     # Check API health for both ports
-    print("\n🔍 Checking GPT-SoVITS APIs...")
+    print("\n[CHECK] Checking GPT-SoVITS APIs...")
 
     ema_client = GPTSoVITSClient(api_url=f"http://127.0.0.1:{ema_port}")
     ema_healthy = await ema_client.health_check()
@@ -483,7 +501,7 @@ async def main():
     hiro_healthy = await hiro_client.close()
 
     if not ema_healthy:
-        print(f"❌ Cannot connect to GPT-SoVITS API at port {ema_port}")
+        print(f"[ERROR] Cannot connect to GPT-SoVITS API at port {ema_port}")
         sys.exit(1)
 
     # Re-create client for proper health check
@@ -492,11 +510,11 @@ async def main():
     await hiro_client.close()
 
     if not hiro_healthy:
-        print(f"❌ Cannot connect to GPT-SoVITS API at port {hiro_port}")
+        print(f"[ERROR] Cannot connect to GPT-SoVITS API at port {hiro_port}")
         sys.exit(1)
 
-    print(f"✓ Ema API running on port {ema_port}")
-    print(f"✓ Hiro API running on port {hiro_port}")
+    print(f"[OK] Ema API running on port {ema_port}")
+    print(f"[OK] Hiro API running on port {hiro_port}")
 
     # Run test
     output_path = output_dir / "dual_port_test_result.json"
@@ -528,9 +546,9 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\n⚠️  Test interrupted by user")
+        print("\n[WARN] Test interrupted by user")
     except Exception as e:
-        print(f"❌ Fatal error: {e}")
+        print(f"[ERROR] Fatal error: {e}")
         import traceback
 
         traceback.print_exc()
