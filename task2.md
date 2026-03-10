@@ -215,3 +215,18 @@ Metadata Format: Should the .txt file use simple KEY=VALUE format (like voice_se
     maybe better to use JSON.
 so please renew the plan, thanks.
 
+you are an ai llm app expert. can you help me? thanks. can you read full-chat-record.md, a2d-studio.txt, to review what we have done?
+and please also read AGENTS.md.
+
+
+1. Read the existing TASK2_ANALYSIS.md and TASK2_INVESTIGATION_SUMMARY.md to see what's already been investigated? yes, thanks.
+
+
+
+please read session-ses_3299-1.md.
+and there is a new task that a test is needed for gpt sovits to check if it suffer the model change time bottleneck.
+can you help me figure out if gpt sovits will suffer the model change time bottleneck when using multi chara voice gen? 
+my situation is, two characters, two different models, each one say one sentence at a time, then switch chara.
+please refer to demo_gpt_sovits_voice.py.
+please help me write a .py file to test the time cost when using only one port (9880).
+please help me write a .py file to test the time cost when using two ports (31801, 31802).

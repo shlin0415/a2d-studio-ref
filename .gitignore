@@ -193,3 +193,4 @@ Thumbs.db
 # Lock files from package managers (optional - uncomment if needed)
 # package-lock.json
 # poetry.lock
+.opencode
