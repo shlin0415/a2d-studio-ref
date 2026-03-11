@@ -93,16 +93,16 @@ logs/
 !dialogue-server/**/*.orig
 """
 
-# SOURCE_EXTENSIONS = {
-#     '.py', '.js', '.ts', '.c', '.cpp', '.h', '.hpp', '.java', 
-#     '.go', '.rs', '.sh', '.rb', '.php', '.cs', '.html', '.css', 
-#     '.sql', '.yaml', '.yml', '.json', '.md', '.txt'
-# }
-
 SOURCE_EXTENSIONS = {
     '.py', '.js', '.ts', '.c', '.cpp', '.h', '.hpp', '.java', 
-    '.go', '.rs', '.sh', '.rb', '.php', '.cs', '.html', '.css'
+    '.go', '.rs', '.sh', '.rb', '.php', '.cs', '.html', '.css', 
+    '.sql', '.yaml', '.yml', '.json', '.md', '.txt'
 }
+
+# SOURCE_EXTENSIONS = {
+#     '.py', '.js', '.ts', '.c', '.cpp', '.h', '.hpp', '.java', 
+#     '.go', '.rs', '.sh', '.rb', '.php', '.cs', '.html', '.css'
+# }
 
 
 def get_spec(root_path):

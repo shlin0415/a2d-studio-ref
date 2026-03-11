@@ -261,5 +261,10 @@ thanks, do you save the generated voice files? i want to check them.
 thanks, please make the test py save the voice files and re run the tests.
 
 thank you very much.
+
+
+
+
 do you know how to accept the changes in opencode win desktop app?
 you help me git the changes before, but it seem keep the changes and let me check.
+
