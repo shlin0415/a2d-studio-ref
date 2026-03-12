@@ -268,3 +268,5 @@ thank you very much.
 do you know how to accept the changes in opencode win desktop app?
 you help me git the changes before, but it seem keep the changes and let me check.
 
+/crystallize **FIRST IMPORTANT FROM THE USER** thanks. i have finish git. please help me crystallize the whole dialogue-server and voice-server test stage. you may find it large for git log, do not spend too much time on git log. the current session and full-chat-record.md and task*.md files may help you more.
+
