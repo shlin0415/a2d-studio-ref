@@ -142,14 +142,14 @@ share/python-wheels/
 MANIFEST
 
 # Virtual environments
-venv/
-ENV/
-env/
-.venv
+*venv/*
+*ENV/*
+*env/*
+*.venv*
 
 # IDE
-.vscode/
-.idea/
+*.vscode/*
+*.idea/*
 *.swp
 *.swo
 *~
@@ -169,7 +169,7 @@ htmlcov/
 .trash/
 
 # Node (if used)
-node_modules/
+*node_modules/*
 npm-debug.log
 yarn-error.log
 
@@ -193,4 +193,4 @@ Thumbs.db
 # Lock files from package managers (optional - uncomment if needed)
 # package-lock.json
 # poetry.lock
-.opencode
+*.opencode/*
