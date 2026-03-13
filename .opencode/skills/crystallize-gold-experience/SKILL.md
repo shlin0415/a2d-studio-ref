@@ -15,6 +15,16 @@ This skill is triggered when:
 - You realize the current `.opencode/` instructions were incomplete or led to a mistake.
 - **Mandatory:** If a single issue took more than 3 turns to debug.
 
+## Reference Examples (AReaL Gold Standard)
+**Format first!!! Especially for the special head, the special tail, and the name match!!!**
+**If the format is wrong, the whole file will be totally useless!!!**
+| Component | AReaL Crystallized Lesson | File Reference |
+| :--- | :--- | :--- |
+| **Agent** | "Experts must use `dp_shard_mod_ep` mesh, not `dp_shard`, to avoid OOM." | `agents/archon-expert-example-AReaL.md` |
+| **Command** | "Allocate `task(model='opus')` for engine code but `haiku` for docs." | `command/review-pr-example-AReaL.md` |
+| **Data** | "Map `parallel_dims.py` to **CRITICAL** risk level." | `data/review-pr-change-types-example-AReaL.md` |
+| **Skill** | "Verify StateDict on a **Meta Device** before consuming real GPU time." | `skills/add-archon-model-example-AReaL/SKILL.md` |
+
 ## Step-by-Step Guide
 
 ### Step 1: Perform Root Cause Reflection
@@ -43,15 +53,6 @@ Follow the **AReaL Formatting Standard**:
 2.  Inject the new intelligence into the "Common Issues," "Key Requirements," or "Debugging" sections.
 3.  Perform a "Crystallization Commit" to save the system state.
 
-## Reference Examples (AReaL Gold Standard)
-
-| Component | AReaL Crystallized Lesson | File Reference |
-| :--- | :--- | :--- |
-| **Agent** | "Experts must use `dp_shard_mod_ep` mesh, not `dp_shard`, to avoid OOM." | `agents/archon-expert-example-AReaL.md` |
-| **Command** | "Allocate `task(model='opus')` for engine code but `haiku` for docs." | `command/review-pr-example-AReaL.md` |
-| **Data** | "Map `parallel_dims.py` to **CRITICAL** risk level." | `data/review-pr-change-types-example-AReaL.md` |
-| **Skill** | "Verify StateDict on a **Meta Device** before consuming real GPU time." | `skills/add-archon-model-example-AReaL/SKILL.md` |
-
 ## Key Requirements
 
 1.  **Never delete existing knowledge:** Only append or refine unless a rule is proven wrong.
@@ -60,7 +61,7 @@ Follow the **AReaL Formatting Standard**:
 4.  **Reference the Gold Standard:** When adding a skill, link to the best implementation in the current repo as the "Template."
 
 ## Common Mistakes
-
+- ❌ Format error (the file head, the file tail, the name match).
 - ❌ Writing long paragraphs (AI context is more efficient with lists).
 - ❌ Keeping lessons "in-head" across session restarts (leads to regression).
 - ❌ Documenting the "What" (Code) instead of the "Why" (Architecture/Trap).

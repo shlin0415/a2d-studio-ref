@@ -6,6 +6,22 @@ description: Harvest breakthroughs and "Hidden Traps" from the current session t
 
 This command performs a retrospective on the current development session. It identifies architectural breakthroughs and "Hidden Traps" and encodes them into the project's permanent intelligence directory (`.opencode/`).
 
+## Usage
+
+```
+/crystallize
+```
+
+## Reference Examples (AReaL Gold Standard)
+**Format first!!! Especially for the special head, the special tail, and the name match!!!**
+**If the format is wrong, the whole file will be totally useless!!!**
+| Component | AReaL Crystallized Lesson | File Reference |
+| :--- | :--- | :--- |
+| **Agent** | "Experts must use `dp_shard_mod_ep` mesh, not `dp_shard`, to avoid OOM." | `agents/archon-expert-example-AReaL.md` |
+| **Command** | "Allocate `task(model='opus')` for engine code but `haiku` for docs." | `command/review-pr-example-AReaL.md` |
+| **Data** | "Map `parallel_dims.py` to **CRITICAL** risk level." | `data/review-pr-change-types-example-AReaL.md` |
+| **Skill** | "Verify StateDict on a **Meta Device** before consuming real GPU time." | `skills/add-archon-model-example-AReaL/SKILL.md` |
+
 ## Session Context
 
 Current branch: 
@@ -19,12 +35,6 @@ Files modified in this session:
 
 Change volume:
 !`git diff origin/main...HEAD --stat`
-
-## Usage
-
-```
-/crystallize
-```
 
 ## Workflow
 
@@ -67,6 +77,7 @@ task(
 ```
 
 ### Step 4: Standards & Finalization
+
 Regardless of the path, all updates must adhere to the **AReaL Gold Standard**:
 - **Tone:** Imperative mood ("Always," "Never," "Ensure").
 - **Evidence:** Include the diagnostic CLI commands (e.g., `py-spy`, `logs`, `nvidia-smi`) used to verify the fix if exist.
@@ -77,6 +88,9 @@ Regardless of the path, all updates must adhere to the **AReaL Gold Standard**:
 1. Summarize the captured intelligence for the user.
 2. **Commit:** Execute a "Crystallization Commit" describing the intelligence captured (e.g., `chore(agents): crystallize async deadlock resolution logic`).
 3. **Stop:** Ask the user to stop or continue when take too long time to prevent logic looping.
+
+## Common Mistakes
+- ❌ Format error (the file head, the file tail, the name match).
 
 ______________________________________________________________________
 

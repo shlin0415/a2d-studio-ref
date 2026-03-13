@@ -21,6 +21,16 @@ Use this agent when:
 - **Critical Trigger:** Any issue that took more than 3 turns to debug MUST be crystallized.
 - The user asks for a "summary of lessons" or to "update the system intelligence."
 
+## Reference Examples (AReaL Gold Standard)
+**Format first!!! Especially for the special head, the special tail, and the name match!!!**
+**If the format is wrong, the whole file will be totally useless!!!**
+| Component | AReaL Crystallized Lesson | File Reference |
+| :--- | :--- | :--- |
+| **Agent** | "Experts must use `dp_shard_mod_ep` mesh, not `dp_shard`, to avoid OOM." | `agents/archon-expert-example-AReaL.md` |
+| **Command** | "Allocate `task(model='opus')` for engine code but `haiku` for docs." | `command/review-pr-example-AReaL.md` |
+| **Data** | "Map `parallel_dims.py` to **CRITICAL** risk level." | `data/review-pr-change-types-example-AReaL.md` |
+| **Skill** | "Verify StateDict on a **Meta Device** before consuming real GPU time." | `skills/add-archon-model-example-AReaL/SKILL.md` |
+
 ## Core Concepts
 
 Crystallization is the process of moving intelligence from the "Active Conversation" into "Permanent Repository Memory."
@@ -75,3 +85,7 @@ If the model repeats a mistake that was already crystallized:
 1. Load the relevant `.opencode/` file.
 2. Analyze why the instruction was ignored (too long? too vague?).
 3. Refactor the instruction into a more aggressive "Never/Always" rule.
+
+## Common Mistakes
+- ❌ Format error (the file head, the file tail, the name match).
+
