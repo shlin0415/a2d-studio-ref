@@ -62,6 +62,7 @@ dialogue-server/*.output
 .yarn-integrity
 
 # Large Model Files
+*.png
 *.pth
 *.ckpt
 *.safetensors
