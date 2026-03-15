@@ -1,8 +1,8 @@
 
-# Task 3
-# The next stage of a2d-studio task1 and task2
+## Roadmap after task1 and task2
+## The next stage of a2d-studio task1 and task2
 
-## improvement roadmap 1
+### improvement roadmap 1
 Four types of topics:
 (1). simple topic such as chatting-before-sleep.md.
 (2). learning topic such as learn-cuda.md. 
@@ -51,11 +51,19 @@ WHAT NEED TO IMPROVE:
 (5). SCREEN.
     the ./screen-server/ need to launch such as a webpage or a frontend or a ui page to let users to control.
         A. basic page.
-            contain character fig region, character text region, main text/fig/background region, function region (auto play icon, setting icon), Dynamic Notification Pop-up info region, etc.
-        B.  setting page.
+            contain character fig region, character text region, main text/fig/background region, function region (auto play icon, setting icon, timeline, one-step-forward icon, one-step-back icon), Dynamic Notification Pop-up info region, etc. 
+            at this place, each step means that one character say one sentence.
+            we should allow users to generate different versions of voices for one sentence (gpt-sovits).
+            we need to allow users to set N, and try N random refs, and record which refs and voice-gen-settings are tried.
+        B. setting page.
             contain all settings and configs that can be edit by user.
+        C. cache folder.
+            prepare one big folder for each topic, which contains all files needed to play that topic.
+            this cache folder can be used on different computers.
+            users can restart from the place when something have been done last time.
+            first put the cache folder to ./processing-topic-folders/, and if all things finished, put to ./finished-topic-folders/, and allow users to move back to ./processing-topic-folders/ and edit again.
 
 REFERENCE:
-    in ./third-party, lingchat, webgal, sillytavern, gpt-sovits.
+    in ./third-party, lingchat, webgal, sillytavern, gpt-sovits. we should learn from these good projects.
 
 
