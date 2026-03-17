@@ -76,3 +76,24 @@ Before we start Phase 1, a few concerns to clarify:
 **Question**: Should I also look at how WebGAL handles scenarios (for future Screen/UI reference), or dive straight into Phase 1 implementation? 
     emmm, i think you can look at how WebGAL handles scenarios (for future Screen/UI reference), maybe we can find some ways to split stages?
 
+
+
+Screen presets: Should I include these default screen configs? yes, ok.
+PC: 1920x1080, font 20px
+Phone: 1080x2400, font 16px
+Tablet: 2048x1536, font 18px
+oh my god, i forget that on the screen there are other regions.
+oh sorry, i see you remain 30% for other things.
+can you 'draw' on .txt files that when remain regions (character fig region, character text region,function region (auto play icon, setting icon, timeline, one-step-forward icon, one-step-back icon)), 
+how much space will remain? we can do a simulation.
+
+Output format for stages: Should each stage be a separate JSONL file? 
+e.g., stage_001.jsonl, stage_002.jsonl?
+Or one file with stage field? i guess this is better for user to check at once.
+
+Preview generation: Should I output a simple .txt preview showing how text wraps? (For you to verify during development) yes, thanks, it is good.
+
+Ready to start Phase 1?: I'll begin with creating the topic template file and modifying dialogue-server to support it. 
+i think we should first improve the roadmap.md and make some tries. you can make a small demo folder and perform tries. it is the time NEVER edit existing files now for us.
+
+
