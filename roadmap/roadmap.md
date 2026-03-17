@@ -330,7 +330,7 @@ def detect_changes(original_path, edited_path):
 screen-server/
 ├── index.html              # Basic player
 ├── player.js               # Audio/text synchronization
-├── style.css               # Layout (16:9, 20:9 responsive)
+├── style.css               # Layout (16:9 for pc, 9:20 for phone, responsive, etc)
 └── config.json             # Screen settings
 ```
 
@@ -403,9 +403,9 @@ def split_into_pages(dialogue_jsonl, screen_config):
 
 2. **Test voice-server demo**:
    ```bash
-   # First start GPT-SoVITS API
-   cd third_party/GPT-SoVITS-v2pro-20250604
-   python api_v2.py -a 127.0.0.1 -p 9880
+   # First tell user to start GPT-SoVITS API
+   # cd third_party/GPT-SoVITS-v2pro-20250604
+   # python api_v2.py -a 127.0.0.1 -p 9880
    
    # Then run voice demo
    cd voice-server

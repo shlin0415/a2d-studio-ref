@@ -23,7 +23,7 @@ P.S. tried topics are in ./dialogue-topics/. not-tried topics are in ./origin-me
 WHAT NEED TO IMPROVE:
 (1). SPLIT AND RESIZE. 
     the topics may be long. 
-    because a2d-studio finally need to play on a screen (./screen-server/ ?), there needs split of '## Detail', which need to consider the screen size (pc, 1920 * 1080; phone, 2400 * 1080; other sizes), ratio (pc, 16 * 9; phone, 20 * 9; other ratios), font size (such as 16, 20, 24), letter spacing (0.25 letter, 0.5 letter, etc), line spacing (0.5, 1, 1.5, 2, etc). 
+    because a2d-studio finally need to play on a screen (./screen-server/ ?), there needs split of '## Detail', which need to consider the screen size (pc, 1920 * 1080; phone, 1080 * 2400/2400 * 1080; other sizes), ratio (pc, 16 * 9; phone, 9 * 20/20 * 9; other ratios), font size (such as 16, 20, 24), letter spacing (0.25 letter, 0.5 letter, etc), line spacing (0.5, 1, 1.5, 2, etc). 
     LLM may need to split things to N stages, each stage for one page on the screen.
     when return, stage by stage, and also return the start line number and the end line number.
     and if user just want to resize the screen or the font, and do not change other things.
