@@ -43,3 +43,6 @@ example:
 ## 7. please do not edit files in the third_party folder and things recorded in .gitignore in normal situation
 If needed, ask the user first.
 
+## 8. NEVER use rm or delete or similar things before asking the user
+If needed, use git and move useless things to ./trash/ (if not exist should create first).
+
