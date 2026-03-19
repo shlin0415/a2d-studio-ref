@@ -84,7 +84,7 @@ Phone: 1080x2400, font 16px
 Tablet: 2048x1536, font 18px
 oh my god, i forget that on the screen there are other regions.
 oh sorry, i see you remain 30% for other things.
-can you 'draw' on .txt files that when remain regions (character fig region, character text region,function region (auto play icon, setting icon, timeline, one-step-forward icon, one-step-back icon)), 
+can you 'draw' on .txt files that when remain regions (character fig region, character chat text region,function region (auto play icon, setting icon, timeline, one-step-forward icon, one-step-back icon)), 
 how much space will remain? we can do a simulation.
 
 Output format for stages: Should each stage be a separate JSONL file? 
