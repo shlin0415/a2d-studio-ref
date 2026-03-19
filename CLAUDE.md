@@ -35,10 +35,15 @@ python .\quick_start.py 2>&1 | Select-Object -Last 50
 
 ## 6. always remember to check the running env and run commands in the proper env
 example:
-```
+```win
 (base) PS D:\aaa-new\setups\a2d-studio\ref> conda activate a2d-studio
 (a2d-studio) PS D:\aaa-new\setups\a2d-studio\ref> 
 ```
+```linux
+conda info --envs 
+```
+you may alread in the correct conda env.
+If not, you need to find the .bat or .sh or similar things in anaconda or miniconda folder.
 
 ## 7. please do not edit files in the third_party folder and things recorded in .gitignore in normal situation
 If needed, ask the user first.
