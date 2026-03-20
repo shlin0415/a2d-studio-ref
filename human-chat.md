@@ -110,13 +110,29 @@ frontend-design-screen-page-1.png and frontend-design-screen-page-2.png,
 which Allow Region Overlap for user adjustment.
 can you help us design the pre frontend screen webpage? thank you very much.
 
-thank you, i upload,
+thank you, i provide,
 https://github.com/shlin0415/TmpForIssues/blob/main/Ema.png,
 https://github.com/shlin0415/TmpForIssues/blob/main/Hiro.png,
 so you can use links.
-and there are several things need to improve:
-the default size setting of words varies from very small to very large, please let them be more similar, for example, 16-22 px;
+and there are several things need to improve for the original screen html prototype:
+the default size setting of words varies from very small to very large, please let them be more similar;
 when i open the html in google, the 'Emma / 艾玛' and 'Hiro / 希罗' will float to the top;
 please make some regions more arranged, ensure these regions are arranged neatly and orderly—rather than drifting around or fluctuating in size—at least in the initial default state.
-i upload what i see in google, please improve it.
+```
+
+```
+for google ai studio
+
+the character dialogue region almost cover the character fig region.
+please improve this.
+and can you move the character dialogue region to left and let the two character figs together?
+i upload a simple example fig.
+
+thank you.
+can you make the regions be able to move and scale by the user?
+and we seem need to resize the default fig size.
+and make the default dialogue font size be smaller (maybe 0.5x?).
+the situation is, the character figs still be covered by other region.
+you can set the character fig region and character figs will not be covered by other elements.
+
 ```
