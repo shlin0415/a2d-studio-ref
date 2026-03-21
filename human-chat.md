@@ -166,3 +166,13 @@ actually i used google stitch and google ai studio to design a simulation fronte
 but when i get the codes of .\frontend-design\a2d-studio\, i cant open and view it like in google ai studio.
 so seem we need to install extra things?
 
+we can try these two:
+1. **Just preview the UI** — we can stub out the API key requirement so the page loads without errors
+2. **Build a static version** — use `npm run build` to create static files you can open directly (some features may break)
+please discuss with us if needed.
+please use git add commit every edit you do.
+please make sure your actions can be totally rollback.
+please record to time-action-record.md, 
+with what you do, why, brief results, next, and the timeline (the time you start and end).
+please ALWAYS check the system is safe, and your action will not break the system.
+please check the curr env a2d-studio, we need to only install in this.
