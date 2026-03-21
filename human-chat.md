@@ -135,4 +135,20 @@ and make the default dialogue font size be smaller (maybe 0.5x?).
 the situation is, the character figs still be covered by other region.
 you can set the character fig region and character figs will not be covered by other elements.
 
+thank you.
+can you make the entire frontend page more like the png what i upload?
+white background and black text, simpler and more human feelings.
+i put character fig region, character dialogue region, and main text/fig region to a union,
+and make it as large as possible.
+i make small function icons and situations region be the top and as small as possible.
+i make a floating region which can contain other things and can be hidden if needed.
+as we mentioned before, make the regions be able to move and scale by the user.
+so we also need a 'apply & save preference' icon to let the user apply & save preference.
+
+thank you, you are so good.
+i adjust some and i upload the new png.
+i split the character fig region to 1 and 2, and also split the character dialogue region to 1 and 2.
+and maybe it is better to allow user to add a new region freely, with the region templates.
+can you help me improve the frontend? thank you.
+
 ```
