@@ -77,6 +77,13 @@ Before we start Phase 1, a few concerns to clarify:
     emmm, i think you can look at how WebGAL handles scenarios (for future Screen/UI reference), maybe we can find some ways to split stages?
 
 
+thanks. 
+but we will end this session and start a new session.
+can you help us export this session to ./tried-tasks-sessions-files/session-try-roadmap.md?
+NEVER edit other existing files.
+please discuss with us if needed.
+please use git add commit every edit you do.
+
 
 Screen presets: Should I include these default screen configs? yes, ok.
 PC: 1920x1080, font 20px
@@ -152,3 +159,10 @@ and maybe it is better to allow user to add a new region freely, with the region
 can you help me improve the frontend? thank you.
 
 ```
+
+can you help me make a plan to make .\frontend-design\a2d-studio\ be able to open like a website?
+you can read human-chat.md to see what happened recently.
+actually i used google stitch and google ai studio to design a simulation frontend page.
+but when i get the codes of .\frontend-design\a2d-studio\, i cant open and view it like in google ai studio.
+so seem we need to install extra things?
+
