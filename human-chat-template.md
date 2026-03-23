@@ -18,6 +18,8 @@ please read AGENTS.md for safety.
 please first lets discuss and you can prepare to write think.md and roadmap.md.
 ALWAYS consider if need to use git add commit, if needed, do it.
 
+we need to ONLY use the conda env xxx.
+
 i am not sure if you can read long big pdf, so i prepare .md for you, sorry they may be a little messy.
 
 please discuss with us if needed.
