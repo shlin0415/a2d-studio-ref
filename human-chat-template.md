@@ -23,6 +23,7 @@ we need to ONLY use the conda env xxx.
 i am not sure if you can read long big pdf, so i prepare .md for you, sorry they may be a little messy.
 
 please discuss with us if needed.
+please edit .gitignore to ignore large or messy unnecessary files.
 please use git add commit every edit you do.
 please make sure your actions can be totally rollback.
 please record to time-action-record.md, 

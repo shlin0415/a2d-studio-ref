@@ -176,3 +176,11 @@ please record to time-action-record.md,
 with what you do, why, brief results, next, and the timeline (the time you start and end).
 please ALWAYS check the system is safe, and your action will not break the system.
 please check the curr env a2d-studio, we need to only install in this.
+
+you can read human-chat.md to see what happened recently.
+have we finished frontend-design\a2d-studio time-action-record.md?
+
+you may need to really check the folder and the related files to see if finished.
+
+
+
