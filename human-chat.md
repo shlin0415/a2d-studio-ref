@@ -182,5 +182,34 @@ have we finished frontend-design\a2d-studio time-action-record.md?
 
 you may need to really check the folder and the related files to see if finished.
 
+so how could i open the website?
 
+ok, thanks, it works.
+you see our discussion before right?
+we have been conflicted, struggling about how to split dialogue {topic}.md to stages recently.
+but now we think this should do manually, let users do it.
+if not do, default is no stages.
+although there may be font problems, let the screen auto adjust the font size, or set an inside Scrollbar or Pagination.
+ok, thats the frontend issues which may affect the topic template design.
 
+Implementation Summary Table
+| Priority | Task | Dependencies | Est. Time | Existing Solution |
+|----------|------|--------------|-----------|-------------------|
+| 1 | Topic Template | None | 1 day | LingChat prompts |
+| 2 | Topic Types | Template | 2 days | None |
+| 3 | Streaming Output | Types | 3 days | LingChat WS |
+| 4 | Voice Integration | Streaming | 1 day | None |
+| 5 | Edit & Regenerate | Voice Integration | 3 days | None |
+| 6 | Screen/UI | All above | 5 days | WebGAL |
+| 7 | Split & Resize | Screen/UI | 3 days | None |
+
+now we can return.
+after the discussion and decision, we may need to improve the roadmap.md.
+can you help us?
+we think the topic template should hint the user to use stage split if needed.
+and we need to use more specific symbol to process the '## Detail'.
+maybe something like '|====Start of Detail====|', '|====End of Detail====|'.
+and for stage inner detail, '|<===Start of Stage 1===>|', '|<===End of Stage 1===>|'.
+and similar things for others to make the program will not mix and locate accurately.
+can you help us design the special symbols for each part of chat template?
+we can discuss first.
