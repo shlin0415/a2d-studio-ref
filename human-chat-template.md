@@ -44,7 +44,7 @@ or there is a gap?
 
 thank you very much.
 we will leave for several hours.
-so you can try based on the roadmap.md and task*.md.
+so you can try based on the roadmap.md and task*.md (you can split roadmap.md to task*.md).
 please use git add commit every edit you do, and record to time-action-record.md, 
 with what you do, why, brief results, next, and the timeline (the time you start and end).
 after every task*.md finish, you can create new task*.md and continue.
