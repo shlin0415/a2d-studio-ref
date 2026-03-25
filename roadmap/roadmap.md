@@ -2,6 +2,23 @@
 
 ## Part 1: What Have Been Done (Task1 + Task2)
 
+### Template Update (2026-03-25) 🆕
+**New Topic Template Format**: We have finalized the special symbol design for topic templates.
+
+| Symbol Type | Start | End |
+|-------------|-------|-----|
+| Metadata | `|---Field: value---|` | - |
+| Section | `|====Start of Name====|` | `|====End of Name====|` |
+| Stage | `|<===Start of Stage_N===>|` | `|<===End of Stage_N===>|` |
+
+**Files Created**:
+- [`dialogue-topics/template.md`](dialogue-topics/template.md) - New standard template with examples
+- [`dialogue-topics/format-chatting-before-sleep.md`](dialogue-topics/format-chatting-before-sleep.md) - Converted from old format
+- [`dialogue-topics/format-fanfiction.md`](dialogue-topics/format-fanfiction.md) - Converted with 4 stages
+- [`dialogue-topics/format-learn-cuda.md`](dialogue-topics/format-learn-cuda.md) - Converted with ReadForbidden
+
+---
+
 ### Task 1: Dialogue Generation Server ✅
 **Location**: `dialogue-server/`
 
@@ -56,44 +73,57 @@ From `roadmap-after-task1-task2.md`:
 
 **Current state**: Topics in `dialogue-topics/` have no standard structure.
 
+**New Template Format** (from `dialogue-topics/template.md`):
+
+The new template uses special markers for parsing:
+
+| Section | Start Symbol | End Symbol |
+|---------|--------------|-------------|
+| Metadata | `|---Field: value---|` | N/A |
+| Sections | `|====Start of Name====|` | `|====End of Name====|` |
+| Stages | `|<===Start of Stage_N===>|` | `|<===End of Stage_N===>|` |
+
+**Example**:
+```markdown
+|---Style: a little nsfw---|
+|---Location: Bedroom---|
+|---Mood: Intimate, comfortable---|
+
+# Topic Name
+
+## Topic Description
+|====Start of Topic Description====|
+Description content
+|====End of Topic Description====|
+
+## Detail
+|====Start of Detail====|
+Main content here
+|<===Start of Stage_1===>|
+First part
+|<===End of Stage_1===>|
+|====End of Detail====|
+
+|---Similarity: 80---|
+|---ReadForbidden: ```[\s\S]*?``` ---|
+```
+
 **Plan**:
 ```
 dialogue-topics/
-├── template.md              # NEW: Topic template with annotations
-├── chatting-before-sleep.md # Already working
-├── learn-cuda.md           # NEEDS: Template compliance
-└── fanfiction.md           # NEEDS: Template compliance
-```
-
-**Template structure** (`dialogue-topics/template.md`):
-```markdown
-# {Topic Name}
-
-## Required Fields
-Style: {sfw|a little nsfw|nsfw}
-Location: {where the scene takes place}
-Mood: {atmosphere}
-
-## Optional Fields
-similarity: {0-100}       # How close to follow ## Detail (0=free, 100=exact)
-read_forbidden: {regex}   # What NOT to read directly (e.g., code blocks)
-
-## Topic Description
-{2-3 sentence description}
-
-## Detail
-{Content that characters discuss/follow}
-- Use code blocks for things to discuss
-- Use > quotes for things to read aloud
+├── template.md              # NEW: Topic template with markers
+├── format-chatting-before-sleep.md  # Converted from chatting-before-sleep.md
+├── format-fanfiction.md     # Converted from fanfiction.md
+├── format-learn-cuda.md    # Converted from learn-cuda.md
+├── chatting-before-sleep.md # Old format (keep for compatibility)
+├── learn-cuda.md           # Old format (keep for compatibility)
+└── fanfiction.md           # Old format (keep for compatibility)
 ```
 
 **Testing**:
 - Run `python dialogue-server/quick_start.py` with new template
 - Verify LLM respects `similarity` and `read_forbidden` parameters
-
-**Existing solutions in third_party**:
-- LingChat: Has character prompt templates (`character_settings.py`)
-- WebGAL: Has scenario file format (`.wgal`)
+- Verify stage markers work correctly for long content
 
 ---
 
@@ -105,9 +135,17 @@ read_forbidden: {regex}   # What NOT to read directly (e.g., code blocks)
 | Type | Behavior | Current State |
 |------|----------|----------------|
 | Simple | Free discussion | Working |
-| Learning | Don't read ## Detail directly, discuss key points | ⚠️ Partial |
-| Fanfiction | Follow ## Detail with similarity % | ❌ Not supported |
+| Learning | Don't read ## Detail directly, discuss key points | ⚠️ Partial (new format supports `ReadForbidden`) |
+| Fanfiction | Follow ## Detail with similarity % | ✅ New format supports `Similarity` |
 | Letter | Read letter content, introduce correspondent | ❌ Not supported |
+
+**Topic Parsing**: The new template format requires updates to:
+```
+dialogue-server/dialogue_gen/
+├── topic_loader.py      # MODIFY: Parse new symbol markers
+├── prompt_builder.py    # MODIFY: Add type-specific prompts
+└── parser.py            # MODIFY: Handle stage markers
+```
 
 **Plan**:
 ```

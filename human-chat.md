@@ -186,6 +186,10 @@ so how could i open the website?
 
 ok, thanks, it works.
 you see our discussion before right?
+
+
+
+you can read human-chat.md to see what happened recently.
 we have been conflicted, struggling about how to split dialogue {topic}.md to stages recently.
 but now we think this should do manually, let users do it.
 if not do, default is no stages.
@@ -213,3 +217,23 @@ and for stage inner detail, '|<===Start of Stage 1===>|', '|<===End of Stage 1==
 and similar things for others to make the program will not mix and locate accurately.
 can you help us design the special symbols for each part of chat template?
 we can discuss first.
+
+
+Symbol style: Do you prefer ==== vs <=== for sections vs stages? Or would you like a different pattern altogether? prefer ==== vs <=== for sections vs stages.
+
+Backward compatibility: Should the template support BOTH the new marked version AND the current simple markdown format (so existing topics don't break)? no, we need a new format. no need to support BOTH the new marked version AND the current simple markdown format.
+
+Stage naming: Should stages use Stage 1, Stage_1, or something like S1? maybe Stage_1 better.
+
+Scope: Should I mark ALL sections (Detail, Setting, Key Points, etc.) or only the ## Detail section? mark ALL sections (Detail, Setting, Key Points, etc.).
+
+can you create the topic-template.md to be a tmp standard?
+can you create format-{topic}.md for the three old {topic}.md?
+
+so that we can check.
+
+
+
+
+
+
