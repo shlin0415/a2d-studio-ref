@@ -233,7 +233,28 @@ can you create format-{topic}.md for the three old {topic}.md?
 so that we can check.
 
 
-
-
-
+thank you. we see.
+1. Template Standard
+dialogue-topics/template.md - New standard template with comprehensive examples and symbol reference
+2. Converted Topics
+dialogue-topics/format-chatting-before-sleep.md - Simple topic (no stages needed)
+dialogue-topics/format-fanfiction.md - Fanfiction with 4 stages, 80% similarity
+dialogue-topics/format-learn-cuda.md - Learning topic with ReadForbidden marker
+there are several things we can improve.
+1. system template elements with both english and chinese.
+2. drop duplicates.
+   |---Style: a little nsfw---|
+   |---Location: School - Classroom, Hallway, and Gym---|
+   |---Mood: Sweet, romantic, slightly tense, heartwarming---|
+   |---Similarity: 80---|
+   |====Start of Setting====|
+   - Time: Lunch break, sunny day
+   - Location: Classroom, school hallway, and gym area
+   - Context: A girl gives Emma a love letter and asks her to meet at the gym
+   - Other: School setting with classmates (Snowly, Hannah)
+   |====End of Setting====|
+   there are duplicates we should remove. and the template and the example 3 .md should be as simple as possible.
+3. move '## Detail' things to another outside file. we think this way, the LLM will not be confused.
+   in default, '## Detail' things can not be edited, which is the user vital input.
+   in default, name set is SETTING-{topic}.md and DETAIL-{topic}.txt. 
 
