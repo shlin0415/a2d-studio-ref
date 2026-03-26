@@ -235,11 +235,6 @@ so that we can check.
 
 thank you. we see.
 1. Template Standard
-dialogue-topics/template.md - New standard template with comprehensive examples and symbol reference
-2. Converted Topics
-dialogue-topics/format-chatting-before-sleep.md - Simple topic (no stages needed)
-dialogue-topics/format-fanfiction.md - Fanfiction with 4 stages, 80% similarity
-dialogue-topics/format-learn-cuda.md - Learning topic with ReadForbidden marker
 there are several things we can improve.
 1. system template elements with both english and chinese.
 2. drop duplicates.
@@ -256,5 +251,5 @@ there are several things we can improve.
    there are duplicates we should remove. and the template and the example 3 .md should be as simple as possible.
 3. move '## Detail' things to another outside file. we think this way, the LLM will not be confused.
    in default, '## Detail' things can not be edited, which is the user vital input.
-   in default, name set is SETTING-{topic}.md and DETAIL-{topic}.txt. 
+   in default, name set is SETTING-{topic}.md and DETAIL-{topic}.md. 
 
