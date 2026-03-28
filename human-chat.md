@@ -396,3 +396,38 @@ please use git add commit every small edit you do, and record to time-action-rec
 with what you do, why, brief results, next, and the timeline (the time you start and end).
 please ALWAYS check the system is safe, and your action will not break the system.
 PREFER you rename old files to 'old-*', and create new files instead of editing old files.
+
+
+
+you are the LingChat, SillyTavern, WebUI, LLM character dialogue gen, LLM agent development, and linux/windows expert.
+you can see roadmap/, human-chat.md and time-action-record.md, to see what happened recently.
+with your help, we have done many things.
+we are now going to test the three types of topic.md dialogue-topics/, 
+to see if they can be used to generate dialogue, 
+with llm api key, and with the new dialogue server,
+right?
+can you make a detailed plan, and give advices?
+thanks.
+
+
+oh, sorry, i forget one thing that there are old dialogue output files which were captured by old test.
+but the old output is not good which text language is hardcoded.
+and the old output is not matched to new server.
+we may need to discuss what the good dialogue output should be.
+first it cant be hardcoded for text language and voice language.
+and it should comfort our topic requests.
+
+
+
+ok, lets try.
+you can first create a new folder roadmap/dialogue-improve/, write down your plan to roadmap/dialogue-improve/roadmap.md.
+then you can try based on the roadmap.md and task*.md (you can split roadmap.md to task*.md).
+after every task*.md finish, you can create new task*.md and continue.
+please use git add commit every small edit you do.
+please make sure your actions can be totally rollback.
+please record to roadmap/dialogue-improve/time-action-record.md, 
+with what you do, why, brief results, next, and the timeline (the time you start and end).
+please ALWAYS check the system is safe, and your action will not break the system.
+
+
+
