@@ -121,3 +121,33 @@
 **Test results**: 4/4 passed (chatting-before-sleep, learn-cuda, fanfiction, template)
 
 **Next**: Task 3 — Fix prompt_builder.py to make language actually work.
+
+---
+
+## Task 3: Phase 3 - prompt_builder.py
+
+**What**:
+- Renamed old `prompt_builder.py` → `old-prompt_builder.py`
+- Created new `prompt_builder.py` with dynamic language support (9 combinations)
+- Format changes based on dialogue_language/voice_language (same=no translation, different=with translation)
+- Hardcoded examples replaced with per-language examples
+- Backward compat: old `language=` param still works
+- Created `test_prompt_builder_languages.py` with 5 tests (all passing)
+
+**Files changed**:
+- `dialogue-server/dialogue_gen/old-prompt_builder.py` — old version preserved
+- `dialogue-server/dialogue_gen/prompt_builder.py` — new version with dynamic format
+- `dialogue-server/tests/test_prompt_builder_languages.py` — 5 passing tests
+
+**Test results**: 5/5 passed (zh/zh, zh/ja, ja/ja, en/zh, backward compat)
+
+---
+
+### Phase 1-3 Summary (Verified)
+
+All 3 phases verified with tests:
+- Phase 1: SETTING templates updated with new params and language fields
+- Phase 2: topic_loader.py parses new format correctly (4/4 tests)
+- Phase 3: prompt_builder.py generates correct format for all 9 language combos (5/5 tests)
+
+**Next**: Phase 4 (output pipeline) and Phase 5 (voice-server) — requires GPT-SoVITS running on 31801/31802.
