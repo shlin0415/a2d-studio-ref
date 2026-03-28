@@ -234,8 +234,7 @@ so that we can check.
 
 
 thank you. we see.
-1. Template Standard
-there are several things we can improve.
+there are several things we improved.
 1. system template elements with both english and chinese.
 2. drop duplicates.
    |---Style: a little nsfw---|
@@ -253,3 +252,147 @@ there are several things we can improve.
    in default, '## Detail' things can not be edited, which is the user vital input.
    in default, name set is SETTING-{topic}.md and DETAIL-{topic}.md. 
 
+we make the dialogue-topics\DETAIL-topic-template.md and dialogue-topics\SETTING-topic-template.md.
+can you give us advice and check if the template is easy to use by humans, programs and LLM.
+
+
+
+you can look human-chat.md, roadmap/, third_party/ to see what happened recently.
+do you have any advice or good plan?
+
+
+
+yes, thank you.
+can you also make a plan to try to convert .md in origin-messy-topics/ to new format in dialogue-topics/ ?
+
+
+Questions Before Starting
+fanfiction.md stage split: Do you want me to add stage markers to the fanfiction DETAIL, or leave it as one big block?
+   add stage markers to the fanfiction DETAIL.
+Old format files: Should I keep the original origin-messy-topics/ files untouched (they're already in a separate folder, so I assume yes)?
+   yes.
+Naming: The templates use SETTING-topic-template.md and DETAIL-topic-template.md. Should the converted files follow SETTING-chatting-before-sleep.md / DETAIL-chatting-before-sleep.md exactly?
+   yes.
+
+
+
+now you can combine this convert plan to your whole plan.
+
+
+
+yes, thank you.
+you can first write down your plan to roadmap/mimo-topic-plan.md.
+then you can try based on the mimo-topic-plan.md and mimo-topic-plan-task*.md (you can split mimo-topic-plan.md to mimo-topic-plan-task*.md).
+after every mimo-topic-plan-task*.md finish, you can create new mimo-topic-plan-task*.md and continue.
+please use git add commit every small edit you do, and record to time-action-record.md, 
+with what you do, why, brief results, next, and the timeline (the time you start and end).
+please ALWAYS check the system is safe, and your action will not break the system.
+
+
+
+i find that there is a mix of 
+DETAIL_Similarity=80 // 对于用于参考的DETAIL文件内容, 默认是80%相似度
+DETAIL_ReadForbidden=0 // 对于用于参考的DETAIL文件中禁止读取的力度, 默认0, 设置为100时完全禁止直接抄和直接读
+for learning topic, the user may do not want to let the character directly read the codes in DETAIL file, but want them to discuss and learn about them. (DETAIL_Similarity=?, DETAIL_ReadForbidden=80-100)
+for fanfiction topic, the user may want the character to do things like in DETAIL file as same as possible. (DETAIL_Similarity=80-100, DETAIL_ReadForbidden=0)
+so what is your advice to rename these two parameters, and add annotation which will not confuse the user?
+
+
+
+sorry, maybe i myself do not say clearly so confuse us.
+---
+Type	DETAIL_Follow	DETAIL_Direct_Use_For_Voice	Behavior
+None (simple)	N/A	N/A	No DETAIL file
+Learning	80	20	Discuss/learn from key codes / key points in DETAIL, do not directly read the codes for voice
+Fanfiction	80	90	Follow story closely, if there are dialogues, can directly copy and use for voice, if DETAIL_Direct_Use_For_Voice == 100, then copy as same as possible for voice (need to match characters)
+Story	60	20	Loose inspiration, minimal direct quoting
+ASMR	60	20	Loose inspiration, whisper delivery
+---
+how about this?
+
+
+
+ok, seem good, thanks.
+oh no, i seem to forget to add the setting of dialogue language and voice language.
+this is a project of (english, chinese, japanese).
+so there are 3 * 3 possible combinations.
+can you review corr codes and plan to add this setting?
+the corr codes may be old, and there may be some written death codes, please check and plan to fix them.
+
+yes, your recommendation seem right and be verified in LingChat.
+LingChat seem also provide another alternative, maybe you can check it? i am not sure.
+
+
+thanks.
+your recommendation seem right.
+so can you make a plan to improve the .md and the codes and test?
+the things seem be a complex one.
+i will open the gpt-sovits voice server for you.
+
+
+
+thanks.
+your recommendation seem right.
+oh, we also need to apply this we discussed just now, right?
+```
+Your proposal is better than mine. The name DETAIL_Direct_Use_For_Voice is much more precise — it describes the output purpose (voice generation) rather than an abstract "reference" concept.
+
+Quick Validation
+Scenario	Follow	Direct_Use_For_Voice	What happens
+Learning CUDA	80	20	Characters discuss "CPU vs GPU timing", "data transfer cost" — but never read cudaMemcpy(d_A, h_A, size, ...) aloud
+Fanfiction	80	90	Characters re-enact the story, and when Emma says "不过这样的希罗我也喜欢哦" in the DETAIL, the dialogue can directly copy that line
+Fanfiction (100)	100	100	Maximum copy — dialogue lines match DETAIL exactly (only reformat to 【emotion】text（action）<jp> format)
+This makes perfect sense. The two axes are now clearly:
+
+What to talk about (Follow)
+How much of the source text goes directly into voice output (Direct_Use_For_Voice)
+What Needs to Change
+Since I'm in plan mode, here's the list of files that would need updates:
+
+File	Change
+SETTING-topic-template.md	Rename DETAIL_Similarity → DETAIL_Follow, DETAIL_ReadForbidden → DETAIL_Direct_Use_For_Voice, update annotations
+DETAIL-topic-template.md	Update annotation references
+SETTING-chatting-before-sleep.md	No change needed (no DETAIL fields)
+SETTING-learn-cuda.md	Change to DETAIL_Follow=80, DETAIL_Direct_Use_For_Voice=20
+SETTING-fanfiction.md	Change to DETAIL_Follow=80, DETAIL_Direct_Use_For_Voice=90
+roadmap/roadmap.md	Update parameter references
+
+also add the preset table (Learning=80/20, Fanfiction=80/90, etc.) as a comment in SETTING-topic-template.md so users can quickly pick the right values. Something like:
+DETAIL_Follow=80 // 常见预设: Learning=80, Fanfiction=80, Story=60, ASMR=60
+DETAIL_Direct_Use_For_Voice=0 // 常见预设: Learning=20, Fanfiction=90, Story=20, ASMR=20
+```
+please also add this to plan and test together.
+and i launched 
+```
+third_party\GPT-SoVITS-v2pro-20250604>runtime\python.exe api_v2.py -a 127.0.0.1 -p 31801 -c GPT_SoVITS/configs/tts_infer.yaml
+third_party\GPT-SoVITS-v2pro-20250604>runtime\python.exe api_v2.py -a 127.0.0.1 -p 31802 -c GPT_SoVITS/configs/tts_infer.yaml
+```
+these two for you. you can check.
+
+
+
+'I recommend option 2 — verify the SETTING parsing and prompt building work before touching the output format and voice server.'
+yes, you are right.
+'Also: should I write this plan to roadmap/mimo-language-plan.md before starting execution?'
+maybe you can write this, roadmap/mimo-dv-test-plan.md.
+you can first write down your plan to roadmap/mimo-dv-test-plan.md.
+then you can try based on the mimo-dv-test-plan.md and mimo-dv-test-plan-task*.md (you can split mimo-dv-test-plan.md to mimo-dv-test-plan-task*.md).
+after every mimo-dv-test-plan-task*.md finish, you can create new mimo-dv-test-plan-task*.md and continue.
+please use git add commit every small edit you do, and record to time-action-record.md, 
+with what you do, why, brief results, next, and the timeline (the time you start and end).
+please ALWAYS check the system is safe, and your action will not break the system.
+PREFER you rename old files to 'old-*', and create new files instead of editing old files.
+
+
+
+you can see roadmap/mimo-dv-test-plan*.md, human-chat.md and time-action-record.md, to see what happened recently.
+with your help, we have done many things.
+can you make a plan for the next step to continue?
+
+
+
+ok, lets do it.
+please use git add commit every small edit you do, and record to time-action-record.md, 
+with what you do, why, brief results, next, and the timeline (the time you start and end).
+please ALWAYS check the system is safe, and your action will not break the system.
+PREFER you rename old files to 'old-*', and create new files instead of editing old files.

@@ -70,3 +70,23 @@ please write down your opinion, the order and possible solution plans.
 this is vital, thank you.
 this is a long task, you can stop everywhere if you need and ask us and then continue.
 during the task, the only file need to be edited is roadmap/roadmap.md.
+
+
+please based on lab-record-template.txt to write a lab record .txt for this project.
+ONLY remain core logics and codes.
+please select core codes, functions, and paste them directly.
+ALWAYS write like a human (will not use *, #, -, x., and other similar symbols frequently)!
+ALWAYS refer to lab-record-template.txt format.
+this project is one of '实验'.
+NEVER write things like '成功实现', write '尝试', '测试' instead.
+so only one set of:
+```
+<实验名称>
+<日期>
+<目的>
+<过程>
+<结果/总结>
+<分析与讨论/想法>
+<下一步计划>
+```
+you can see human-chat.md and roadmap*.md and task*.md to see what we have done together.
