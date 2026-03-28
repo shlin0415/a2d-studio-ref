@@ -100,3 +100,24 @@
 **Result**: Task 1 complete. All templates updated.
 
 **Next**: Task 2 — Update topic_loader.py + config.py to parse new fields.
+
+---
+
+## Task 2: Phase 2 - topic_loader.py + config.py
+
+**What**:
+- Renamed old `topic_loader.py` → `old-topic_loader.py`
+- Created new `topic_loader.py` with `|====Start/End of ...====|` section parsing
+- Added `TopicMetadata` fields: `dialogue_language`, `voice_language`, `topic_type`, `detail_follow`, `detail_direct_use_for_voice`, `detail_file`
+- Added `translate_mode` and `gpt_sovits_url` to `config.py`
+- Created `test_topic_loader_new_format.py` with 4 tests (all passing)
+
+**Files changed**:
+- `dialogue-server/dialogue_gen/old-topic_loader.py` — old version preserved
+- `dialogue-server/dialogue_gen/topic_loader.py` — new version with section parsing
+- `dialogue-server/dialogue_gen/config.py` — added translate_mode, gpt_sovits_url
+- `dialogue-server/tests/test_topic_loader_new_format.py` — 4 passing tests
+
+**Test results**: 4/4 passed (chatting-before-sleep, learn-cuda, fanfiction, template)
+
+**Next**: Task 3 — Fix prompt_builder.py to make language actually work.
