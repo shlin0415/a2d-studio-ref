@@ -14,8 +14,10 @@ Time='Multiple times'
 Mood='Mood for learning, comfortable, relaxed, lovely'
 Context='Characters are re-interpreting a fanfiction story'
 Location='See in DETAIL'
-DETAIL_Similarity=80
-DETAIL_ReadForbidden=0
+Dialogue_Language='zh'
+Voice_Language='ja'
+DETAIL_Follow=80
+DETAIL_Direct_Use_For_Voice=90
 IF_Print_To_Screen=['None']
 MAX_Real_Time=-1
 ------
