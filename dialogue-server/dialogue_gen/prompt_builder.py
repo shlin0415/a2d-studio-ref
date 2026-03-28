@@ -7,9 +7,12 @@ Based on LingChat's sys_prompt_builder logic
 
 import os
 import logging
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, TYPE_CHECKING
 
 from .core.models import CharacterSettings, STANDARD_EMOTIONS
+
+if TYPE_CHECKING:
+    from .topic_loader import TopicMetadata
 
 logger = logging.getLogger(__name__)
 
@@ -154,6 +157,209 @@ Now, generate the dialogue. Remember to strictly follow the format rules."""
         return system_prompt
 
     @staticmethod
+    def build_system_prompt_from_metadata(
+        user_name: str,
+        characters: List[CharacterSettings],
+        metadata: "TopicMetadata",
+    ) -> str:
+        """
+        Build system prompt using TopicMetadata from SETTING file.
+
+        This is the main method for the new pipeline. It:
+        - Reads dialogue_language and voice_language from metadata
+        - Adds topic-type-specific instructions (None/Learning/Fanfiction)
+        - Includes DETAIL content when present
+        - Allows flexible dialogue length
+
+        Args:
+            user_name: Name of the user/player
+            characters: List of characters participating
+            metadata: TopicMetadata from TopicLoader.load_topic()
+
+        Returns:
+            System prompt string
+        """
+        # Build character descriptions
+        char_descriptions = []
+        char_names = []
+        for char in characters:
+            char_descriptions.append(
+                PromptBuilder._format_character_description(char, user_name)
+            )
+            char_names.append(char.character_key or char.ai_name)
+
+        char_descriptions_str = "\n".join(char_descriptions)
+
+        # Collect all available emotions
+        all_emotions = set()
+        for char in characters:
+            if char.available_emotions:
+                all_emotions.update(char.available_emotions)
+
+        # Build dialogue format instructions
+        dialogue_format = PromptBuilder._build_dialogue_format_instructions(
+            dialogue_language=metadata.dialogue_language,
+            voice_language=metadata.voice_language,
+            max_sentences=5,
+            valid_emotions=list(all_emotions) if all_emotions else None,
+            character_names=char_names,
+        )
+
+        # Build conversation rules (flexible length)
+        conversation_rules = PromptBuilder._build_flexible_conversation_rules(
+            num_characters=len(characters),
+            dialogue_language=metadata.dialogue_language,
+            character_names=char_names,
+        )
+
+        # Build topic-type-specific instructions
+        topic_type_instructions = PromptBuilder._build_topic_type_instructions(
+            metadata=metadata,
+        )
+
+        # Build DETAIL content section (if present)
+        detail_section = PromptBuilder._build_detail_section(metadata)
+
+        # Build topic section
+        extra_notes = ""
+        if metadata.extra_setting:
+            extra_notes = f"Additional setting notes:\n{metadata.extra_setting}"
+
+        topic_section = f"""## Topic/Context
+Title: {metadata.title}
+Type: {metadata.topic_type}
+Style: {metadata.style}
+Time: {metadata.time}
+Mood: {metadata.mood}
+Context: {metadata.context}
+Location: {metadata.location}
+{metadata.description if metadata.description else ""}
+{extra_notes}"""
+
+        # Assemble complete system prompt
+        system_prompt = f"""You are a professional dialogue writer creating natural, engaging conversations.
+
+## Characters
+{char_descriptions_str}
+
+## Dialogue Format
+{dialogue_format}
+
+## Conversation Rules
+{conversation_rules}
+{topic_type_instructions}
+
+{topic_section}
+{detail_section}
+
+Now, generate the dialogue. Remember to strictly follow the format rules."""
+
+        return system_prompt
+
+    @staticmethod
+    def _build_topic_type_instructions(metadata: "TopicMetadata") -> str:
+        """Build topic-type-specific instructions based on TOPIC_Type"""
+        topic_type = metadata.topic_type.lower()
+
+        if topic_type == "none" or topic_type == "":
+            return ""
+
+        instructions = "\n## Topic Type Instructions\n"
+
+        if topic_type == "learning":
+            instructions += f"""This is a LEARNING topic. Characters are studying/discussing material together.
+- Discuss key concepts, insights, and difficulties from the material below
+- Characters should express understanding, confusion, or breakthroughs naturally
+- DO NOT read code or technical content verbatim for voice output
+- You may reference function names, variable names, or key ideas briefly
+- DETAIL_Follow={metadata.detail_follow}: Discuss with this level of depth
+- DETAIL_Direct_Use_For_Voice={metadata.detail_direct_use_for_voice}: Keep direct quotes low for voice
+"""
+        elif topic_type == "fanfiction":
+            instructions += f"""This is a FANFICTION topic. Characters are re-enacting a story.
+- Follow the story in the DETAIL content below with {metadata.detail_follow}% similarity
+- Characters should act out the scenes naturally as dialogue
+- When the source has dialogue lines, you may copy them directly
+- DETAIL_Direct_Use_For_Voice={metadata.detail_direct_use_for_voice}%: This controls how much source text goes directly into voice
+- At high values (80-100), copy dialogue lines verbatim when possible
+- At lower values, paraphrase while keeping the plot points
+"""
+        elif topic_type == "story":
+            instructions += f"""This is a STORY topic. Characters discuss or react to a story.
+- Use the story as loose inspiration ({metadata.detail_follow}% follow)
+- Create original dialogue inspired by the mood and themes
+- DETAIL_Direct_Use_For_Voice={metadata.detail_direct_use_for_voice}: Minimal direct quoting
+"""
+        elif topic_type == "asmr":
+            instructions += f"""This is an ASMR topic. Soft, intimate delivery.
+- Use gentle, whispered tone appropriate for ASMR
+- Follow the DETAIL loosely ({metadata.detail_follow}%)
+- DETAIL_Direct_Use_For_Voice={metadata.detail_direct_use_for_voice}: Minimal direct quoting
+"""
+        else:
+            instructions += f"""Topic type: {metadata.topic_type}
+- DETAIL_Follow={metadata.detail_follow}
+- DETAIL_Direct_Use_For_Voice={metadata.detail_direct_use_for_voice}
+"""
+
+        return instructions
+
+    @staticmethod
+    def _build_detail_section(metadata: "TopicMetadata") -> str:
+        """Build the DETAIL content section for the prompt"""
+        if not metadata.detail_content:
+            return ""
+
+        # If stages exist and are relevant, include them
+        if metadata.stages:
+            # For staged content, include Stage_1 by default
+            stage_content = metadata.stages.get("Stage_1", "")
+            if stage_content:
+                # Truncate if too long (keep within reasonable prompt size)
+                if len(stage_content) > 4000:
+                    stage_content = stage_content[:4000] + "\n... [content truncated]"
+                return f"""
+## DETAIL Content (Stage_1)
+{stage_content}"""
+
+        # No stages — include full DETAIL (truncated if needed)
+        content = metadata.detail_content
+        if len(content) > 4000:
+            content = content[:4000] + "\n... [content truncated]"
+
+        return f"""
+## DETAIL Content
+{content}"""
+
+    @staticmethod
+    def _build_flexible_conversation_rules(
+        num_characters: int,
+        dialogue_language: str = "zh",
+        character_names: Optional[List[str]] = None,
+    ) -> str:
+        """Build conversation rules with flexible length (no hard max_sentences cap)"""
+        char_list = ""
+        if character_names:
+            char_list = f"\nCharacters: {', '.join(character_names)}\n"
+
+        caption_lang = LANG_NAMES.get(dialogue_language, "Chinese")
+
+        rules = f"""1. Generate a natural dialogue with {num_characters} characters
+{char_list}2. Characters alternate speaking turns naturally
+3. Each character speaks multiple times
+4. Each turn: keep it natural (1-3 sentences usually, but can be longer when appropriate)
+5. Responses reflect character personality and the setting
+6. Maintain conversation flow and emotional continuity
+7. Use appropriate emotions for each statement
+8. Actions should enhance the scene and feel natural
+9. Dialogue should be engaging, warm, and natural
+10. Let the dialogue length feel natural — not too short, not too long
+11. CRITICAL: All dialogue text must be in {caption_lang}
+12. Do not break the format 【emotion】text（action）under any circumstances
+13. All emotions must be valid Chinese emotion names from the list"""
+
+        return rules
+
     def _format_character_description(
         character: CharacterSettings, user_name: str
     ) -> str:
