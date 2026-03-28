@@ -76,3 +76,27 @@
 | `SETTING-fanfiction.md` + `DETAIL-fanfiction.md` | SETTING + DETAIL (4 stages) | fanfiction.md |
 
 **Next steps**: Update `topic_loader.py` to parse the new format markers (`|====...====|`, `|---...---|`, `|<===...===>|`).
+
+---
+
+### Session: mimo-dv-test-plan - Language Settings + Param Rename
+
+## Task 1: Phase 1 - SETTING Templates
+
+**What**: Updated all SETTING-*.md and DETAIL-topic-template.md:
+- Renamed `DETAIL_Similarity` → `DETAIL_Follow`, `DETAIL_ReadForbidden` → `DETAIL_Direct_Use_For_Voice`
+- Added `Dialogue_Language` and `Voice_Language` fields
+- Added preset comments to template
+- Removed DETAIL params from chatting-before-sleep (no DETAIL for None type)
+
+**Files changed**:
+- `dialogue-topics/old-SETTING-topic-template.md` — old version preserved
+- `dialogue-topics/SETTING-topic-template.md` — new version with all changes
+- `dialogue-topics/SETTING-learn-cuda.md` — Follow=80, Direct_Use=20
+- `dialogue-topics/SETTING-fanfiction.md` — Follow=80, Direct_Use=90, DL=zh, VL=ja
+- `dialogue-topics/SETTING-chatting-before-sleep.md` — DL=zh, VL=zh
+- `dialogue-topics/DETAIL-topic-template.md` — updated annotations
+
+**Result**: Task 1 complete. All templates updated.
+
+**Next**: Task 2 — Update topic_loader.py + config.py to parse new fields.
