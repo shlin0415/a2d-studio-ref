@@ -14,8 +14,10 @@ Time='Multiple times' // 默认是多个时间
 Mood='Multiple reasonable mood' // 默认是多种合理的可能的情绪
 Context='Characters are spending time together' // 默认是主角们正在一起度过时间
 Location='Multiple places' // 默认是多个场所
-DETAIL_Similarity=80 // 对于用于参考的DETAIL文件内容, 默认是80%相似度
-DETAIL_ReadForbidden=0 // 对于用于参考的DETAIL文件中禁止读取的力度, 默认0, 设置为100时完全禁止直接抄和直接读
+Dialogue_Language='zh' // 对话字幕语言 / Caption language: 'zh'=中文, 'en'=英文, 'ja'=日文
+Voice_Language='zh' // 语音合成语言 / TTS voice language: 'zh'=中文, 'en'=英文, 'ja'=日文
+DETAIL_Follow=80 // 角色对DETAIL内容的忠实度: 低=自由发挥, 高=忠实还原 / How closely to follow DETAIL: low=free, high=faithful. 常见预设: Learning=80, Fanfiction=80, Story=60, ASMR=60
+DETAIL_Direct_Use_For_Voice=0 // 角色在对话中直接引用DETAIL用于配音的频率: 低=从不直接引用, 高=逐句朗读 / How often characters directly quote DETAIL for voice: low=never, high=read aloud. 常见预设: Learning=20, Fanfiction=90, Story=20, ASMR=20
 IF_Print_To_Screen=['None'] // 是否打印DETAIL里Stage的内容到屏幕上，默认是不打印, 可自己设置要打印哪些: ['Stage_1', 'Stage_3', ..., 'Stage_n']; ['All'].
 MAX_Real_Time=-1 // 最大现实持续时间, 默认是随机应变, 内容播完为止, 可选持续时间(单位分钟/min): 1, ..., 1440000.
 ------
