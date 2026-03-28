@@ -35,6 +35,8 @@ class TopicMetadata:
         self.detail_follow: int = 80
         self.detail_direct_use_for_voice: int = 0
         self.detail_file: Optional[str] = None
+        self.detail_content: str = ""  # Full DETAIL file content
+        self.stages: Dict[str, str] = {}  # Stage name -> content (if staged)
 
         # Extra setting content (after ------)
         self.extra_setting: str = ""
@@ -54,6 +56,8 @@ class TopicMetadata:
             "detail_follow": self.detail_follow,
             "detail_direct_use_for_voice": self.detail_direct_use_for_voice,
             "detail_file": self.detail_file,
+            "detail_content_length": len(self.detail_content),
+            "stage_names": list(self.stages.keys()),
         }
 
 
@@ -248,10 +252,41 @@ class TopicLoader:
 
     @staticmethod
     def _load_detail_file(metadata: TopicMetadata, topic_dir: Path):
-        """Load DETAIL file content if specified"""
+        """Load DETAIL file content and parse stages if present"""
         if metadata.detail_file:
             detail_path = topic_dir / metadata.detail_file
             if detail_path.exists():
-                logger.info(f"  DETAIL file found: {detail_path}")
+                try:
+                    with open(detail_path, "r", encoding="utf-8") as f:
+                        content = f.read()
+                    metadata.detail_content = content
+                    # Parse stages if present
+                    metadata.stages = TopicLoader._parse_stages(content)
+                    if metadata.stages:
+                        logger.info(
+                            f"  DETAIL file loaded with {len(metadata.stages)} stages: {detail_path}"
+                        )
+                    else:
+                        logger.info(f"  DETAIL file loaded (no stages): {detail_path}")
+                except Exception as e:
+                    logger.error(f"  Error reading DETAIL file: {e}")
             else:
                 logger.warning(f"  DETAIL file not found: {detail_path}")
+
+    @staticmethod
+    def _parse_stages(content: str) -> Dict[str, str]:
+        """Parse stage markers from DETAIL content.
+
+        Stage markers: |<===Start of Stage_N===>| ... |<===End of Stage_N==>|
+        Returns dict of stage_name -> stage_content.
+        """
+        stages = {}
+        stage_pattern = re.compile(
+            r"\|<===Start of (Stage_\d+)===>\|(.*?)\|<===End of \1===>\|",
+            re.DOTALL,
+        )
+        for match in stage_pattern.finditer(content):
+            stage_name = match.group(1)
+            stage_content = match.group(2).strip()
+            stages[stage_name] = stage_content
+        return stages
