@@ -151,3 +151,59 @@ All 3 phases verified with tests:
 - Phase 3: prompt_builder.py generates correct format for all 9 language combos (5/5 tests)
 
 **Next**: Phase 4 (output pipeline) and Phase 5 (voice-server) — requires GPT-SoVITS running on 31801/31802.
+
+---
+
+## Task 4: Phase 4 - Fix output pipeline
+
+**Time**: 2026-03-28 (continued)
+
+**What**:
+- Fixed duplicate elif blocks in dialogue_generator.py (lines 186-215 were duplicates using old `language=` param)
+- Created test_output_format.py to verify JSONL output has caption_text/voice_text/caption_language/voice_language
+- output_generator.py already had correct implementation (no changes needed)
+
+**Files changed**:
+- `dialogue-server/dialogue_gen/dialogue_generator.py` — removed duplicate elif blocks
+- `dialogue-server/tests/test_output_format.py` — new test (4 tests)
+
+**Result**: Task 4 complete. output_generator.py correctly produces caption_text/voice_text with language fields. 4/4 tests pass.
+
+**Next**: Task 5 — voice-server integration with JSONL
+
+---
+
+## Task 5: Phase 5 - voice-server JSONL integration
+
+**What**:
+- Created jsonl_voice_generator.py: reads JSONL, extracts voice_text + voice_language, calls GPT-SoVITS API
+- Created test_jsonl_voice.py: tests JSONL parsing, config parsing, character voice loading
+
+**Files created**:
+- `voice-server/jsonl_voice_generator.py` — main voice generator from JSONL
+- `voice-server/tests/test_jsonl_voice.py` — 5 tests
+
+**Result**: Task 5 complete. Voice generator reads JSONL header for voice_language, loads character voice settings from Character-voice-example/. 5/5 tests pass.
+
+**Usage**:
+```bash
+python voice-server/jsonl_voice_generator.py --jsonl dialogue-server/output/real_dialogue.jsonl --api-url http://127.0.0.1:31801
+```
+
+---
+
+### mimo-dv-test-plan Summary (All Tasks Complete)
+
+All 5 phases verified:
+- Phase 1: SETTING templates updated with new params and language fields ✅
+- Phase 2: topic_loader.py parses new format correctly (4/4 tests) ✅
+- Phase 3: prompt_builder.py generates correct format for all 9 language combos (5/5 tests) ✅
+- Phase 4: output_generator.py produces caption_text/voice_text with language fields (4/4 tests) ✅
+- Phase 5: jsonl_voice_generator.py reads JSONL and calls GPT-SoVITS with voice_language (5/5 tests) ✅
+
+**Total**: 18/18 tests passing across all phases.
+
+**Next possible directions**:
+- Streaming output (async dialogue→voice pipeline)
+- Edit & regenerate workflow
+- Screen/UI display integration
