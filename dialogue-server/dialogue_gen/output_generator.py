@@ -26,6 +26,7 @@ class OutputGenerator:
         dialogue_language: str = "zh",
         voice_language: str = "zh",
         output_path: Optional[Path] = None,
+        topic_type: str = "None",
         # Backward compat
         language: Optional[str] = None,
     ) -> str:
@@ -39,6 +40,7 @@ class OutputGenerator:
             dialogue_language: Language for caption text
             voice_language: Language for voice/TTS text
             output_path: Optional file path to write output
+            topic_type: Topic type (None, Learning, Fanfiction, etc.)
             language: Deprecated, use dialogue_language instead
 
         Returns:
@@ -55,6 +57,7 @@ class OutputGenerator:
             dialogue_language=dialogue_language,
             voice_language=voice_language,
             num_lines=len(dialogue_lines),
+            topic_type=topic_type,
         )
 
         # Build output lines
@@ -88,6 +91,7 @@ class OutputGenerator:
         dialogue_language: str = "zh",
         voice_language: str = "zh",
         num_lines: int = 0,
+        topic_type: str = "None",
     ) -> Dict[str, Any]:
         """Build JSONL header with metadata"""
 
@@ -99,6 +103,7 @@ class OutputGenerator:
                 "characters": char_names,
                 "character_count": len(characters),
                 "topic": topic,
+                "topic_type": topic_type,
                 "dialogue_language": dialogue_language,
                 "voice_language": voice_language,
                 "emotion_count": 18,
@@ -125,8 +130,8 @@ class OutputGenerator:
             # Same language: voice_text = caption_text
             voice_text = line.text
         else:
-            # Different languages: voice_text = translation (text_jp or explicit)
-            voice_text = line.text_jp if line.text_jp else line.text
+            # Different languages: voice_text = translation
+            voice_text = line.translation_text if line.translation_text else line.text
 
         result = {
             "index": index,
@@ -134,7 +139,6 @@ class OutputGenerator:
             "emotion": line.emotion,
             "text": line.text,
             "action": line.action,
-            "text_jp": line.text_jp,
             "caption_text": caption_text,
             "voice_text": voice_text,
             "caption_language": dialogue_language,
@@ -154,6 +158,7 @@ class OutputGenerator:
         voice_language: str = "zh",
         output_path: Optional[Path] = None,
         pretty: bool = True,
+        topic_type: str = "None",
         language: Optional[str] = None,
     ) -> str:
         """Generate single JSON output (alternative to JSONL)"""
@@ -167,6 +172,7 @@ class OutputGenerator:
             dialogue_language=dialogue_language,
             voice_language=voice_language,
             num_lines=len(dialogue_lines),
+            topic_type=topic_type,
         )
 
         lines_list = [
@@ -228,7 +234,7 @@ class OutputGenerator:
                     line.emotion,
                     line.text,
                     line.action,
-                    line.text_jp or "",
+                    line.translation_text or "",
                     line.emotion_jp or "",
                 ]
             )
@@ -259,8 +265,8 @@ class OutputGenerator:
             if line.action:
                 line_text += f"（{line.action}）"
 
-            if line.text_jp:
-                line_text += f"\n  -> {line.text_jp}"
+            if line.translation_text:
+                line_text += f"\n  -> {line.translation_text}"
 
             lines.append(line_text)
 

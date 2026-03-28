@@ -62,7 +62,6 @@ class DialogueLine:
     emotion: str
     text: str
     action: str
-    text_jp: Optional[str]
     caption_text: str
     voice_text: str
     caption_language: str
@@ -317,9 +316,8 @@ def parse_jsonl(jsonl_path: Path) -> Tuple[JsonlHeader, List[DialogueLine]]:
                 emotion=d.get("emotion", ""),
                 text=d.get("text", ""),
                 action=d.get("action", ""),
-                text_jp=d.get("text_jp"),
                 caption_text=d.get("caption_text", d.get("text", "")),
-                voice_text=d.get("voice_text", d.get("text_jp") or d.get("text", "")),
+                voice_text=d.get("voice_text", d.get("text", "")),
                 caption_language=d.get("caption_language", header.dialogue_language),
                 voice_language=d.get("voice_language", header.voice_language),
             )

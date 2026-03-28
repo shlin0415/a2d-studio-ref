@@ -30,14 +30,14 @@ def make_test_lines():
             emotion="期待",
             text="这么晚来找我，是有什么事情吗？",
             action="高兴地看着希罗",
-            text_jp="こんな遅くに私を訪ねてきて、何か用？",
+            translation_text="こんな遅くに私を訪ねてきて、何か用？",
         ),
         DialogueLine(
             character="希罗",
             emotion="害羞",
             text="其实...有点睡不着",
             action="低头玩弄衣角",
-            text_jp="実は...ちょっと眠れないんだ",
+            translation_text="実は...ちょっと眠れないんだ",
         ),
     ]
 

@@ -10,6 +10,7 @@ from pydantic import BaseModel, Field, ConfigDict
 
 class VoiceModel(BaseModel):
     """Voice synthesis configuration"""
+
     sva_speaker_id: Optional[str] = None
     sbv2_name: Optional[str] = None
     sbv2_speaker_id: Optional[str] = None
@@ -45,7 +46,7 @@ class CharacterSettings(BaseModel):
     scale: float = 1.0
     clothes_name: Optional[str] = None
     available_emotions: Optional[List[str]] = None  # Emotions from fig/ folder
-    
+
     # Available Emotions (dynamically loaded from fig/ folder)
     available_emotions: List[str] = Field(default_factory=list)
     clothes: Optional[List[Dict[str, str]]] = None
@@ -57,15 +58,15 @@ class CharacterSettings(BaseModel):
 
 class DialogueLine(BaseModel):
     """Single line of dialogue with emotion and metadata"""
-    
+
     character: str
     emotion: str
     text: str
     action: str = ""
-    text_jp: Optional[str] = None
+    translation_text: Optional[str] = None  # LLM translation for cross-language voice
     emotion_jp: Optional[str] = None
     timestamp: Optional[str] = None
-    
+
     class Config:
         json_schema_extra = {
             "example": {
@@ -73,17 +74,17 @@ class DialogueLine(BaseModel):
                 "emotion": "平静",
                 "text": "今天天气真好啊",
                 "action": "",
-                "text_jp": "今日はいい天気ですね",
+                "translation_text": "今日はいい天気ですね",
             }
         }
 
 
 class DialoguePlaybook(BaseModel):
     """Complete dialogue playbook"""
-    
+
     header: Dict[str, Any]
     lines: List[DialogueLine]
-    
+
     class Config:
         json_schema_extra = {
             "example": {
@@ -99,7 +100,7 @@ class DialoguePlaybook(BaseModel):
                         "emotion": "平静",
                         "text": "今天天气真好",
                     }
-                ]
+                ],
             }
         }
 
@@ -107,7 +108,7 @@ class DialoguePlaybook(BaseModel):
 # Standard emotions expanded to include more variations
 STANDARD_EMOTIONS = [
     "慌张",
-    "担心", 
+    "担心",
     "尴尬",
     "紧张",
     "高兴",
