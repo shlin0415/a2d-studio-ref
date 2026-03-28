@@ -14,8 +14,8 @@ Time='Late evening, just before sleep'
 Mood='Intimate, comfortable, relaxed'
 Context='Characters are winding down for the day'
 Location='Bedroom'
-DETAIL_Similarity=80
-DETAIL_ReadForbidden=0
+Dialogue_Language='zh'
+Voice_Language='zh'
 IF_Print_To_Screen=['None']
 MAX_Real_Time=-1
 ------
