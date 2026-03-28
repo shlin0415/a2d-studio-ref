@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 class DialogueGenerator:
     """Main orchestrator for dialogue generation"""
-    
+
     def __init__(
         self,
         llm_provider: str = "openai",
@@ -29,7 +29,7 @@ class DialogueGenerator:
     ):
         """
         Initialize dialogue generator
-        
+
         Args:
             llm_provider: LLM provider name
             llm_model: Model to use
@@ -44,39 +44,49 @@ class DialogueGenerator:
             model=llm_model,
             api_key=api_key,
         )
-    
+
     async def generate_multi_character_dialogue(
         self,
         character_paths: List[str | Path],
         topic: str,
         user_name: str = "player",
-        language: str = "zh",
+        dialogue_language: str = "zh",
+        voice_language: str = "zh",
         enable_translation: bool = False,
         output_path: Optional[Path] = None,
         output_format: str = "jsonl",
         max_tokens: int = 1024,
         temperature: float = 0.7,
+        # Backward compat
+        language: Optional[str] = None,
     ) -> Dict[str, Any]:
         """
         Generate multi-character dialogue
-        
+
         Args:
             character_paths: List of paths to character folders
             topic: Dialogue topic/context
             user_name: Name of user/player
-            language: Target language (zh, en, jp)
+            dialogue_language: Language for caption/dialogue text (zh, en, ja)
+            voice_language: Language for TTS voice text (zh, en, ja)
             enable_translation: Whether to enable translation
             output_path: Path to save output
             output_format: Output format (jsonl, json, csv, txt)
             max_tokens: Max tokens for LLM
             temperature: LLM temperature
-            
+            language: Deprecated, use dialogue_language instead
+
         Returns:
             Dictionary with status and results
         """
-        
-        logger.info(f"Starting multi-character dialogue generation ({len(character_paths)} characters)")
-        
+
+        if language is not None:
+            dialogue_language = language
+
+        logger.info(
+            f"Starting multi-character dialogue generation ({len(character_paths)} characters)"
+        )
+
         # Step 1: Load characters
         characters = []
         for char_path in character_paths:
@@ -85,26 +95,29 @@ class DialogueGenerator:
                 characters.append(char)
             else:
                 logger.warning(f"Failed to load character from: {char_path}")
-        
+
         if not characters:
             return {
                 "success": False,
                 "error": "No valid characters loaded",
             }
-        
-        logger.info(f"Loaded {len(characters)} characters: {[c.ai_name for c in characters]}")
-        
+
+        logger.info(
+            f"Loaded {len(characters)} characters: {[c.ai_name for c in characters]}"
+        )
+
         # Step 2: Build system prompt
         system_prompt = self.prompt_builder.build_system_prompt(
             user_name=user_name,
             characters=characters,
             topic=topic,
-            language=language,
+            dialogue_language=dialogue_language,
+            voice_language=voice_language,
             enable_translation=enable_translation,
         )
-        
+
         logger.debug(f"System prompt length: {len(system_prompt)} chars")
-        
+
         # Step 3: Generate dialogue via LLM
         try:
             raw_dialogue = await self.llm_service.generate_dialogue(
@@ -119,7 +132,7 @@ class DialogueGenerator:
                 "success": False,
                 "error": str(e),
             }
-        
+
         # Step 4: Parse dialogue
         char_names = [c.ai_name for c in characters]
         dialogue_lines = self.dialogue_parser.parse_multi_character_dialogue(
@@ -127,16 +140,17 @@ class DialogueGenerator:
             characters=char_names,
             valid_emotions=self.prompt_builder.get_emotion_list(),
         )
-        
+
         logger.info(f"Parsed {len(dialogue_lines)} dialogue lines")
-        
+
         # Step 5: Generate output
         if output_format == "jsonl":
             output = self.output_generator.generate_jsonl(
                 dialogue_lines=dialogue_lines,
                 characters=characters,
                 topic=topic,
-                language=language,
+                dialogue_language=dialogue_language,
+                voice_language=voice_language,
                 output_path=output_path,
             )
         elif output_format == "json":
@@ -144,7 +158,8 @@ class DialogueGenerator:
                 dialogue_lines=dialogue_lines,
                 characters=characters,
                 topic=topic,
-                language=language,
+                dialogue_language=dialogue_language,
+                voice_language=voice_language,
                 output_path=output_path,
                 pretty=True,
             )
@@ -159,15 +174,18 @@ class DialogueGenerator:
                 output_path=output_path,
             )
         else:
-            logger.warning(f"Unknown output format: {output_format}, defaulting to jsonl")
+            logger.warning(
+                f"Unknown output format: {output_format}, defaulting to jsonl"
+            )
             output = self.output_generator.generate_jsonl(
                 dialogue_lines=dialogue_lines,
                 characters=characters,
                 topic=topic,
-                language=language,
+                dialogue_language=dialogue_language,
+                voice_language=voice_language,
                 output_path=output_path,
             )
-        
+
         return {
             "success": True,
             "characters": char_names,
@@ -177,7 +195,7 @@ class DialogueGenerator:
             "dialogue_lines": dialogue_lines,
             "raw_output": output[:500] + "..." if len(output) > 500 else output,
         }
-    
+
     async def generate_single_character_dialogue(
         self,
         character_path: str | Path,
@@ -192,7 +210,7 @@ class DialogueGenerator:
     ) -> Dict[str, Any]:
         """
         Generate single character dialogue
-        
+
         Args:
             character_path: Path to character folder
             topic: Dialogue topic
@@ -203,13 +221,13 @@ class DialogueGenerator:
             output_format: Output format
             max_tokens: Max tokens for LLM
             temperature: LLM temperature
-            
+
         Returns:
             Dictionary with status and results
         """
-        
+
         logger.info(f"Starting single-character dialogue generation")
-        
+
         # Load character
         character = self.character_loader.load_character(character_path)
         if not character:
@@ -217,9 +235,9 @@ class DialogueGenerator:
                 "success": False,
                 "error": f"Failed to load character from: {character_path}",
             }
-        
+
         logger.info(f"Loaded character: {character.ai_name}")
-        
+
         # Generate (delegate to multi-character with single character)
         return await self.generate_multi_character_dialogue(
             character_paths=[character_path],
@@ -236,27 +254,27 @@ class DialogueGenerator:
 
 async def main():
     """Example usage"""
-    
+
     # Configure logging
     logging.basicConfig(
         level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     )
-    
+
     # Initialize generator
     generator = DialogueGenerator(
         llm_provider="openai",
         llm_model="gpt-3.5-turbo",
     )
-    
+
     # Example: Generate with character-fig-setting-example
     character_paths = [
         "Character-fig-setting-example/ema",
         "Character-fig-setting-example/hiro",
     ]
-    
+
     topic = "Two friends meet in a coffee shop and discuss their weekend plans."
-    
+
     result = await generator.generate_multi_character_dialogue(
         character_paths=character_paths,
         topic=topic,
@@ -265,7 +283,7 @@ async def main():
         output_format="jsonl",
         output_path=Path("output/dialogue.jsonl"),
     )
-    
+
     print(f"\nGeneration result: {result}")
 
 
