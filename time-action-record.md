@@ -37,3 +37,42 @@
 **Result**: Task 2 complete. All sections mapped, DETAIL_File correctly references DETAIL-learn-cuda.md.
 
 **Next**: Task 3 — Convert fanfiction.md (largest file, 542 lines, needs 4 stages).
+
+---
+
+### Task 3: Convert fanfiction.md
+
+**Time**: 00:25 - 00:45
+
+**What**: Created DETAIL-fanfiction.md (554 lines, 4 stages) and SETTING-fanfiction.md from origin-messy-topics/fanfiction.md.
+
+**Why**: fanfiction.md is a Fanfiction type topic with long story content (~520 lines). Needed stage splitting by narrative arc.
+
+**Stage split**:
+| Stage | Content |
+|-------|---------|
+| Stage_1 | Hiro in hallway, Snowy/Hannah tell about letter, observing |
+| Stage_2 | Eavesdropping, Emma says "喜欢", lunch bento feeding scene |
+| Stage_3 | Afternoon self-study, Hiro realizes she likes Emma |
+| Stage_4 | After school crepe shop, Emma's confession, bittersweet ending |
+
+**Files created**:
+- `roadmap/mimo-topic-plan-task3.md` — task 3 detail
+- `dialogue-topics/DETAIL-fanfiction.md` — story with 4 stage markers
+- `dialogue-topics/SETTING-fanfiction.md` — topic metadata, type=Fanfiction, DETAIL_Similarity=80
+
+**Result**: Task 3 complete. All 3 origin topics converted.
+
+---
+
+### Session Summary
+
+**All tasks complete.** Files created in `dialogue-topics/`:
+
+| File | Type | Source |
+|------|------|--------|
+| `SETTING-chatting-before-sleep.md` | SETTING only | chatting-before-sleep.md |
+| `SETTING-learn-cuda.md` + `DETAIL-learn-cuda.md` | SETTING + DETAIL | learn-cuda.md |
+| `SETTING-fanfiction.md` + `DETAIL-fanfiction.md` | SETTING + DETAIL (4 stages) | fanfiction.md |
+
+**Next steps**: Update `topic_loader.py` to parse the new format markers (`|====...====|`, `|---...---|`, `|<===...===>|`).
