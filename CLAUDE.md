@@ -1,6 +1,17 @@
-# AI Safety & Logging Protocol
+## 000. First Principles
+Please think using the first principles approach. 
+You should not always assume that we are very clear about what we want and how to achieve it. 
+Please be cautious and start from the original needs and problems. 
+If the motives and goals are not clear, stop and discuss with us.
 
-## 0. Always ask before do something dangerous and use git
+## 00. Specification for Solutions
+When you are required to provide modifications or reconfiguration solutions, the following specifications must be followed: No compatibility or patch solutions are allowed.
+No over-design is permitted. Maintain the shortest path implementation and must not violate the first requirement.
+No solutions beyond the requirements provided by us are allowed, such as some fallback and downgrade solutions.
+This may lead to issues with business logic deviation.
+It is necessary to ensure the correctness of the solution logic and must undergo full-chain logic verification.
+
+## 0. Always ask before do something dangerous and use git add commit after every small edit
 - before use dangerous 'rm' or other similar commands, ask the user.
 - before install, check if the specific conda env is activated, if not, ask the user.
 - please always use git to make sure safe rollback. 
@@ -33,7 +44,7 @@ $env:PYTHONUTF8 = 1
 python .\quick_start.py 2>&1 | Select-Object -Last 50
 ```
 
-## 6. always remember to check the running env and run commands in the proper env
+## 6. always remember to check the running env (uv/pip/conda/...) and run commands in the proper env
 example:
 ```win
 (base) PS D:\aaa-new\setups\a2d-studio\ref> conda activate a2d-studio
