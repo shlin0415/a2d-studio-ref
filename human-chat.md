@@ -479,3 +479,7 @@ This is the tokenizer config for Qwen2 model. Here's a breakdown of the key para
 8. `unk_token`: null - There's no special token for unknown words.
 
 The chat template (not shown in your snippet) would define how to format conversations between user and assistant messages, likely using the special tokens like `<|im_start|>` and `<|im_end|>` to mark the start and end of each message turn.
+
+
+
+third party add ai animation.
