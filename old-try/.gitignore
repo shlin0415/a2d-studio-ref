@@ -1,0 +1,203 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+vendor/
+venv/
+env/
+.venv/
+third_party/
+
+# Build Artifacts
+dist/
+build/
+out/
+*.exe
+*.dll
+*.so
+*.dylib
+*.app
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Python (SD WebUI)
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.mypy_cache/
+*.egg
+
+# Node/WebGAL
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnp.*
+
+# Dialogue Server Output (but keep source files)
+dialogue-server/output/*.jsonl
+dialogue-server/output/*.json
+dialogue-server/*.output
+*.log
+
+# Backups to keep (do not ignore)
+# !dialogue-server/**/*.orig
+
+.yarn-integrity
+
+# Large Model Files
+*.ppt
+*.pptx
+*.pdf
+*.tar
+*.gz
+*.zip
+*.png*
+*.pth
+*.ckpt
+*.safetensors
+*.gguf
+*.bin
+models/
+checkpoints/
+vae/
+loras/
+embeddings/
+extensions/sd-webui-controlnet/annotator/
+
+# Temporary/Downloaded
+.cache/
+temp/
+tmp/
+*.tmp
+downloads/
+outputs/
+logs/
+*.log
+
+# Runtime data
+*.sqlite
+*.db
+session-*.md
+
+# Backup files (from your AGENTS.md protocol)
+*.orig
+*.bak1
+*.bak2
+.trash/
+
+# nul
+*nul*
+
+# package
+*package*
+
+# Lib
+*Lib*
+
+# others
+*.ogg
+*.wav
+*.pth
+*runtime*
+*assets*
+*resource*
+*background*
+*/fig/*
+
+##### from old 
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+*venv/*
+*ENV/*
+*env/*
+*.venv*
+
+# IDE
+*.vscode/*
+*.idea/*
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+.trash/
+
+# Node (if used)
+*node_modules/*
+npm-debug.log
+yarn-error.log
+
+# Environment files (security)
+.env
+.env.local
+.env.*.local
+
+# OS-specific
+Thumbs.db
+.DS_Store
+
+# Project-specific backups (keep versioned backups only)
+*.bak1
+*.bak2
+# But DO preserve .orig files (originals before first edit)
+
+# Logs
+*.log
+
+# Lock files from package managers (optional - uncomment if needed)
+# package-lock.json
+# poetry.lock
+*.opencode/*

@@ -17,8 +17,8 @@ It is necessary to ensure the correctness of the solution logic and must undergo
 - please always use git to make sure safe rollback. 
 
 ## 1. Minimalist Logging (Token-Efficient)
-- Before and after every action, append a single-line summary to `ACTION_LOG.md`.
-- FORMAT: [Timestamp] | [Action Type] | [Target] | [Result Summary]
+- Before and after every action, append a single-line summary to `time-action-record.md`.
+- What you do, why, brief results, next, and the timeline (the time you start and end).
 - Do NOT record full terminal stdout unless an error occurs. 
 
 ## 2. Smart Backup Policy (Original + 2)
@@ -62,3 +62,11 @@ If needed, ask the user first.
 ## 8. NEVER use rm or delete or similar things before asking the user
 If needed, use git and move useless things to ./trash/ (if not exist should create first).
 
+## 9. other things
+please make sure your actions can be totally rollback.
+please ALWAYS check the system is safe, and your action will not break the system.
+please make sure your log files, other output files and commands are under curr dir, 
+or the system will seem stop you and ask for permission.
+
+## 10. end questions
+at the end, you can list 10 questions, and A. B. C., and your answers and recommandations to help things be clear.

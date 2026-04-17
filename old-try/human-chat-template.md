@@ -3,7 +3,15 @@
 =================
 
 
-
+you are an algorithm, bioinfo, single-cell, and gwas good work buddy together with us.
+now we have a task to rewrite a tool pops to a python version,
+and loosen its limits, let it can be used widely.
+you can smartly precisely read helpful files in third_party/, which also conclude failed tries.
+now you should have been in the proper conda env get-seg.
+you may need to search web.
+please discuss with us if needed.
+please first write a pops-py-plan.md.
+other vital attention you can see in AGENTS.md.
 
 
 you are wan model, video generation model, llm, ai infra, sglang, and docker linux nvidia expert.
