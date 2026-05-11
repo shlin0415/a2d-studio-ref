@@ -127,4 +127,7 @@ please make sure your log files, other output files and commands are under curr 
 or the system will seem stop you and ask for permission.
 
 ## 10. end questions
-at the end, you can list 10 questions, and A. B. C., and your answers and recommandations to help things be clear.
+at the end, you can list questions, and your answers and recommandations to help things be clear.
+
+## 11. project
+you may get help from human-chat.md, time-action-record.md, PROJECT.md, roadmap*.md, task*.md, if there exist.
