@@ -1,5 +1,20 @@
 # Time Action Record
 
+## 2026-05-14
+
+### Summary: Created tried-summary.md
+
+**Time**: ~19:00
+
+**What**: Summarized all try-test/ work (dialogue server, voice server, frontend) into tried-summary.md based on file modification times and contents.
+
+**Why**: User requested a consolidated overview of everything attempted so far.
+
+**Files created**:
+- `try-test/tried-summary.md` — comprehensive project summary
+
+---
+
 ## 2026-03-28
 
 ### Session: Topic Conversion Plan + Task 1

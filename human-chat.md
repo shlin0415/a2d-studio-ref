@@ -483,3 +483,17 @@ The chat template (not shown in your snippet) would define how to format convers
 
 
 third party add ai animation.
+
+
+你可以帮我们总结一下目前尝试过的内容吗？
+主要是对话生成系统，语音系统，一个粗糙的前端。
+很多文件在try-test文件夹中。
+注意文件时间的变化。
+
+谢谢，感觉你总结得挺好的，你可以帮忙写入一个文件吗？你建议用什么名字？
+
+ok，那就这名字，放在try-test文件夹
+
+好的，谢谢
+另外，我们能不能用平实的语言，不涉及具体文件，就是描述一下我们干了什么
+比如，我对这个项目的定位是，a2d-studio, auto cp, 全自动磕cp机，可手动的剧本编辑器和播放器，兼容手机和电脑，web和桌宠
